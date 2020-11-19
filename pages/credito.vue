@@ -6,7 +6,7 @@
             <card-credito class="my-3"></card-credito>
             <v-card
               class="rounded-lg d-flex flex-wrap" hover>
-              <v-card-title>
+              <v-card-title class="text--secondary">
                I miei crediti
               </v-card-title>
               <v-card-text>

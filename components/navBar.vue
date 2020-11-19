@@ -4,10 +4,10 @@
     color="#374785"
     grow
     app
-    height="90"
+    shift
   >
     <v-btn
-      class="mt-7"
+      height="100%"
       to="/negozio"
     >
         <span
@@ -19,7 +19,7 @@
     </v-btn>
 
     <v-btn
-      class="mt-7"
+      height="100%"
       to="/credito"
     >
        <span
@@ -31,7 +31,7 @@
       <v-icon>mdi-account</v-icon>
     </v-btn>
     <v-btn
-      class="mt-7"
+      height="100%"
       to="/ordini"
     >
        <span
@@ -44,9 +44,8 @@
     </v-btn>
 
 
-
     <v-btn
-      class="mt-7"
+      height="100%"
       to="/portafoglio"
     >
       <span

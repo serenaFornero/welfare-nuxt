@@ -113,18 +113,15 @@
             cols="12"
             sm="6"
             md="3">
-            <v-select
-              :items="userRelatives()"
-            ></v-select>
+            <relatives-autocomplete v-model="relative"></relatives-autocomplete>
           </v-col>
           <v-col
             cols="12"
             sm="6"
             md="3">
             <v-text-field
-              value=""
+              v-model="birthDate"
               label="Data di nascita"
-              readonly
               append-icon="mdi-calendar"
             ></v-text-field>
           </v-col>
@@ -133,8 +130,7 @@
             sm="6"
             md="3">
             <v-text-field
-              value=""
-              readonly
+              v-model="relation"
               label="Legame di parentela"
             ></v-text-field>
           </v-col>
@@ -165,12 +161,17 @@
 <script>
 
 import Password from "@/components/password";
+import RelativesAutocomplete from "~/components/RelativesAutocomplete";
 export default {
   layout: 'default',
   components: {
+    RelativesAutocomplete,
     Password
   },
   data: () => ({
+    relative: null,
+    birthDate: null,
+    relation: null,
     profile: {
       id:0,
       nome: "John Doe",
@@ -201,6 +202,20 @@ export default {
     dialog: false,
 
   }),
+  watch: {
+    relative: {
+      immediate: false,
+      deep: true,
+      handler(value) {
+        if(!value) {
+          return false
+        }
+
+        this.relation = value.relation
+        this.birthDate = value.birthDate
+      }
+    }
+  },
   methods: {
     /*
     selectedRelative(name){
