@@ -1,42 +1,45 @@
 <template>
-  <v-app>
-    <template>
-      <v-container fluid>
-        <v-row justify="space-around">
-          <v-card
-            color="transparent"
-            flat
-          >
-            <v-card-title>
-              <v-avatar size="56">
-                <img
-                  alt="user"
-                  src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-                >
-              </v-avatar>
-              <p class="ml-3 mt-3">
-                John Doe
-              </p>
-            </v-card-title>
-            <card-credito></card-credito>
-            <p class="headline mt-5">Crediti</p>
-            <card-crediti></card-crediti>
-          </v-card>
-        </v-row>
+  <v-container fluid>
+            <v-row>
+<avatar></avatar>
+            </v-row>
+            <card-credito class="my-3"></card-credito>
+            <v-card
+              class="rounded-lg d-flex flex-wrap" hover>
+              <v-card-title>
+               I miei crediti
+              </v-card-title>
+              <v-card-text>
+                    <p class="subtitle-1 mx-3">Totale accreditato nel  {{ new Date().getFullYear() }}:</p>
+                    <p class="pb-3 ml-3">{{credit}} €</p>
+                      <v-divider></v-divider>
+                    <p class="subtitle-1 pt-3 mx-3">Credito residuo Gift Card:</p>
+                    <p class="pb-3 ml-3">{{ giftCardCredit }} €</p>
+                      <v-divider></v-divider>
+                    <p class="subtitle-1 pt-3 mx-3">Scadenza credito disponibile:</p>
+                    <p class="pb-3 ml-3">{{ expirationDate }}</p>
+              </v-card-text>
+            </v-card>
       </v-container>
-    </template>
-  </v-app>
 </template>
 
 
 <script>
 import CardCredito from "@/components/cardCredito";
-import CardCrediti from "@/components/cardCrediti";
+import Avatar from "@/components/avatar";
 export default {
   layout: 'default',
   components: {
-    CardCrediti,
+    Avatar,
     CardCredito,
-  }
+  },
+  data () {
+    return {
+      credit: 860.00,
+      giftCardCredit: 258.23,
+      expirationDate: "12/11/2020"
+
+    }
+  },
 }
 </script>

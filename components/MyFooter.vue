@@ -1,16 +1,19 @@
 <template>
-  <v-footer padless>
+  <v-footer
+    dark
+    fixed
+    color="#A8D0E6"
+  >
     <v-col
       class="text-center"
-      cols="12"
     >
-      {{ new Date().getFullYear() }} — <strong>WeLocal</strong>
+      {{ new Date().getFullYear() }} — <strong>WeCare</strong>
     </v-col>
   </v-footer>
 </template>
 
 <script>
 export default {
-  name: "Footer.vue"
+  name: "MyFooter"
 }
 </script>
