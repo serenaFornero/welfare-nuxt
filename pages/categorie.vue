@@ -20,7 +20,7 @@
               hover
             >
 
-              <nuxt-link to=""><v-img src="food.png"></v-img></nuxt-link>
+              <nuxt-link to="/categorieServizi"><v-img src="food.png"></v-img></nuxt-link>
             </v-card>
             <p class="text-center font-weight-bold">Alimentari</p>
           </div>

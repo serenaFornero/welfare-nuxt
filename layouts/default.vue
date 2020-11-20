@@ -9,7 +9,9 @@
                 <dialog-assistenza></dialog-assistenza>
               </v-col>
             </v-row>
-            <nuxt/>
+            <transition name="slide" mode="out-in">
+              <nuxt/>
+            </transition>
           </v-col>
         </v-row>
       </v-container>
@@ -31,3 +33,17 @@ export default {
 
 }
 </script>
+
+<style>
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+</style>
