@@ -4,7 +4,7 @@
       justify="center"
     >
       <v-btn
-        color="#374785"
+        color="#2573d5"
         class="text-capitalize"
         dark
         @click="dialog3 = true"
@@ -24,7 +24,7 @@
             <v-btn
               outlined
               class="text-capitalize"
-              color="#374785"
+              color="#2573d5"
               @click="dialog3 = false"
             >
               Chiudi

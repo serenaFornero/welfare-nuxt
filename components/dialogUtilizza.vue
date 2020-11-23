@@ -8,7 +8,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          color="#374785"
+          color="#2573d5"
           dark
           v-bind="attrs"
           v-on="on"
@@ -20,7 +20,7 @@
       <v-card>
         <v-toolbar
           dark
-          color="#374785"
+          color="#29304d"
         >
           <v-btn
             icon
@@ -68,22 +68,23 @@ export default {
         {
           id: 1,
           name: "Amazon 50",
-          price: "50,00"
+          price: 50
         },
         {
           id: 2,
           name: "Amazon 20",
-          price: "20,00"
+          price: 20
         },
         {
           id: 3,
           name: "Amazon 15",
-          price: "15,00"
+          price: 15
         },
 
       ]
     }
 
   },
+
 }
 </script>

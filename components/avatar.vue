@@ -10,7 +10,7 @@
     to="/profilo">
   </nuxt-link>
 </v-avatar>
-<p class="headline mt-2 ml-2">
+<p class="headline mt-2 ml-2" style="color: #29304d ">
   John Doe
 </p>
 </v-col>

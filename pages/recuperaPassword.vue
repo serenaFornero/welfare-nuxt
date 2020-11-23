@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-card
-      class="d-flex justify-center rounded-xl"
+      class="d-flex justify-center rounded-lg"
       color="transparent"
       flat
     >
@@ -10,10 +10,12 @@
         width="400"
         flat
       >
-        <v-card-text>
-          <p class="headline mt-3 font-weight-regular">Recupera Password</p>
-          <p class="subtitle-1 mt-3 mb-5 font-weight-regular">Inserisci l'indirizzo e-mail associato <br> al tuo account</p>
+        <v-row justify="center">
+          <v-card-title class="mb-2 mt-3 ">Recupera Password</v-card-title>
+          <v-card-subtitle>Inserisci l'indirizzo e-mail associato <br> al tuo account</v-card-subtitle>
+        </v-row>
 
+        <v-card-text>
           <v-img
             contain
             fluid
@@ -37,7 +39,7 @@
             color="#374785"
             large
             dark
-            class="mb-5 text-capitalize"
+            class="mb-5 text-capitalize rounded-lg"
             to="/resetPassword"
 
           >

@@ -98,22 +98,22 @@
             {
               type: "market",
               icon: "mdi-food",
-              color: "#0D47A1"
+              color: "#29304d"
             },
             {
               type: "transport",
               icon: "mdi-bus",
-              color: "#283593"
+              color: "#29304d"
             },
             {
               type: "beauty",
               icon: "mdi-account-heart",
-              color: "#3949AB"
+              color: "#29304d"
             },
             {
               type: "bar",
               icon: "mdi-coffee",
-              color: "#1976D2"
+              color: "#29304d"
             },
           ],
         }

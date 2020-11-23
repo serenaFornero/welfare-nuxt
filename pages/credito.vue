@@ -6,18 +6,18 @@
             <card-credito class="my-3"></card-credito>
             <v-card
               class="rounded-lg d-flex flex-wrap" hover>
-              <v-card-title class="text--secondary">
+              <v-card-title style="color: #232649">
                I miei crediti
               </v-card-title>
               <v-card-text>
                     <p class="subtitle-1 mx-3">Totale accreditato nel  {{ new Date().getFullYear() }}:</p>
-                    <p class="pb-3 ml-3">{{credit}} €</p>
+                    <p class="pb-3 ml-3 font-weight-black" style="color: #2573d5">{{credit}} €</p>
                       <v-divider></v-divider>
                     <p class="subtitle-1 pt-3 mx-3">Credito residuo Gift Card:</p>
-                    <p class="pb-3 ml-3">{{ giftCardCredit }} €</p>
+                    <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ giftCardCredit }} €</p>
                       <v-divider></v-divider>
                     <p class="subtitle-1 pt-3 mx-3">Scadenza credito disponibile:</p>
-                    <p class="pb-3 ml-3">{{ expirationDate }}</p>
+                    <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ expirationDate }}</p>
               </v-card-text>
             </v-card>
       </v-container>

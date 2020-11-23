@@ -5,6 +5,9 @@
       x-small
       class="mt-n10"
       to="/profilo"
+      color="#29304d"
+      outlined
+      dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
@@ -14,9 +17,17 @@
       <v-card-title>
       Aggiungi familiare
         </v-card-title>
-      <v-card-subtitle>
-     In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non necessariamente conviventi o parte del nucleo familiare.
-      </v-card-subtitle>
+      <v-alert border="top"
+               colored-border
+               type="info"
+               elevation="2"
+               class="mx-2 subtitle-2 secondary--text"
+
+      >
+        In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non necessariamente conviventi
+        o parte del nucleo familiare. Si tratta in particolare del coniuge, dei figli legittimi, naturali o adottivi, dei
+        genitori, fratelli o sorelle, dei suoceri, generi e nuore.
+      </v-alert>
       <v-card-text>
         <v-row>
           <v-col
@@ -53,7 +64,7 @@
       </v-card-text>
       <v-card-actions class="justify-center">
         <v-btn
-          class="mb-5 mt-n5 text-capitalize" dark color="#374785" >
+          class="mb-5 mt-n5 text-capitalize" dark color="#2573d5" >
           Aggiungi
         </v-btn>
       </v-card-actions>

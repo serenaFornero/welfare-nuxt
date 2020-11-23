@@ -1,48 +1,62 @@
 <template>
     <v-container fluid>
       <v-row class="d-flex">
-        <p class="headline">
+        <p class="headline" style="color: #29304d">
           Negozio
         </p>
         <v-spacer></v-spacer>
-        <v-card-actions>
           <v-btn
-            color="#374785"
+            class="mt-n1"
+            color="#2573d5"
             fab
             dark
             small
-            class="mt-n2"
             to="/categorie"
           >
             <v-icon>mdi-format-list-bulleted-square</v-icon>
           </v-btn>
-        </v-card-actions>
       </v-row>
       <search-field></search-field>
+      <v-row justify="center">
+        <v-btn
+          color="#2573d5"
+          dark
+          fixed
+          style="margin-top: 550px;"
+          top
+          fab
+          small
+          to="/mappa"
+        >
+          <v-icon>mdi-map-marker</v-icon>
+        </v-btn>
+      </v-row>
       <v-card
         class="rounded-lg"
         hover
       >
-    <v-row justify="center">
-          <v-btn
-            color="#374785"
-            dark
-            fixed
-            style="margin-top: 550px;"
-            top
-            fab
-            small
-          >
-            <v-icon>mdi-map-marker</v-icon>
-          </v-btn>
-      </v-row>
-        <v-tabs color="#374785" centered grow slider-color="#374785">
+        <v-tabs
+          color="#29304d"
+          centered
+          grow
+          slider-color="#29304d"
+        >
           <v-tab class="text-capitalize">Servizi vicino a te</v-tab>
           <v-tab class="text-capitalize">Buoni acquisto</v-tab>
           <v-tab-item>
               <v-list class="mt-5">
-                <v-list-item v-for="shop in shops" :key="shop.id">
-                  <v-list-item-avatar tile class="rounded-lg" width="100" height="50"><v-img :src="changeImage(shop.id).src"></v-img></v-list-item-avatar>
+                <v-list-item
+                  v-for="shop in shops"
+                  :key="shop.id"
+                >
+                  <v-list-item-avatar
+                    tile
+                    class="rounded-lg"
+                    width="100"
+                    height="50"
+                  >
+                    <v-img :src="changeImage(shop.id).src"></v-img>
+                  </v-list-item-avatar>
                     <nuxt-link to="/trasferimentoEffettuato" style="text-decoration: none">
                       <v-list-item-content>
                         <v-list-item-title>{{ shop.name }} {{shop.rating}}/5</v-list-item-title>
@@ -55,8 +69,18 @@
           </v-tab-item>
           <v-tab-item>
               <v-list>
-                <v-list-item v-for="giftCard in giftCards" :key="giftCard.id">
-                  <v-list-item-avatar tile class="rounded-lg" width="50" height="50"><v-img :src="getImage(giftCard.id).src"></v-img></v-list-item-avatar>
+                <v-list-item
+                  v-for="giftCard in giftCards"
+                  :key="giftCard.id"
+                >
+                  <v-list-item-avatar
+                    tile
+                    class="rounded-lg"
+                    width="50"
+                    height="50"
+                  >
+                    <v-img :src="getImage(giftCard.id).src"></v-img>
+                  </v-list-item-avatar>
                     <v-list-item-content>
                       <v-list-item-title>{{ giftCard.name }}</v-list-item-title>
                       <v-list-item-content>{{giftCard.description}}</v-list-item-content>
@@ -213,7 +237,6 @@ export default {
   }
 }
 </script>
-
 
 
 

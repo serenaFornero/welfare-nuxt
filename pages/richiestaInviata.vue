@@ -5,6 +5,9 @@
       x-small
       class="mt-n10"
       to="/negozio"
+      color="#29304d"
+      outlined
+      dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
@@ -25,11 +28,11 @@
         <v-card-actions>
           <v-btn
             dark
-            color="#374785"
+            color="#2573d5"
             class="text-capitalize mb-5"
             to="/richiestaNonRiuscita"
           >
-            Richiedi un altro rimborso
+            Portafoglio
           </v-btn>
         </v-card-actions>
       </v-row>

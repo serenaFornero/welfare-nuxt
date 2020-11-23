@@ -8,7 +8,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          color="#374785"
+          color="#2573d5"
           dark
           v-bind="attrs"
           v-on="on"
@@ -20,7 +20,7 @@
       <v-card>
         <v-toolbar
           dark
-          color="#374785"
+          color="#29304d"
         >
           <v-btn
             icon
@@ -29,7 +29,7 @@
           >
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Gift Card Name</v-toolbar-title>
+          <v-toolbar-title>Gift card Name</v-toolbar-title>
         </v-toolbar>
         <v-list
           three-line
@@ -37,11 +37,10 @@
         >
           <v-list-item v-for="giftCard in giftCards" :key="giftCard.id">
             <v-list-item-content>
-              <v-list-item-title class="font-weight-bold">Gift Card {{giftCard.name}}</v-list-item-title>
+              <v-list-item-title class="font-weight-bold" style="color: #29304d">Gift Card {{giftCard.name}}</v-list-item-title>
               <v-list-item>  <v-img src="giftCardAmazon.png" class="my-5" contain width="200" height="150"></v-img></v-list-item>
               <v-list-item-subtitle class="text-center">Buono Regalo valido per l’acquisto di prodotti disponibili su Amazon.it del vaore di {{giftCard.price}}€ </v-list-item-subtitle>
-              <v-list-item-title class="font-weight-bold text-center my-2">{{giftCard.price}}€</v-list-item-title>
-              <v-row justify="center"><v-btn color="#374785" dark class="text-capitalize my-5" to="/trasferimentoEffettuato">Acquista</v-btn></v-row>
+              <v-row justify="center"><v-btn color="#2573d5" dark class="text-capitalize my-5" to="/trasferisci">Acquista {{giftCard.price}}€</v-btn></v-row>
             </v-list-item-content>
           </v-list-item>
         </v-list>

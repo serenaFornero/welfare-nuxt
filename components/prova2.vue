@@ -1,97 +1,123 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <avatar></avatar>
-    </v-row>
-    <card-credito class="my-3"></card-credito>
-    <search-field></search-field>
-    <v-card
-      class="rounded-lg d-flex flex-wrap"
-      hover
-    >
-      <v-card-title>
-        Le mie transazioni
-      </v-card-title>
-      <v-spacer></v-spacer>
-      <v-card-text class="mt-n5">
-        <v-list>
-          <v-list-item
-            v-for="transaction in transactions"
-            :key="transaction.id"
-            class="mb-5">
-            <v-icon>mdi-shopping</v-icon>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>{{ transaction.shopName }}</v-list-item-title>
-                <v-list-item-subtitle>{{ transaction.date }}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-            <p class="mt-3"> {{transaction.credit}}</p>
-          </v-list-item>
-        </v-list>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <v-autocomplete
+    clearable
+    item-value="id"
+    :prepend-inner-icon="prependInnerIcon"
+    :rules="rules"
+    :label="label"
+    :items="relatives"
+    return-object
+    v-model="relative">
+    <template v-slot:selection="{item}">
+      <div class="text-capitalize">{{ item.name + ' ' + item.surname }}</div>
+    </template>
+    <template v-slot:item="{ attrs, item, on }">
+      <v-list-item
+        v-bind="attrs"
+        active-class="primary elevation-4 white--text text-capitalize"
+        class="ma-2 v-sheet"
+        elevation="0"
+        v-on="on"
+      >
+        <v-list-item-content>
+          <v-list-item-title>
+            {{ item.name + ' ' + item.surname }}
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            {{ item.relation }} - {{ item.birthDate }}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+
+      </v-list-item>
+    </template>
+  </v-autocomplete>
 </template>
 
 
 <script>
-import CardCredito from "@/components/cardCredito";
-import Avatar from "@/components/avatar";
-import SearchField from "@/components/searchField";
-
 export default {
-  layout: 'default',
-  components: {
-    SearchField,
-    Avatar,
-    CardCredito,
+  name: 'RelativesAutocomplete',
+  props: {
+    prependInnerIcon: {
+      type: String,
+      default: 'mdi-account-multiple'
+    },
+    value: {
+      type: Object
+    },
+    label: {
+      type: String,
+      default: 'Seleziona Famliare'
+    },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    dense: {
+      type: Boolean,
+      default: false
+    },
+    rules: {
+      type: Array,
+      default: () => []
+    }
   },
-  data: () => ({
-    transactions : [
-      {
-        id: 0,
-        shopName: "Market",
-        credit: "-20,00",
-        date: "12-12-2020"
-      },
-      {
-        id: 1,
-        shopName: "Trasporti",
-        credit: "+100,00",
-        date: "14-12-2020"
-      },
-      {
-        id: 2,
-        shopName: "Alimentari Pinerolo",
-        credit: "-30,00",
-        date: "15-12-2020"
-      },
-      {
-        id: 3,
-        shopName: "Parrucchiere Pinerolo",
-        credit: "-30,00",
-        date: "15-12-2020"
-      },
-      {
-        id: 4,
-        shopName: "Pasticceria Pinerolo",
-        credit: "-10,00",
-        date: "15-12-2020"
-      }
-    ],
-  }),
-  computed: {
-    changeIcon(){
-      let a
-      let shopName = this.transactions.shopName
-      if (shopName === "Market"){
-        a = "a"
-      } else if (shopName === "Trasporti"){
-        a = "b"
-      } else a = "c"
+  data() {
+    return {
+      relative: this.value,
+      relatives: [
+        {
+          id: 1,
+          name: 'Log-in',
+          surname: 'Cante',
+          birthDate: '10/02/1993',
+          relation: 'Fratello'
+        },
+        {
+          id: 2,
+          name: 'Credito',
+          surname: 'Fornero',
+          birthDate: '19/11/1996',
+          relation: 'Sorella'
+        },
+        {
+          id: 3,
+          name: 'trasferisci',
+          surname: 'Rossi',
+          birthDate: '01/01/1958',
+          relation: 'Padre'
+        },
+        {
+          id: 4,
+          name: 'trasferisci',
+          surname: 'Rossi',
+          birthDate: '01/01/1958',
+          relation: 'Padre'
+        },
+        {
+          id: 5,
+          name: 'trasferisci',
+          surname: 'Rossi',
+          birthDate: '01/01/1958',
+          relation: 'Padre'
+        },
+        {
+          id: 6,
+          name: 'servizi',
+          surname: 'Rossi',
+          birthDate: '01/01/1958',
+          relation: 'Padre'
+        }
+      ]
+    }
+  },
+  watch: {
+    value(val) {
+      this.relative = val
+    },
+    relative(val) {
+      this.$emit('input', val)
     }
   }
-
 }
 </script>

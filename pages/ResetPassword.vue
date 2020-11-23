@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-card
-      class="d-flex justify-center rounded-xl"
+      class="d-flex justify-center rounded-lg"
       color="transparent"
       flat
     >
@@ -10,9 +10,11 @@
               width="400"
               flat
             >
+              <v-row justify="center">
+                <v-card-title class="mb-2 mt-3 ">Reimposta Password</v-card-title>
+                <v-card-subtitle>Scegli una nuova password</v-card-subtitle>
+              </v-row>
               <v-card-text>
-                <p class="headline mt-3 font-weight-regular">Reimposta Password</p>
-                <p class="subtitle-1 mt-3 mb-5 font-weight-regular">Scegli una nuova password</p>
                 <v-img
                   contain
                   fluid
@@ -40,7 +42,7 @@
                   color="#374785"
                   large
                   dark
-                  class="mb-5 text-capitalize"
+                  class="mb-5 text-capitalize rounded-lg"
                   @click="e1 = 2"
                   to="/credito"
                 >

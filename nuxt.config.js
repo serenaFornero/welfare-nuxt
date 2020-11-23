@@ -57,8 +57,7 @@ export default {
           background: '#00a86b'
         },
         light: {
-          color: '#757575' ,
-          background: '#A8D0E6'
+          background: '#F7F9FC'
         }
       }
     }

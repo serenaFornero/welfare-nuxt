@@ -5,6 +5,9 @@
       x-small
       class="mt-n10"
       to="/portafoglio"
+      color="#29304d"
+      outlined
+      dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
@@ -22,7 +25,7 @@
         <v-stepper-header>
           <v-stepper-step
             :complete="e6 > 1"
-            color="#374785"
+            color="#2573d5"
             step="1"
           >
             Dettagli spesa
@@ -32,7 +35,7 @@
 
           <v-stepper-step
             :complete="e6 > 2"
-            color="#374785"
+            color="#2573d5"
             step="2"
 
           >
@@ -43,7 +46,7 @@
 
           <v-stepper-step
             step="3"
-            color="#374785"
+            color="#2573d5"
           >
             Conferma e invia
           </v-stepper-step>
@@ -51,10 +54,18 @@
 
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-card-subtitle>
-             1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale della spesa sostenuta).
-             <br> 2. Seleziona l'effettivo beneficiario. Se non è presente nell'elenco, vai in profilo e inseriscilo fra i tuoi familiari.
-            </v-card-subtitle>
+            <v-alert border="top"
+                     colored-border
+                     type="info"
+                     elevation="2"
+                     class="mx-2 subtitle-2 secondary--text"
+
+            >
+              1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale della spesa sostenuta).
+              <br> 2. Seleziona l'effettivo beneficiario. Se non è presente nell'elenco, vai in profilo e inseriscilo fra i tuoi familiari.
+
+            </v-alert>
+
             <v-card
               flat
             >
@@ -118,7 +129,7 @@
             <div class="d-flex justify-center my-3">
               <v-btn
                 @click="e6 = 2"
-                color="#374785"
+                color="#2573d5"
                 class="text-capitalize"
                 dark
 
@@ -129,10 +140,19 @@
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <v-card-subtitle>
+            <v-alert border="top"
+                     colored-border
+                     type="info"
+                     elevation="2"
+                     class="mx-2 subtitle-2 secondary--text"
+
+            >
               1. Seleziona il file da allegare (sono consenti file pdf, jpg, png, bmp). <br>
               2. Clicca su Upload per caricare il file.<br>
               3. Ripeti l'operazione per ogni file da allegare
+            </v-alert>
+            <v-card-subtitle>
+
             </v-card-subtitle>
             <v-card
               flat
@@ -150,7 +170,7 @@
             <div class="d-flex justify-center my-3">
               <v-btn
                 @click="e6 = 3"
-                color="#374785"
+                color="#2573d5"
                 class="text-capitalize"
                 dark
               >
@@ -160,16 +180,23 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-card-subtitle>
+            <v-alert border="top"
+                     colored-border
+                     type="info"
+                     elevation="2"
+                     class="mx-2 subtitle-2 secondary--text"
+
+            >
               1. Controlla che tutti i dati siano corretti. <br>
               2. Clicca su Invia richiesta per completare la richiesta di rimborso.
-            </v-card-subtitle>
+            </v-alert>
+
 <v-row justify="center" class="my-3">
             <v-btn
-              color="#374785"
+              color="#2573d5"
               class="text-capitalize"
               dark
-              to="/richiestaInviata"
+              to="/trasferisci"
             >
               Invia richiesta
             </v-btn>

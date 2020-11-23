@@ -5,9 +5,13 @@
     x-small
     class="mt-n10"
     to="/credito"
+    color="#29304d"
+    outlined
+    dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
+
     <v-card
       class="rounded-lg flex-column justify-center"
     >
@@ -21,13 +25,13 @@
               to="/profilo">
             </nuxt-link>
           </v-avatar>
-          <p class="mt-2 ml-2 headline">
+          <p class="mt-2 ml-2 headline" style="color: #29304d">
             John Doe
           </p>
           <v-btn
             class="my-2 text-capitalize"
             outlined
-            color="#374785"
+            color="#2573d5"
           >
             Cambia immagine
           </v-btn>
@@ -103,10 +107,31 @@
             ></password>
           </v-col>
         </v-row>
+        <div class="text-center">
+          <v-btn class="my-5 text-capitalize" dark color="#2573d5" outlined>
+            Aggiorna
+          </v-btn>
+        </div>
       </v-card-text>
-      <v-card-title>
+      <v-divider></v-divider>
+      <v-card-title >
        I miei familiari
       </v-card-title>
+      <v-card-actions class="subtitle-2 mx-2">
+        Aggiungi nuovo familiare alla lista
+        <v-spacer></v-spacer>
+        <v-btn
+          to="/aggiungiFamiliare"
+          color="#2573d5"
+          dark
+          fab
+          x-small
+        >
+          <v-icon
+            small
+          >mdi-plus</v-icon>
+        </v-btn>
+      </v-card-actions>
       <v-card-text>
         <v-row>
           <v-col
@@ -136,23 +161,6 @@
           </v-col>
         </v-row>
       </v-card-text>
-      <v-card-actions class="justify-center">
-        <v-btn
-          class="mb-5 mt-n5 text-capitalize"
-          to="/aggiungiFamiliare"
-          outlined
-          color="#374785"
-          dark
-        >
-          Aggiungi familiare
-        </v-btn>
-      </v-card-actions>
-      <v-divider></v-divider>
-        <div class="text-center">
-          <v-btn class="my-5 text-capitalize" dark color="#374785" >
-            Salva modifiche
-          </v-btn>
-        </div>
     </v-card>
   </v-container>
 </template>
@@ -169,6 +177,7 @@ export default {
     Password
   },
   data: () => ({
+    color: 'red' ,
     relative: null,
     birthDate: null,
     relation: null,
@@ -235,11 +244,6 @@ export default {
 
       return name
     },
-
-
-
-
-
 
   }
 

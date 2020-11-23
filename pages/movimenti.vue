@@ -23,8 +23,8 @@
             <v-list-item-content>
               <v-list-item-title>{{ transaction.shopName }}</v-list-item-title>
               <v-list-item-subtitle>{{ transaction.date }}</v-list-item-subtitle>
-            </v-list-item-content>
-          <p class="mt-3"> {{transaction.credit}}</p>
+            </v-list-item-content >
+          <p class="mt-3 font-weight-bold" :style="getColor(transaction.credit)"> {{transaction.credit}} €</p>
         </v-list-item>
       </v-list>
       </v-card-text>
@@ -54,22 +54,22 @@ data: () => ({
     {
       type: "market",
       icon: "mdi-food",
-      color: "#0D47A1"
+      color:"#29304d"
     },
     {
       type: "transport",
       icon: "mdi-bus",
-      color: "#283593"
+      color:  "#29304d"
     },
     {
       type: "beauty",
       icon: "mdi-account-heart",
-      color: "#3949AB"
+      color: "#29304d"
     },
     {
       type: "bar",
       icon: "mdi-coffee",
-      color: "#1976D2"
+      color: "#29304d"
     },
   ],
 
@@ -78,35 +78,35 @@ data: () => ({
       id: 0,
       shopName: "Market Pinerolo",
       category: "market",
-      credit: "-20,00",
+      credit: -20,
       date: "12-12-2020"
     },
     {
       id: 1,
-      shopName: "Abbonamento trasporti",
+      shopName: "Trasporti",
       category: "transport",
-      credit: "+100,00",
+      credit: "+" + 100,
       date: "14-12-2020"
     },
     {
       id: 2,
       shopName: "Bar Pinerolo",
       category: "bar",
-      credit: "-30,00",
+      credit: -30.00,
       date: "15-12-2020"
     },
     {
       id: 3,
       shopName: "Parrucchiere Pinerolo",
       category: "beauty",
-      credit: "-30,00",
+      credit: 0,
       date: "15-12-2020"
     },
     {
       id: 4,
       shopName: "Pasticceria Pinerolo",
       category: "market",
-      credit: "-10,00",
+      credit: -10.00,
       date: "15-12-2020"
     }
   ],
@@ -118,6 +118,15 @@ data: () => ({
           return this.categoriesIcons[i]
         }
       }
+    },
+    getColor(credit){
+      console.log(credit)
+        if (credit < 0){
+          return "color: #f76c6c"
+        } else if (credit > 0){
+          return "color: #2573d5"
+        }
+
     }
   },
 }

@@ -1,7 +1,7 @@
 <template>
   <v-bottom-navigation
     :value="value"
-    color="#374785"
+    color="#29304d"
     grow
     app
     shift

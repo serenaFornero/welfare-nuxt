@@ -1,13 +1,16 @@
 <template>
   <v-container fluid>
     <v-card
-      class="text-center rounded-xl"
+      class="text-center rounded-lg"
       width="400"
       hover
     >
+<v-row justify="center">
+      <v-card-title class=" mt-3" style="color: #29304d" >
+        Accedi alla tua area personale
+      </v-card-title>
+</v-row>
       <v-card-text>
-        <p class="headline mb-5 mt-3 font-weight-regular">Accedi alla tua area personale</p>
-
         <v-form>
           <v-text-field
             v-model="email"
@@ -28,7 +31,8 @@
             <v-checkbox class="mt-1 ml-3 font-weight-light "
                         v-model="checkbox"
                         label="Ricordami"
-                        color="#374785"
+                        color="#2573d5"
+
             ></v-checkbox>
             <v-spacer></v-spacer>
             <nuxt-link
@@ -43,8 +47,8 @@
       <v-divider></v-divider>
       <v-card-actions class="justify-center">
           <v-btn
-            color="#374785"
-            class="my-10 text-capitalize"
+            color="#2573d5"
+            class="my-5 text-capitalize rounded-lg"
             large
             dark
             to="/credito"

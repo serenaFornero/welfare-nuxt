@@ -6,7 +6,13 @@
           <v-col cols="12" lg="12" md="10" sm="10" xs="6">
             <v-row >
               <v-col class="d-flex flex-row-reverse mb-n10 mt-2">
-                <dialog-assistenza></dialog-assistenza>
+                <nuxt-link to="/assistenza" style="text-decoration: none">
+                  <v-icon
+                    class="mt-n15"
+                  >mdi-information-outline
+                  </v-icon>
+                </nuxt-link>
+
               </v-col>
             </v-row>
             <transition name="slide" mode="out-in">
@@ -22,11 +28,11 @@
 <script>
 
 import NavBar from "@/components/navBar";
-import dialogAssistenza from "@/components/dialogAssistenza";
+
 export default {
   components: {
     NavBar,
-    dialogAssistenza
+
   },
   data: () => ({
   }),
