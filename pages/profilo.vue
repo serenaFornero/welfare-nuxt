@@ -13,7 +13,7 @@
     </v-btn>
 
     <v-card
-      class="rounded-lg flex-column justify-center"
+      class="rounded-lg flex-column justify-center" elevation="5"
     >
         <div class="text-center"
         >
@@ -29,14 +29,14 @@
             John Doe
           </p>
           <v-btn
-            class="my-2 text-capitalize"
+            class="my-2 text-capitalize rounded-lg"
             outlined
             color="#2573d5"
           >
             Cambia immagine
           </v-btn>
         </div>
-      <v-card-title>
+      <v-card-title style="color: #232649">
         I miei dati
       </v-card-title>
       <v-card-text>
@@ -77,7 +77,7 @@
           </v-col>
         </v-row>
       </v-card-text>
-      <v-card-title>
+      <v-card-title style="color: #232649">
        Modifica password
       </v-card-title>
       <v-card-text>
@@ -108,16 +108,16 @@
           </v-col>
         </v-row>
         <div class="text-center">
-          <v-btn class="my-5 text-capitalize" dark color="#2573d5" outlined>
+          <v-btn class="my-5 text-capitalize rounded-lg" dark color="#2573d5" outlined>
             Aggiorna
           </v-btn>
         </div>
       </v-card-text>
       <v-divider></v-divider>
-      <v-card-title >
+      <v-card-title style="color: #232649" >
        I miei familiari
       </v-card-title>
-      <v-card-actions class="subtitle-2 mx-2">
+      <v-card-actions class="subtitle-2 mx-2 grey--text text--darken-1">
         Aggiungi nuovo familiare alla lista
         <v-spacer></v-spacer>
         <v-btn

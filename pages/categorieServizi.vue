@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
       <v-row class="d-flex">
-        <p class="headline">
+        <p class="headline" style="color: #29304d">
           Alimentari
         </p>
       </v-row>
@@ -9,7 +9,7 @@
 
       <v-card
         class="rounded-lg"
-        hover
+        elevation="5"
       >
 
         <v-list>
@@ -17,9 +17,10 @@
             <v-list-item-avatar><v-icon :color="getIcon(shop.category).color"> {{getIcon(shop.category).icon}}</v-icon></v-list-item-avatar>
             <nuxt-link to="/trasferimentoEffettuato" style="text-decoration: none">
                 <v-list-item-content>
-                  <v-list-item-title>{{ shop.name }} {{shop.rating}}/5</v-list-item-title>
-                  <v-list-item-subtitle class="subtitle-2">{{ shop.address }}</v-list-item-subtitle>
-                  <v-list-item-content>{{shop.description}}</v-list-item-content>
+                  <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ shop.name }}</v-list-item-title>
+                  <v-list-item-action-text class="font-weight-light" >{{ shop.address }}</v-list-item-action-text>
+                  <v-list-item-subtitle class="grey--text text--darken-1">{{shop.description}}</v-list-item-subtitle>
+                  <v-list-item-action-text class="grey--text text--darken-1 mt-2">{{shop.rating}}/5</v-list-item-action-text>
                   <v-list-item-content><v-divider></v-divider></v-list-item-content>
                 </v-list-item-content>
               </nuxt-link>

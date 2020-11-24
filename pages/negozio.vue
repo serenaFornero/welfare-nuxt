@@ -33,7 +33,7 @@
       </v-row>
       <v-card
         class="rounded-lg"
-        hover
+        elevation="5"
       >
         <v-tabs
           color="#29304d"
@@ -52,16 +52,18 @@
                   <v-list-item-avatar
                     tile
                     class="rounded-lg"
-                    width="100"
+                    width="90"
                     height="50"
                   >
                     <v-img :src="changeImage(shop.id).src"></v-img>
                   </v-list-item-avatar>
-                    <nuxt-link to="/trasferimentoEffettuato" style="text-decoration: none">
+                    <nuxt-link to="/trasferisci" style="text-decoration: none">
                       <v-list-item-content>
-                        <v-list-item-title>{{ shop.name }} {{shop.rating}}/5</v-list-item-title>
-                        <v-list-item-subtitle class="subtitle-2">{{ shop.address }}</v-list-item-subtitle>
-                        <v-list-item-content>{{shop.description}}</v-list-item-content>
+                        <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ shop.name }}</v-list-item-title>
+                        <v-list-item-action-text class="font-weight-light" >{{ shop.address }}</v-list-item-action-text>
+                        <v-list-item-subtitle class="grey--text text--darken-1">{{shop.description}}</v-list-item-subtitle>
+                        <v-list-item-action-text class="grey--text text--darken-1 mt-2">{{shop.rating}}/5</v-list-item-action-text>
+                        <v-list-item-content><v-divider></v-divider></v-list-item-content>
                       </v-list-item-content>
                     </nuxt-link>
                   </v-list-item>
@@ -82,8 +84,8 @@
                     <v-img :src="getImage(giftCard.id).src"></v-img>
                   </v-list-item-avatar>
                     <v-list-item-content>
-                      <v-list-item-title>{{ giftCard.name }}</v-list-item-title>
-                      <v-list-item-content>{{giftCard.description}}</v-list-item-content>
+                      <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ giftCard.name }}</v-list-item-title>
+                      <v-list-item-subtitle class="grey--text text--darken-1">{{giftCard.description}}</v-list-item-subtitle>
                       <v-list-item-action>
                         <dialog-buoni-acquisto></dialog-buoni-acquisto>
                       </v-list-item-action>
@@ -178,7 +180,7 @@ export default {
         },
         {
           id: 6,
-          name: "Parrucchiere",
+          name: "Market",
           rating: 2,
           address: "Via Buniva 5, Pinerolo",
           description: "Lorem ipsum dolor sit amet"

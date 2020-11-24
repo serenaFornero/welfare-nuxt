@@ -11,7 +11,7 @@
       <v-btn
         dark
         outlined
-        class="mb-5 text-capitalize"
+        class="mb-5 text-capitalize rounded-lg"
         to="/movimenti"
         width="100"
 
@@ -22,7 +22,7 @@
       <v-btn
         dark
         outlined
-        class="mb-5 text-capitalize"
+        class="mb-5 text-capitalize rounded-lg"
         to="/credito"
         width="100"
       >

@@ -12,14 +12,20 @@
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
     <v-row class="d-flex">
-      <p class="headline">
-        Rimborsi
-      </p>
-      <v-card class="rounded-lg">
-        <v-card-title>
+      <v-card class="rounded-lg" elevation="5">
+        <v-card-title style="color: #232649">
          Rimborsi in attesa
         </v-card-title>
         <v-card-text>
+          <v-alert border="top"
+                   colored-border
+                   type="info"
+                   elevation="2"
+                   class="mx-2 subtitle-2 grey--text text--darken-1"
+
+          >
+            Le richieste di rimborso verranno processate in 7 giorni lavorativi.
+          </v-alert>
           <v-list>
             <v-list-item v-for="pendingRequest in pendingRequests" :key="pendingRequest.id" class="mb-5">
               <v-icon color="#29304d">mdi-shopping</v-icon>
@@ -30,13 +36,13 @@
                   <v-list-item-action-text class="mt-2"> {{ pendingRequest.date }}</v-list-item-action-text>
                 </v-list-item-content>
               </v-list-item>
-              <p class="mt-3 font-weight-bold" :style="getColor(pendingRequest.credit)"> {{pendingRequest.credit}}</p>
+              <p class="mt-3 font-weight-bold" style="color: #f76c6c"> {{pendingRequest.credit}}</p>
             </v-list-item>
           </v-list>
         </v-card-text>
       </v-card>
-      <v-card class="mt-5 rounded-lg">
-        <v-card-title>
+      <v-card class="mt-5 rounded-lg" elevation="5">
+        <v-card-title style="color: #232649">
           Storico rimborsi
         </v-card-title>
         <v-card-text>

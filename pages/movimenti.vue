@@ -7,9 +7,9 @@
     <search-field></search-field>
     <v-card
       class="rounded-lg d-flex flex-wrap"
-      hover
+      elevation="5"
     >
-      <v-card-title>
+      <v-card-title style="color: #232649">
         Le mie transazioni
       </v-card-title>
      <v-spacer></v-spacer>

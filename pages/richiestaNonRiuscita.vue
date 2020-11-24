@@ -16,10 +16,10 @@
     </v-row>
     <card-credito class="my-3"></card-credito>
     <v-card
-      class="rounded-lg d-flex flex-wrap" hover>
+      class="rounded-lg d-flex flex-wrap" elevation="5">
       <v-row justify="center">
         <v-img src="feedback.png" class="mt-5 mb-3" height="80" width="100" contain></v-img>
-        <v-card-title>
+        <v-card-title style="color: #232649">
           Trasferimento non riuscito!
         </v-card-title>
         <v-card-subtitle class="text-center mt-3">
@@ -33,8 +33,9 @@
           <v-btn
             dark
             width="100"
-            color="#2573d5"
-            class="text-capitalize mb-5"
+            color="#f76c6c"
+            class="text-capitalize mb-5 rounded-lg"
+            to="/portafoglio"
           >
             Ritenta
           </v-btn>

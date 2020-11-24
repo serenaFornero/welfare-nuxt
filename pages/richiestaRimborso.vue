@@ -11,14 +11,8 @@
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-row class="d-flex">
-      <p class="headline">
-        Rimborsi
-      </p>
-    </v-row>
-
-    <v-card class="rounded-lg">
-      <v-card-title>
+    <v-card class="rounded-lg" elevation="5">
+      <v-card-title style="color: #232649">
         Richiedi rimborso
       </v-card-title>
       <v-stepper  v-model="e6">
@@ -58,7 +52,7 @@
                      colored-border
                      type="info"
                      elevation="2"
-                     class="mx-2 subtitle-2 secondary--text"
+                     class="mx-2 subtitle-2 grey--text text--darken-1"
 
             >
               1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale della spesa sostenuta).
@@ -79,9 +73,9 @@
                 md="3"
               >
                   <v-text-field
+                    max-width="50"
+                    label="Inserisci importo da rimborsare"
                     placeholder="0,00"
-                    hint="Inserisci importo da rimborsare"
-                    persistent-hint
                     required
 
                   ></v-text-field>
@@ -92,10 +86,10 @@
                   md="3"
                 >
                   <v-select
+                    max-width="50"
                     :items="categoria"
                     placeholder=""
-                    hint="Scegli la categoria di spesa"
-                    persistent-hint
+                    label="Scegli la categoria di spesa"
                     required
                   ></v-select>
                 </v-col>
@@ -105,9 +99,9 @@
                   md="3"
                 >
                   <v-select
+                    label="Scegli il tipo di spesa"
+                    max-width="50"
                     :items="tipo"
-                    hint="Scegli il tipo di spesa"
-                    persistent-hint
                     required
                   ></v-select>
                 </v-col>
@@ -117,9 +111,9 @@
                     md="3"
                   >
                   <v-select
+                    label="Scegli l'effettivo beneficiario"
+                    max-width="50"
                     :items="beneficiario"
-                    hint="Scegli l'effettivo beneficiario"
-                    persistent-hint
                     required
                   ></v-select>
                   </v-col>
@@ -130,7 +124,7 @@
               <v-btn
                 @click="e6 = 2"
                 color="#2573d5"
-                class="text-capitalize"
+                class="text-capitalize rounded-lg"
                 dark
 
               >
@@ -160,9 +154,10 @@
               <v-card-text>
                 <v-file-input
                   accept="image/*"
-                  label=""
-                  hint="Scegli i file da allegare"
-                  persistent-hint
+                  label="Scegli i file da allegare"
+                  placeholder=""
+                  max-width="50"
+
                   required
                 ></v-file-input>
               </v-card-text>
@@ -171,7 +166,7 @@
               <v-btn
                 @click="e6 = 3"
                 color="#2573d5"
-                class="text-capitalize"
+                class="text-capitalize rounded-lg"
                 dark
               >
                 Avanti
@@ -194,9 +189,9 @@
 <v-row justify="center" class="my-3">
             <v-btn
               color="#2573d5"
-              class="text-capitalize"
+              class="text-capitalize rounded-lg"
               dark
-              to="/trasferisci"
+              to="/richiestaInviata"
             >
               Invia richiesta
             </v-btn>

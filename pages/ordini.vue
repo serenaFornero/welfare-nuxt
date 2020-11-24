@@ -7,11 +7,20 @@
 
     </v-row>
     <v-card
-      class="rounded-lg d-flex flex-wrap" hover
+      class="rounded-lg d-flex flex-wrap" elevation="5"
     >
       <v-card-title style="color: #29304d">
        I miei ordini
       </v-card-title>
+      <v-alert border="top"
+               colored-border
+               type="info"
+               elevation="2"
+               class="mx-2 subtitle-2 grey--text text--darken-1"
+
+      >
+        I voucher sono solitamente disponibili entro 48 ore lavorative dall'ordine.
+      </v-alert>
       <v-card-text class="mt-n5">
         <v-list>
           <v-list-item v-for="giftCard in giftCards" :key="giftCard.id">
@@ -19,7 +28,7 @@
             <v-list-item two-line>
               <v-list-item-content>
                 <v-list-item-title>{{ giftCard.title }}</v-list-item-title>
-                <v-list-item-subtitle>{{ giftCard.description }}</v-list-item-subtitle>
+                <v-list-item-subtitle>{{ giftCard.description }}{{giftCard.price}}€</v-list-item-subtitle>
                 <v-list-item-action><dialog-utilizza></dialog-utilizza></v-list-item-action>
               </v-list-item-content>
             </v-list-item>
@@ -48,20 +57,20 @@ export default {
       {
         id:1,
         title: "Gift Card Amazon",
-        description: "Lorem ipsum dolor sit amet"
+        description: "Buono del valore di "
         ,
         price: 50
       },
       {
         id:2,
         title: "Gift Decathlon",
-        description: "Lorem ipsum dolor sit amet",
+        description: "Buono del valore di ",
         price: 20
       },
       {
         id:3,
         title: "Gift Carrefour",
-        description: "Lorem ipsum dolor sit amet",
+        description: "Buono del valore di ",
         price: 15
       },
     ]

@@ -5,7 +5,7 @@
             </v-row>
             <card-credito class="my-3"></card-credito>
             <v-card
-              class="rounded-lg d-flex flex-wrap" hover>
+              class="rounded-lg d-flex flex-wrap" elevation="5">
               <v-card-title style="color: #232649">
                I miei crediti
               </v-card-title>

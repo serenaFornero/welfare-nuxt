@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-        <p class="headline">
+        <p class="headline" style="color: #29304d">
          Categorie
         </p>
     <search-field></search-field>
     <v-card
-      class="rounded-lg"
+      class="rounded-lg" elevation="5"
     >
       <v-row>
         <v-col class="d-flex flex-wrap justify-center">
@@ -22,7 +22,7 @@
 
               <nuxt-link to="/categorieServizi"><v-img src="food.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Alimentari</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Alimentari</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -36,7 +36,7 @@
             >
               <nuxt-link to=""><v-img src="heart-beat.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Salute</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Salute</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -50,7 +50,7 @@
             >
               <nuxt-link to=""><v-img src="wine.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Ristorazione</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Ristorazione</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -64,7 +64,7 @@
             >
               <nuxt-link to=""><v-img src="wine.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Fitness e <br> benessere</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Fitness e <br> benessere</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -78,7 +78,7 @@
             >
               <nuxt-link to=""><v-img src="hand.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Corsi</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Corsi</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -92,7 +92,7 @@
             >
               <nuxt-link to=""><v-img src="plane.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Viaggi e <br> vacanze</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Viaggi e <br> vacanze</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -106,7 +106,7 @@
             >
               <nuxt-link to=""><v-img src="ticket.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Cultura e <br>intrattenimento</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Cultura e <br>intrattenimento</p>
 
           </div>
           <div class="d-flex flex-column">
@@ -121,7 +121,7 @@
             >
               <nuxt-link to=""><v-img src="online-shop.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Shopping</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Shopping</p>
           </div>
         </v-col>
       </v-row>

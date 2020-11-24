@@ -12,19 +12,16 @@
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
     <v-row class="d-flex">
-      <p class="headline">
-        Versamenti
-      </p>
-      <v-card class="rounded-lg">
-        <v-card-title>
+      <v-card class="rounded-lg" elevation="5">
+        <v-card-title style="color: #232649">
           Versamenti in attesa
         </v-card-title>
         <v-card-subtitle>
           Al momento non ci sono versamenti in attesa di essere confermati.
         </v-card-subtitle>
       </v-card>
-      <v-card class="mt-5 rounded-lg">
-        <v-card-title>
+      <v-card class="mt-5 rounded-lg" elevation="5">
+        <v-card-title style="color: #232649">
           Storico versamenti
         </v-card-title>
         <v-card-text>
@@ -56,26 +53,18 @@ export default {
     transactions : [
       {
         id: 0,
-        name: "Abbonamento trasporti",
-        credit:  "+" + 100,
+        name: "Versamento previdenza",
+        credit:  "+" + 1000,
         date: "12-12-2020"
       },
       {
         id: 1,
-        name: "Rette scolastiche",
-        credit:  "+" + 500,
+        name: "Versamento previdenza",
+        credit:  "+" + 3000,
         date: "14-12-2020"
       }
     ],
-    pendingRequests: [
-      {
-        id: 0,
-        description: "Spese per i servizi di educazione e istruzione" ,
-        name: "Rette scolastiche",
-        credit:  "+" + 500,
-        date: "12-12-2020"
-      },
-    ]
+
   }),
   methods: {
     getColor(credit){

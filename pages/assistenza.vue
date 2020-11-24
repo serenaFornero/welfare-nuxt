@@ -19,7 +19,7 @@
 
             <dialog-assistenza></dialog-assistenza>
           </v-card>
-          <p class="text-center font-weight-bold">{{cardAssistenza.description}}</p>
+          <p class="text-center font-weight-bold " style="color: #29304d">{{cardAssistenza.description}}</p>
         </div>
       </v-col>
     </v-row>

@@ -12,7 +12,7 @@
           dark
           v-bind="attrs"
           v-on="on"
-          class="text-capitalize"
+          class="text-capitalize rounded-lg"
         >
           scopri
         </v-btn>
@@ -40,7 +40,7 @@
               <v-list-item-title class="font-weight-bold" style="color: #29304d">Gift Card {{giftCard.name}}</v-list-item-title>
               <v-list-item>  <v-img src="giftCardAmazon.png" class="my-5" contain width="200" height="150"></v-img></v-list-item>
               <v-list-item-subtitle class="text-center">Buono Regalo valido per l’acquisto di prodotti disponibili su Amazon.it del vaore di {{giftCard.price}}€ </v-list-item-subtitle>
-              <v-row justify="center"><v-btn color="#2573d5" dark class="text-capitalize my-5" to="/trasferisci">Acquista {{giftCard.price}}€</v-btn></v-row>
+              <v-row justify="center"><v-btn color="#2573d5" dark class="text-capitalize my-5 rounded-lg" to="/trasferimentoEffettuato">Acquista {{giftCard.price}}€</v-btn></v-row>
             </v-list-item-content>
           </v-list-item>
         </v-list>

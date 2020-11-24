@@ -4,25 +4,24 @@
       fab
       x-small
       class="mt-n10"
-      to="/negozio"
+      to="/portafoglio"
       color="#29304d"
       outlined
       dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-card class="rounded-lg">
-        <v-card-title class="justify-center">Pinerolo Market</v-card-title>
-        <v-card-subtitle class="text-center">Via Buniva 5, Pinerolo</v-card-subtitle>
-      <v-row justify="center">
+    <v-card class="rounded-lg" elevation="5" >
+        <v-card-title class="justify-center" style="color: #232649">Shop Name</v-card-title>
+        <v-card-subtitle class="text-center">shop address</v-card-subtitle>
+      <v-row justify="center" >
       <v-col
         cols="12"
         sm="6"
         md="3"
-
       >
         <v-text-field
-          class="mx-2 rounded-lg"
+          class="mx-2 rounded-lg my-5"
           label="Solo"
           placeholder="Inserisci importo"
           solo
@@ -31,7 +30,6 @@
       </v-row>
       <v-card-actions class="justify-center">
         <v-btn
-
           color="#2573d5"
           class="text-capitalize my-5 rounded-lg"
           dark

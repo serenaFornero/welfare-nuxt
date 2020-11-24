@@ -4,7 +4,10 @@
       fab
       x-small
       class="mt-n10"
-      to="/negozio"
+      to="/credito"
+      color="#29304d"
+      outlined
+      dark
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
@@ -13,7 +16,7 @@
     </v-row>
     <card-credito class="my-3"></card-credito>
     <v-card
-      class="rounded-lg d-flex flex-wrap" hover>
+      class="rounded-lg d-flex flex-wrap" elevation="5">
       <v-row justify="center">
         <v-img src="good.png" class="mt-5 mb-3" height="80" width="100" contain></v-img>
       <v-card-title>
@@ -25,9 +28,8 @@
       <v-card-actions>
         <v-btn
         dark
-
-        color="#374785"
-        class="text-capitalize mb-5"
+        color="#2573d5"
+        class="text-capitalize mb-5 rounded-lg"
         to="/trasferimentoNonRiuscito"
         >
           Trasferisci di nuovo

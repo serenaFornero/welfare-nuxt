@@ -12,16 +12,16 @@
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
     <v-card
-      class="rounded-xl flex-column justify-center"
+      class="rounded-lg flex-column justify-center" elevation="5"
     >
-      <v-card-title>
+      <v-card-title style="color: #232649">
       Aggiungi familiare
         </v-card-title>
       <v-alert border="top"
                colored-border
                type="info"
                elevation="2"
-               class="mx-2 subtitle-2 secondary--text"
+               class="mx-2 subtitle-2 grey--text text--darken-1"
 
       >
         In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non necessariamente conviventi
@@ -64,7 +64,7 @@
       </v-card-text>
       <v-card-actions class="justify-center">
         <v-btn
-          class="mb-5 mt-n5 text-capitalize" dark color="#2573d5" >
+          class="mb-5 mt-n5 text-capitalize rounded-lg" dark color="#2573d5" >
           Aggiungi
         </v-btn>
       </v-card-actions>

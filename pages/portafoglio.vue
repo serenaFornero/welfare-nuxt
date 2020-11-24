@@ -1,13 +1,13 @@
 <template>
   <v-container fluid>
     <v-row class="d-flex">
-      <p class="headline">
+      <p class="headline" style="color: #232649">
         Portafoglio
       </p>
     </v-row>
     <v-card
       class="rounded-lg"
-      hover
+      elevation="5"
     >
        <!-- <v-card-title>
           <p class="title">Modalità di pagamento</p>
@@ -24,9 +24,9 @@
                elevation="2"
                hover
              >
-               <nuxt-link to="/trasferimenti"><v-img src="no-border.png"></v-img></nuxt-link>
+               <nuxt-link to="/trasferimentiQrCode"><v-img src="no-border.png"></v-img></nuxt-link>
              </v-card>
-             <p class="text-center font-weight-bold">Qr-code</p>
+             <p class="text-center font-weight-bold" style="color: #232649">Qr-code</p>
            </div>
            <div class="d-flex flex-column">
              <v-card
@@ -38,9 +38,9 @@
                elevation="2"
                hover
              >
-               <nuxt-link to="/negozio"><v-img src="up-arrow.png"></v-img></nuxt-link>
+               <nuxt-link to="/trasferisci"><v-img src="up-arrow.png"></v-img></nuxt-link>
              </v-card>
-             <p class="text-center font-weight-bold">Trasferimenti</p>
+             <p class="text-center font-weight-bold" style="color: #232649">Trasferimenti</p>
            </div>
          </v-col>
        </v-row>
@@ -61,7 +61,7 @@
             >
               <nuxt-link to="/richiestaRimborso"><v-img src="edit.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Richiedi rimborso</p>
+            <p class="text-center font-weight-bold" style="color: #232649">Richiedi rimborso</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -75,7 +75,7 @@
             >
               <nuxt-link to="/rimborsi"><v-img src="deposit.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Rimborsi</p>
+            <p class="text-center font-weight-bold" style="color: #232649">Rimborsi</p>
           </div>
         </v-col>
       </v-row>
@@ -96,7 +96,7 @@
             >
               <nuxt-link to="/richiestaVersamento"><v-img src="edit.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Effettua versamento</p>
+            <p class="text-center font-weight-bold" style="color: #232649">Effettua versamento</p>
           </div>
           <div class="d-flex flex-column">
             <v-card
@@ -110,7 +110,7 @@
             >
               <nuxt-link to="/versamenti"><v-img src="share.png"></v-img></nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold">Versamenti</p>
+            <p class="text-center font-weight-bold" style="color: #232649">Versamenti</p>
           </div>
         </v-col>
       </v-row>
