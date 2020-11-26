@@ -16,21 +16,17 @@
         max-width="500px"
       >
         <v-card>
-          <v-card-title style="color: #29304d">
-            <span>Gift Card</span>
-          </v-card-title>
-          <v-card-text class="font-weight-bold text-center title">Codice: GJFE44K </v-card-text>
-          <v-card-subtitle class=" text-center">Tempo rimasto:  {{ timerCount }} </v-card-subtitle>
+          <v-row justify="end" class="mr-2">
           <v-card-actions>
-            <v-btn
-              outlined
-              class="text-capitalize rounded-lg"
-              color="#2573d5"
+            <v-icon
               @click="dialog3 = false"
             >
-              Chiudi
-            </v-btn>
+              mdi-close
+            </v-icon>
           </v-card-actions>
+          </v-row>
+          <v-card-text class="font-weight-bold text-center title">Codice: GJFE44K </v-card-text>
+          <v-card-subtitle class=" text-center">Tempo rimasto:  {{ timerCount }} </v-card-subtitle>
         </v-card>
       </v-dialog>
     </v-row>

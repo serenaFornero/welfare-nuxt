@@ -1,22 +1,15 @@
-<!--<template>
-  <div>
-    <TravelMap class="travel-map"/>
-  </div>
+<template>
+  <v-input></v-input>
 </template>
 
 <script>
-import TravelMap from "@/components/TravelMap";
-
 export default {
-  components: {
-    TravelMap
-  }
-};
-</script>
-
-<style lang="scss" scoped>
-.travel-map {
-  height: 400px;
+  mounted() {
+    const autocomplete = new this.$google.maps.places.Autocomplete(inputElement,
+      {
+        types: ['geocode'],
+      },
+    );
+  },
 }
-</style>
--->
+</script>

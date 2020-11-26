@@ -11,7 +11,7 @@
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-row class="d-flex">
+    <v-row class="d-flex flex-column justify-center">
       <v-card class="rounded-lg" elevation="5">
         <v-card-title style="color: #232649">
          Rimborsi in attesa
@@ -21,7 +21,8 @@
                    colored-border
                    type="info"
                    elevation="2"
-                   class="mx-2 subtitle-2 grey--text text--darken-1"
+                   class="mx-3 subtitle-2 grey--text text--darken-1"
+                   max-width="500"
 
           >
             Le richieste di rimborso verranno processate in 7 giorni lavorativi.

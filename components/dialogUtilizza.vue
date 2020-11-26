@@ -39,7 +39,8 @@
                    colored-border
                    type="info"
                    elevation="2"
-                   class="mx-2 mt-5 subtitle-2 grey--text text--darken-1"
+                   class="mx-3 mt-5 subtitle-2 grey--text text--darken-1"
+                   max-width="500"
 
           >
             I voucher potranno essere attivati cliccando sul pulsante "attiva". I voucher, dopo essere stati attivati, dovranno essere utilizzati entro 30 minuti.

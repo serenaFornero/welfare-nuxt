@@ -41,6 +41,14 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // Simple usage
+    'nuxt-google-maps-module',
+
+    // With options
+    ['nuxt-google-maps-module', {
+      /* module options */
+      key: 'AIzaSyARL9MNzLtSbGBtJauTGF_Ohu5gmjIm0Kc', // Default
+    }],
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -65,5 +73,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+
   }
 }

@@ -2,10 +2,11 @@
   <v-footer
     dark
     fixed
-    color="#A8D0E6"
+    color="#F7F9FC"
   >
     <v-col
       class="text-center"
+      style="color: #2573d5"
     >
       {{ new Date().getFullYear() }} — <strong>WeCare</strong>
     </v-col>

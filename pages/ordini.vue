@@ -7,7 +7,7 @@
 
     </v-row>
     <v-card
-      class="rounded-lg d-flex flex-wrap" elevation="5"
+      class="rounded-lg d-flex flex-wrap flex-column justify-center" elevation="5"
     >
       <v-card-title style="color: #29304d">
        I miei ordini
@@ -16,7 +16,8 @@
                colored-border
                type="info"
                elevation="2"
-               class="mx-2 subtitle-2 grey--text text--darken-1"
+               class="mx-3 subtitle-2 grey--text text--darken-1"
+               max-width="500"
 
       >
         I voucher sono solitamente disponibili entro 48 ore lavorative dall'ordine.

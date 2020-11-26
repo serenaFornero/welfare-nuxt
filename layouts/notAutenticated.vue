@@ -1,13 +1,14 @@
 <template>
   <v-app>
     <v-app-bar
-      color="#A8D0E6"
+      color="#F7F9FC"
       dark
       dense
       flat
     >
       <v-toolbar-title
         class="font-weight-medium mt-6 mb-3 text-center"
+        style="color: #2573d5"
       >
         WeCare
       </v-toolbar-title>

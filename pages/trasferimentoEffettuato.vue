@@ -16,15 +16,19 @@
     </v-row>
     <card-credito class="my-3"></card-credito>
     <v-card
-      class="rounded-lg d-flex flex-wrap" elevation="5">
-      <v-row justify="center">
+      class="rounded-lg" elevation="5">
+      <v-row>
         <v-img src="good.png" class="mt-5 mb-3" height="80" width="100" contain></v-img>
+      </v-row>
+      <v-row  justify="center">
       <v-card-title>
         Trasferimento Effettuato!
       </v-card-title>
+      </v-row >
       <v-card-subtitle class="text-center mt-3">
         Tieni traccia delle tue transazioni nella sezione <strong>movimenti.</strong>
       </v-card-subtitle>
+      <v-row  justify="center">
       <v-card-actions>
         <v-btn
         dark

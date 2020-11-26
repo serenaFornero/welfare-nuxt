@@ -72,7 +72,6 @@
               :value="profile.dataNascita"
               label="Data di nascita"
               readonly
-              append-icon="mdi-calendar"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -147,7 +146,6 @@
             <v-text-field
               v-model="birthDate"
               label="Data di nascita"
-              append-icon="mdi-calendar"
             ></v-text-field>
           </v-col>
           <v-col

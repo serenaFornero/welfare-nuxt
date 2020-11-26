@@ -16,13 +16,16 @@
     </v-row>
     <card-credito class="my-3"></card-credito>
     <v-card
-      class="rounded-lg d-flex flex-wrap" elevation="5"
+      class="rounded-lg" elevation="5"
     >
-      <v-row justify="center">
+      <v-row>
         <v-img src="feedback.png" class="mt-5 mb-3" height="80" width="100" contain></v-img>
+      </v-row>
+      <v-row  justify="center">
         <v-card-title>
           Trasferimento non riuscito!
         </v-card-title>
+      </v-row>
         <v-card-subtitle class="text-center mt-3">
           Assicurati di:
          <v-list>
@@ -31,6 +34,7 @@
            <v-list-item-subtitle>3. Avere credito sufficiente</v-list-item-subtitle>
          </v-list>
         </v-card-subtitle>
+      <v-row justify="center">
         <v-card-actions>
           <v-btn
             dark

@@ -21,7 +21,9 @@
                colored-border
                type="info"
                elevation="2"
-               class="mx-2 subtitle-2 grey--text text--darken-1"
+               class="mx-3 subtitle-2 grey--text text--darken-1"
+               max-width="500"
+
 
       >
         In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non necessariamente conviventi
@@ -45,9 +47,9 @@
             sm="6"
             md="3">
             <v-text-field
+
               value=""
               label="Data di nascita"
-              append-icon="mdi-calendar"
             ></v-text-field>
           </v-col>
           <v-col
@@ -55,6 +57,7 @@
             sm="6"
             md="3">
             <v-select
+              prepend-inner-icon="mdi-account-multiple"
               :items="items"
               value=""
               label="Legame di parentela"

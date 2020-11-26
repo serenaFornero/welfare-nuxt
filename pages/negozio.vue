@@ -1,7 +1,8 @@
 <template>
     <v-container fluid>
+
       <v-row class="d-flex">
-        <p class="headline" style="color: #29304d">
+        <p class="headline" style="color: #29304d;">
           Negozio
         </p>
         <v-spacer></v-spacer>
@@ -16,21 +17,10 @@
             <v-icon>mdi-format-list-bulleted-square</v-icon>
           </v-btn>
       </v-row>
-      <search-field></search-field>
-      <v-row justify="center">
-        <v-btn
-          color="#2573d5"
-          dark
-          fixed
-          style="margin-top: 550px;"
-          top
-          fab
-          small
-          to="/mappa"
-        >
-          <v-icon>mdi-map-marker</v-icon>
-        </v-btn>
+      <v-row class="d-none d-lg-block">
+
       </v-row>
+      <search-field></search-field>
       <v-card
         class="rounded-lg"
         elevation="5"
@@ -44,18 +34,32 @@
           <v-tab class="text-capitalize">Servizi vicino a te</v-tab>
           <v-tab class="text-capitalize">Buoni acquisto</v-tab>
           <v-tab-item>
+            <v-row justify="center" class="d-md-none">
+              <v-btn
+                color="#2573d5"
+                dark
+                fixed
+                style="margin-top: 550px;"
+                top
+                fab
+                small
+                to="/mappa"
+              >
+                <v-icon>mdi-map-marker</v-icon>
+              </v-btn>
+            </v-row>
               <v-list class="mt-5">
+                <v-row class="d-none d-lg-block ml-3 mb-3" >
+                  <span>Visualizza sulla </span> <nuxt-link to="/mappa"> Mappa</nuxt-link>
+                </v-row>
                 <v-list-item
                   v-for="shop in shops"
                   :key="shop.id"
                 >
-                  <v-list-item-avatar
-                    tile
-                    class="rounded-lg"
-                    width="90"
-                    height="50"
-                  >
-                    <v-img :src="changeImage(shop.id).src"></v-img>
+                  <v-list-item-avatar  tile class="rounded-lg">
+                    <v-img
+                      :src="changeImage(shop.id).src"
+                    ></v-img>
                   </v-list-item-avatar>
                     <nuxt-link to="/trasferisci" style="text-decoration: none">
                       <v-list-item-content>
@@ -78,8 +82,6 @@
                   <v-list-item-avatar
                     tile
                     class="rounded-lg"
-                    width="50"
-                    height="50"
                   >
                     <v-img :src="getImage(giftCard.id).src"></v-img>
                   </v-list-item-avatar>

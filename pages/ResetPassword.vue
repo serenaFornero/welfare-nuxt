@@ -8,7 +8,7 @@
             <v-card
               class="text-center mb-16"
               width="400"
-              flat
+              elevation="5"
             >
               <v-row justify="center">
                 <v-card-title class="mb-2 mt-3 ">Reimposta Password</v-card-title>
@@ -39,7 +39,7 @@
               </v-card-text>
               <v-card-actions class="justify-center">
                 <v-btn
-                  color="#374785"
+                  color="#2573d5"
                   large
                   dark
                   class="mb-5 text-capitalize rounded-lg"

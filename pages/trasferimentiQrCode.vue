@@ -13,7 +13,7 @@
     </v-btn>
   <v-card class="d-flex flex-column rounded-lg">
     <v-row justify="center" class="text-center">
-      <v-card-title>
+      <v-card-title  style="color: #232649">
         Scannerizza il QR-Code per <br> procedere al pagamento
       </v-card-title>
     </v-row>

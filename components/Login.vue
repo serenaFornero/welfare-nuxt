@@ -3,13 +3,13 @@
     <v-card
       class="text-center rounded-lg"
       width="400"
-      hover
+      elevation="5"
     >
-<v-row justify="center">
-      <v-card-title class=" mt-3" style="color: #29304d" >
-        Accedi alla tua area personale
-      </v-card-title>
-</v-row>
+      <v-row justify="center">
+            <v-card-title class=" mt-3" style="color: #29304d" >
+              Accedi alla tua area personale
+            </v-card-title>
+      </v-row>
       <v-card-text>
         <v-form>
           <v-text-field

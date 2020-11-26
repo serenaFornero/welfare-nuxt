@@ -8,10 +8,10 @@
       <v-card
         class="text-center mb-16"
         width="400"
-        flat
+        elevation="5"
       >
         <v-row justify="center">
-          <v-card-title class="mb-2 mt-3 ">Recupera Password</v-card-title>
+          <v-card-title class="mb-2 mt-3"  style="color: #29304d">Recupera Password</v-card-title>
           <v-card-subtitle>Inserisci l'indirizzo e-mail associato <br> al tuo account</v-card-subtitle>
         </v-row>
 
@@ -36,7 +36,7 @@
         </v-card-text>
         <v-card-actions class="justify-center">
           <v-btn
-            color="#374785"
+            color="#2573d5"
             large
             dark
             class="mb-5 text-capitalize rounded-lg"

@@ -11,7 +11,7 @@
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-row class="d-flex">
+    <v-row class="d-flex flex-column justify-center">
       <v-card class="rounded-lg" elevation="5">
         <v-card-title style="color: #232649">
           Versamenti in attesa

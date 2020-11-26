@@ -27,7 +27,6 @@
                         {{ item.relation }} - {{ item.birthDate }}
                     </v-list-item-subtitle>
                 </v-list-item-content>
-
             </v-list-item>
         </template>
     </v-autocomplete>
