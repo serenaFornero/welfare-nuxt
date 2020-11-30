@@ -9,15 +9,15 @@
               <v-card-title style="color: #232649">
                I miei crediti
               </v-card-title>
-              <v-card-text>
+              <v-card-text v-for="values in credit" :key="values.id">
                     <p class="subtitle-1 mx-3">Totale accreditato nel  {{ new Date().getFullYear() }}:</p>
-                    <p class="pb-3 ml-3 font-weight-black" style="color: #2573d5">{{credit}} €</p>
+                    <p class="pb-3 ml-3 font-weight-black" style="color: #2573d5">{{values.tot}} €</p>
                       <v-divider></v-divider>
                     <p class="subtitle-1 pt-3 mx-3">Credito residuo Gift Card:</p>
-                    <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ giftCardCredit }} €</p>
+                    <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ values.giftCardCredit }} €</p>
                       <v-divider></v-divider>
                     <p class="subtitle-1 pt-3 mx-3">Scadenza credito disponibile:</p>
-                    <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ expirationDate }}</p>
+                    <p class="pb-3 ml-3 font-weight-black " style="color: #f76c6c">{{values.expiration}}</p>
               </v-card-text>
             </v-card>
       </v-container>
@@ -35,11 +35,13 @@ export default {
   },
   data () {
     return {
-      credit: 860.00,
-      giftCardCredit: 258.23,
-      expirationDate: "12/11/2020"
 
     }
   },
+  computed: {
+    credit() {
+      return this.$store.getters["credit/getCredit"]
+    }
+  }
 }
 </script>

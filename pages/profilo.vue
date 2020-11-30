@@ -40,14 +40,17 @@
         I miei dati
       </v-card-title>
       <v-card-text>
-        <v-row>
+        <v-row v-for="user in utente"
+               :key="user.id">
           <v-col
             cols="12"
             sm="6"
-            md="3">
+            md="3"
+
+          >
             <v-text-field
               max-width="50"
-              :value="profile.nome"
+              :value="user.name + user.surname"
               readonly
               label="Nome e cognome"
             ></v-text-field>
@@ -58,7 +61,7 @@
             md="3"
           >
             <v-text-field
-              :value="profile.email"
+              :value="user.email"
               label="E-mail"
               readonly
             ></v-text-field>
@@ -69,7 +72,7 @@
             md="3"
           >
             <v-text-field
-              :value="profile.dataNascita"
+              :value="user.birthDate"
               label="Data di nascita"
               readonly
             ></v-text-field>
@@ -209,6 +212,12 @@ export default {
     dialog: false,
 
   }),
+  computed: {
+   utente() {
+      return this.$store.getters["users/getUser"]
+    }
+  },
+
   watch: {
     relative: {
       immediate: false,

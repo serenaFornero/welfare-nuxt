@@ -47,7 +47,7 @@ export default {
     // With options
     ['nuxt-google-maps-module', {
       /* module options */
-      key: 'AIzaSyARL9MNzLtSbGBtJauTGF_Ohu5gmjIm0Kc', // Default
+      key: '', // Default
     }],
   ],
 

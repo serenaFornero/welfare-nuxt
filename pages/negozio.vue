@@ -49,8 +49,8 @@
               </v-btn>
             </v-row>
               <v-list class="mt-5">
-                <v-row class="d-none d-lg-block ml-3 mb-3" >
-                  <span>Visualizza sulla </span> <nuxt-link to="/mappa"> Mappa</nuxt-link>
+                <v-row class="d-none d-lg-block ml-3 mb-3 ">
+                  <span class="font-weight-light grey--text text--darken-1 ">Visualizza sulla </span> <nuxt-link style="text-decoration: none" class="font-weight-bold" to="/mappa"> Mappa</nuxt-link>
                 </v-row>
                 <v-list-item
                   v-for="shop in shops"

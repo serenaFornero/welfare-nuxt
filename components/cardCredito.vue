@@ -4,8 +4,8 @@
     style="background-color: #29304d"
 
   >
-        <v-card-title style="color: white">
-         Credito disponibile: 120,00
+        <v-card-title style="color: white" v-for="values in credit" :key="values.id">
+         Credito disponibile: {{values.creditAvailable}} €
         </v-card-title>
     <v-card-actions class="mx-3">
       <v-btn
@@ -37,6 +37,11 @@ export default {
   data: () => ({
     step: 1,
   }),
+  computed: {
+    credit() {
+      return this.$store.getters["credit/getCredit"]
+    }
+  }
 
 }
 </script>
