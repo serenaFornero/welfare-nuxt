@@ -64,7 +64,7 @@ export default {
     data() {
         return {
             relative: this.value,
-            relatives: [
+            /*relatives: [
                 {
                     id: 1,
                     name: 'Paolo',
@@ -86,7 +86,7 @@ export default {
                     birthDate: '01/01/1958',
                     relation: 'Padre'
                 }
-            ]
+            ]*/
         }
     },
     watch: {
@@ -96,6 +96,11 @@ export default {
         relative(val) {
             this.$emit('input', val)
         }
+    },
+  computed: {
+    relatives(){
+      return this.$store.getters["relatives/getRelative"]
     }
+  }
 }
 </script>

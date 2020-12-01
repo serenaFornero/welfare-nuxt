@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
-    <v-row>
-      <avatar></avatar>
+    <v-row v-for="values in users" :key="values.id">
+      <avatar class="d-flex" :user="values"></avatar>
     </v-row>
     <card-credito class="my-3"></card-credito>
     <search-field></search-field>
@@ -21,7 +21,7 @@
             class="mb-5"
           >
             <v-list-item-avatar>
-              <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon>
+                <v-icon :color="getIconColor(transactions.idCategory)">{{getIcon(transactions.idCategory)}}{{getIconWallet(transactions.idCategory)}}</v-icon> <!-- <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon> -->
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title>{{ transactions.name }}</v-list-item-title>
@@ -52,32 +52,63 @@ export default {
     transaction() {
       return this.$store.getters["transactions/getTransactions"]
     },
-    icons() {
-      return this.$store.getters["icons/getIcons"]
+    categories(){
+      return this.$store.getters["categories/getCategory"]
     },
-    categories() {
+    categoriesWallet(){
+      return this.$store.getters["categories/getCategoryWallet"]
+    },
+    users() {
+      return this.$store.getters["users/getUser"]
+    },
+   /* categories() {
       return [
         {
           id: 0,
-        color: 'red',
-        icon: 'mdi-home'
+          color: 'red',
+          icon: 'mdi-home'
         }
       ]
-    }
+    }*/
   },
   methods: {
     getColor(value) {
-      console.log(value)
       if (value < 0) {
         return "color: #f76c6c"
       } else if (value > 0) {
         return "color: #2573d5"
       }
     },
-    getTransactionCategory(categoryId) {
+    getIcon(idCategory){
+      for(let i = 0; i < this.categories.length; i++){
+        if (idCategory === this.categories[i].id){
+          return this.categories[i].icon
+        }
+      }
+    },
+    getIconWallet(idCategory){
+      for(let i = 0; i < this.categoriesWallet.length; i++){
+        if(idCategory === this.categoriesWallet[i].id){
+          return this.categoriesWallet[i].icon
+        }
+      }
+    },
+    getIconColor(idCategory){
+      for(let i = 0; i < this.categories.length; i++){
+        if (idCategory === this.categories[i].id){
+          return this.categories[i].color
+        }
+      }
+    },
+
+    }
+
+
+   /* getTransactionCategory(categoryId) {
       return this.categories.filter(el => el.id === 0)[0]
     }
-    /*getIcon(name){
+
+      getIcon(name){
       for(let i = 0; i < this.icons.length; i++){
         console.log(name)
         if (name === this.icons[i].type){
@@ -85,7 +116,5 @@ export default {
         }
       }
     },*/
-
-  },
 }
 </script>

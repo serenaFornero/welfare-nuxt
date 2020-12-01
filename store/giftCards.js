@@ -4,7 +4,8 @@ export const state = () => ({
       id:0,
       brand: "Amazon",
       description: "Lorem Ipsum dolor sit amet",
-      idCategory: 10,
+      src: "amazon.jpg",
+      idCategory: 15,
       variants: [
         {
           id: 0.1,
@@ -32,7 +33,8 @@ export const state = () => ({
       id:1,
       brand: "Netflix",
       description: "Lorem Ipsum dolor sit amet",
-      idCategory: 10,
+      src: "netflix.jpeg",
+      idCategory: 15,
       variants: [
         {
           id: 1.1,
@@ -60,7 +62,8 @@ export const state = () => ({
       id:2,
       brand: "Decathlon",
       description: "Lorem Ipsum dolor sit amet",
-      idCategory: 10,
+      src: "decathlon.png",
+      idCategory: 15,
       variants: [
         {
           id: 2.1,
@@ -86,3 +89,11 @@ export const state = () => ({
     },
   ]
 })
+
+
+export const getters = {
+ getGiftCard(state){
+    return state.giftCards
+  }
+}
+

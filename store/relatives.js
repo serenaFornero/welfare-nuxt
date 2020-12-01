@@ -6,7 +6,7 @@ export const state = () => ({
           name: "Carlo",
           surname: "Rossi",
           birthDate: "10/02/2010",
-          relationship: "Figlio"
+          relation: "Figlio"
         },
         {
           userId: 0,
@@ -14,7 +14,7 @@ export const state = () => ({
           name: "Valeria",
           surname: "Bianchi",
           birthDate: "1/07/1980",
-          relationship: "Moglie"
+          relation: "Moglie"
         }
       ],
 })

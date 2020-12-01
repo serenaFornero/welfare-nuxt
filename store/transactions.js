@@ -20,7 +20,7 @@ export const state = () => ({
       id: 3,
       name: "Trasporti" ,
       value: 100,
-      idCategory: 8,
+      idCategory: 11,
       date: "10-10-2020",
       userId: 0
     },
@@ -36,7 +36,7 @@ export const state = () => ({
       id: 5,
       name: "Retta Scolastica" ,
       value: 300,
-      idCategory: 8,
+      idCategory: 11,
       date: "6-10-2020",
       userId: 0
     }

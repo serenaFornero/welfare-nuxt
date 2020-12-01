@@ -25,7 +25,7 @@
             </v-icon>
           </v-card-actions>
           </v-row>
-          <v-card-text class="font-weight-bold text-center title">Codice: GJFE44K </v-card-text>
+          <v-card-text class="font-weight-bold text-center title">Codice: {{}} </v-card-text>
           <v-card-subtitle class=" text-center">Tempo rimasto:  {{ timerCount }} </v-card-subtitle>
         </v-card>
       </v-dialog>
@@ -44,20 +44,6 @@ export default {
       notifications: false,
       sound: true,
       widgets: false,
-      items: [
-        {
-          title: 'Click Me',
-        },
-        {
-          title: 'Click Me',
-        },
-        {
-          title: 'Click Me',
-        },
-        {
-          title: 'Click Me 2',
-        },
-      ],
       absolute: true,
       overlay: false,
     }
@@ -77,6 +63,11 @@ export default {
       immediate: true // This ensures the watcher is triggered upon creation
     }
 
+  },
+  computed: {
+    orders() {
+      return this.$store.getters["orders/getOrder"]
+    }
   }
 }
 </script>

@@ -49,7 +49,7 @@ export default {
     trans:{
       shop: "Market"
     },
-    /*
+
       categoriesIcons: [
         {
           type: "market",
@@ -71,8 +71,8 @@ export default {
           icon: "mdi-coffee",
           color: "#29304d"
         },
-      ],*/
-    /*
+      ],
+
       transactions : [
         {
           id: 0,
@@ -109,7 +109,7 @@ export default {
           credit: -10.00,
           date: "15-12-2020"
         }
-      ],*/
+      ],
   }),
   methods: {
     getIcon(category){

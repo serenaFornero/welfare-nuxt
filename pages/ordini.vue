@@ -24,16 +24,16 @@
       </v-alert>
       <v-card-text class="mt-n5">
         <v-list>
-          <v-list-item v-for="giftCard in giftCards" :key="giftCard.id">
+          <v-list-item v-for="values in orders" :key="values.id">
             <v-icon color="#29304d">mdi-shopping</v-icon>
             <v-list-item two-line>
               <v-list-item-content>
-                <v-list-item-title>{{ giftCard.title }}</v-list-item-title>
-                <v-list-item-subtitle>{{ giftCard.description }}{{giftCard.price}}€</v-list-item-subtitle>
+                <v-list-item-title>{{ values.name }}</v-list-item-title>
+                <v-list-item-subtitle>{{values.description}}</v-list-item-subtitle>
                 <v-list-item-action><dialog-utilizza></dialog-utilizza></v-list-item-action>
               </v-list-item-content>
             </v-list-item>
-            <p class="mt-3 font-weight-bold" :style="getColor(giftCard.price)"> {{giftCard.price}}€</p>
+          <p class="mt-3 font-weight-bold" :style="getColor(values.value)"> {{values.value}}€</p>
           </v-list-item>
         </v-list>
       </v-card-text>
@@ -53,38 +53,19 @@ export default {
     CardCredito,
     dialogUtilizza
   },
-  data: () =>  ({
-    giftCards: [
-      {
-        id:1,
-        title: "Gift Card Amazon",
-        description: "Buono del valore di "
-        ,
-        price: 50
-      },
-      {
-        id:2,
-        title: "Gift Decathlon",
-        description: "Buono del valore di ",
-        price: 20
-      },
-      {
-        id:3,
-        title: "Gift Carrefour",
-        description: "Buono del valore di ",
-        price: 15
-      },
-    ]
-
-  }),
+  data: () =>  ({}),
   methods:{
-    getColor(price){
-      if (price < 0){
+    getColor(value){
+      if (value < 0){
         return "color: #f76c6c"
-      } else if (price > 0){
+      } else if (value > 0){
         return "color: #2573d5"
       }
-
+    }
+  },
+  computed: {
+    orders() {
+      return this.$store.getters["orders/getOrder"]
     }
   }
 }

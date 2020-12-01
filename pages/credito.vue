@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
-            <v-row>
-<avatar></avatar>
+            <v-row  v-for="values in users" :key="values.id">
+<avatar class="d-flex" :user="values"></avatar>
             </v-row>
             <card-credito class="my-3"></card-credito>
             <v-card
@@ -41,7 +41,11 @@ export default {
   computed: {
     credit() {
       return this.$store.getters["credit/getCredit"]
-    }
+    },
+    users() {
+      return this.$store.getters["users/getUser"]
+    },
+
   }
 }
 </script>

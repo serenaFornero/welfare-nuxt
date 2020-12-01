@@ -1,4 +1,5 @@
 <template>
+  <form>
   <v-text-field
     :type="showPassword ? 'text' : 'password'"
     :label="label"
@@ -6,7 +7,7 @@
     :rules="rules"
     :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
     @click:append="showPassword = !showPassword"/>
-
+  </form>
 </template>
 <script>
 

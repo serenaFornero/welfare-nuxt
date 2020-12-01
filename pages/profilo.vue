@@ -17,7 +17,10 @@
     >
         <div class="text-center"
         >
-          <v-avatar size="70" class="my-2">
+          <v-row class="d-flex flex-column" v-for="values in users" :key="values.id">
+            <avatar :user="values"></avatar>
+          </v-row>
+          <!--<v-avatar size="70" class="my-2">
             <nuxt-link
               tag="img"
               src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
@@ -27,7 +30,7 @@
           </v-avatar>
           <p class="mt-2 ml-2 headline" style="color: #29304d">
             John Doe
-          </p>
+          </p>-->
           <v-btn
             class="my-2 text-capitalize rounded-lg"
             outlined
@@ -40,7 +43,7 @@
         I miei dati
       </v-card-title>
       <v-card-text>
-        <v-row v-for="user in utente"
+        <v-row v-for="user in users"
                :key="user.id">
           <v-col
             cols="12"
@@ -90,6 +93,7 @@
             md="3"
           >
             <password
+              label="Nuova Password"
               cols="12"
               sm="6"
               md="3"
@@ -102,12 +106,14 @@
             md="3"
           >
             <password
+              label="Ripeti Password"
               cols="12"
               sm="6"
               md="3"
               class="mx-2"
             ></password>
           </v-col>
+
         </v-row>
         <div class="text-center">
           <v-btn class="my-5 text-capitalize rounded-lg" dark color="#2573d5" outlined>
@@ -171,53 +177,27 @@
 
 import Password from "@/components/password";
 import RelativesAutocomplete from "~/components/RelativesAutocomplete";
+import avatar from "@/components/avatar";
 export default {
   layout: 'default',
   components: {
     RelativesAutocomplete,
-    Password
+    Password,
+    avatar
   },
   data: () => ({
     color: 'red' ,
     relative: null,
     birthDate: null,
     relation: null,
-    profile: {
-      id:0,
-      nome: "John Doe",
-      email: `john.doe@nomeazienda.it`,
-      dataNascita: "12/12/1990",
-    },
-    relatives:[
-      {
-        id: 0,
-        nome:"Carlo Rossi",
-        dataNascita: "2/2/2010",
-        relationship: "Figlio"
-      },
-      {
-        id: 1,
-        nome:"Valeria Bianchi",
-        dataNascita: "1/5/1990",
-        relationship: "Coniuge"
-      },
-      {
-        id: 2,
-        nome:"Ginevra Rossi",
-        dataNascita: "1/5/2008",
-        relationship: "Figlio"
-      }
-    ],
-
     dialog: false,
 
   }),
   computed: {
-   utente() {
+   users() {
       return this.$store.getters["users/getUser"]
     }
   },
-
   watch: {
     relative: {
       immediate: false,
@@ -232,27 +212,7 @@ export default {
       }
     }
   },
-  methods: {
-    /*
-    selectedRelative(name){
-      for(let i = 0; i < this.relatives.length; i++){
-        if (name === this.relatives[i].nome){
-          return this.relatives[i].dataNascita
-        }
-      }
-    },
-    */
-
-    userRelatives(){
-      let name = []
-      for(let i = 0; i < this.relatives.length; i++){
-       name[i] = this.relatives[i].nome
-      }
-
-      return name
-    },
-
-  }
+  methods: {}
 
 }
 </script>
