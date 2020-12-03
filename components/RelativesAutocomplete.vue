@@ -64,29 +64,6 @@ export default {
     data() {
         return {
             relative: this.value,
-            /*relatives: [
-                {
-                    id: 1,
-                    name: 'Paolo',
-                    surname: 'Cante',
-                    birthDate: '10/02/1993',
-                    relation: 'Fratello'
-                },
-                {
-                    id: 2,
-                    name: 'Serena ',
-                    surname: 'Fornero',
-                    birthDate: '19/11/1996',
-                    relation: 'Sorella'
-                },
-                {
-                    id: 3,
-                    name: 'Mario',
-                    surname: 'Rossi',
-                    birthDate: '01/01/1958',
-                    relation: 'Padre'
-                }
-            ]*/
         }
     },
     watch: {
