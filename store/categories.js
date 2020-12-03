@@ -59,35 +59,11 @@ export const state = () => ({
     },
   ],
 
-  categoriesOrders: [
-    {
-      id: 14,
-      name: "Ordini",
-      icon: "mdi-gift",
-      src: "",
-      color: "#232649"
-    }
-  ],
-
-  categoriesGiftCards: [
-    {
-      id: 15,
-      name: "GiftCard",
-      icon: "mdi-wallet-giftcard",
-      src: "",
-      color: "#232649"
-    },
-  ]
-
 })
 
 export const getters = {
   getCategory(state){
     return state.categoriesServices
   },
-  getCategoryWallet(state){
-    return state.categoriesWallet
-  },
-
 }
 

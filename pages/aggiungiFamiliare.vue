@@ -75,16 +75,39 @@
             </v-col>
           </v-row>
           <v-card-actions class="justify-center">
+            <v-dialog
+              v-model="dialog"
+              persistent
+              max-width="290"
+            >
+              <template v-slot:activator="{ on, attrs }">
             <v-btn
-              class="mb-5 mt-n5 text-capitalize rounded-lg"
+              class="mb-5 text-capitalize rounded-lg"
               type="submit"
               dark
               color="#2573d5"
               @click="addRelative"
+              v-bind="attrs"
+              v-on="on"
             >
               Aggiungi
 
             </v-btn>
+              </template>
+              <v-card class="text-center">
+                <v-card-actions class="justify-end">
+                  <v-btn
+                    icon
+                    dark
+                    color="#2573d5"
+                    @click="dialog = false"
+                  >
+                    <v-icon> mdi-close </v-icon>
+                  </v-btn>
+                </v-card-actions>
+                <v-card-text class="font-weight-bold mt-n5">Familiare aggiunto <br/> correttamente!</v-card-text>
+              </v-card>
+            </v-dialog>
           </v-card-actions>
         </v-form>
       </v-card-text>
@@ -94,9 +117,15 @@
 </template>
 
 <script>
+
+
 export default {
+  components: {
+
+  },
 
   data: () => ({
+    dialog: false,
     relative: {
       name: '',
       surname: '',
@@ -114,7 +143,9 @@ export default {
         birthDate: '',
         relation: '',
       }
-    }
+    },
+
+
   }
 }
 </script>

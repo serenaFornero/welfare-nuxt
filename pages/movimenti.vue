@@ -21,9 +21,8 @@
             class="mb-5"
           >
             <v-list-item-avatar>
-              <v-icon :color="getIconColor(transactions.idCategory)">
-                {{ getIcon(transactions.idCategory) }}{{ getIconRefund(transactions.idCategory) }}
-              </v-icon> <!-- <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon> -->
+              <v-icon :color="getIconColor(transactions.idCategory)">{{ getIcon(transactions.idCategory) }}</v-icon>
+              <!-- <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon> -->
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title>{{ transactions.name }}</v-list-item-title>
@@ -58,11 +57,17 @@ export default {
       return this.$store.getters["categories/getCategory"]
     },
     refund() {
-      return this.$store.getters["wallet/getrefund"]
+      return this.$store.getters["wallet/getRefund"]
     },
     users() {
       return this.$store.getters["users/getUser"]
     },
+    concatenaColor(){
+      return this.categories.concat(this.refund)
+    },
+    concatenaIcons(){
+      return this.categories.concat(this.refund)
+    }
 
     /* categories() {
        return [
@@ -83,39 +88,42 @@ export default {
       }
     },
     getIcon(idCategory) {
+      for (let i = 0; i < this.concatenaIcons.length; i++){
+        if (idCategory === this.concatenaIcons[i].id){
+          return this.concatenaIcons[i].icon
+        }
+      }
+    },
+    getIconColor(idCategory) {
+      for (let i = 0; i < this.concatenaColor.length; i++ ){
+        if (idCategory === this.concatenaColor[i].id) {
+          return this.concatenaColor[i].color
+        }
+      }
+    },
+  }
+  /*
+    getIcon(idCategory) {
       for (let i = 0; i < this.categories.length; i++) {
         if (idCategory === this.categories[i].id) {
           return this.categories[i].icon
         }
       }
-    },
-    getIconRefund(idCategory) {
-      for (let i = 0; i < this.refund.length; i++) {
-        if (idCategory === this.refund[i].id) {
-          return this.refund[i].icon
-        }
+    },*/
+
+  /*
+  getIconRefund(idCategory) {
+    for (let i = 0; i < this.refund.length; i++) {
+      if (idCategory === this.refund[i].id) {
+        return this.refund[i].icon
       }
-    },
-    getIconColor(idCategory) {
-      for (let i = 0; i < this.categories.length; i++) {
-        if (idCategory === this.categories[i].id) {
-          return this.categories[i].color
-        }
-      }
-    },
-  }
+    }
+  },*/
 
   /* getTransactionCategory(categoryId) {
      return this.categories.filter(el => el.id === 0)[0]
    }
 
-     getIcon(name){
-     for(let i = 0; i < this.icons.length; i++){
-       console.log(name)
-       if (name === this.icons[i].type){
-         return this.icons[i].icon
-       }
-     }
    },*/
 }
 </script>

@@ -53,7 +53,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  getrefund(state){
+  getRefund(state){
     return state.refund
   },
 

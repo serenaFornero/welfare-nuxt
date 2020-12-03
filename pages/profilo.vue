@@ -126,7 +126,7 @@
         I miei familiari
       </v-card-title>
       <v-card-actions class="subtitle-2 mx-2 grey--text text--darken-1">
-        Aggiungi nuovo familiare alla lista
+        Aggiungi nuovo familiare
         <v-spacer></v-spacer>
         <v-btn
           to="/aggiungiFamiliare"
