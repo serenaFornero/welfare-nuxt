@@ -29,7 +29,7 @@
           >
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Gift Card Name</v-toolbar-title>
+          <v-toolbar-title>{{}}</v-toolbar-title>
         </v-toolbar>
         <v-list
           two-line
@@ -48,7 +48,7 @@
           <v-list-item>
             <v-list-item-content>
               <v-img src="giftCardAmazon.png" class="my-5" contain width="200" height="150"></v-img>
-              <v-list-item-subtitle class="text-center">Buono Regalo valido per l’acquisto di prodotti <br> disponibili su Amazon.it del vaore di {{ }} € </v-list-item-subtitle>
+              <v-list-item-subtitle class="text-center">Buono Regalo valido per l’acquisto di prodotti <br> disponibili su {} del vaore di {} € </v-list-item-subtitle>
              <v-row justify="center" class="mt-3"> <dialog-attiva></dialog-attiva></v-row>
             </v-list-item-content>
           </v-list-item>

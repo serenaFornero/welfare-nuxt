@@ -6,10 +6,11 @@ export const state = () => ({
       icon: "mdi-gift",
       src: "",
       color: "#232649",
-      list: [
+      orderList: [
         {
           id: 0,
           idUser: 0,
+          src: "amazon.jpg",
           idCategory: 14,
           name: "Gift Card Amazon",
           description: "Lorem Ipsum dolor sit amet",
@@ -19,6 +20,7 @@ export const state = () => ({
         {
           id: 1,
           idUser: 0,
+          src: "decathlon.png",
           idCategory: 14,
           name: "Gift Card Decathlon",
           description: "Lorem Ipsum dolor sit amet",
@@ -28,13 +30,13 @@ export const state = () => ({
         {
           id: 2,
           idUser: 0,
+          src: "netflix.jpeg",
           idCategory: 14,
           name: "Gift Card Netflix",
           description: "Lorem Ipsum dolor sit amet",
           value: 50,
           code: "56DLSKR"
         },
-
       ]
     }
   ],

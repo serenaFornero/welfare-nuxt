@@ -10,7 +10,7 @@
       class="rounded-lg d-flex flex-wrap flex-column justify-center" elevation="5"
     >
       <v-card-title style="color: #29304d">
-       I miei ordini
+        I miei ordini
       </v-card-title>
       <v-alert border="top"
                colored-border
@@ -23,17 +23,28 @@
         I voucher sono solitamente disponibili entro 48 ore lavorative dall'ordine.
       </v-alert>
       <v-card-text class="mt-n5">
-        <v-list>
-          <v-list-item v-for="values in orders" :key="values.id">
-            <v-icon color="#29304d">mdi-shopping</v-icon>
-            <v-list-item two-line>
-              <v-list-item-content>
-                <v-list-item-title>{{ values.name }}</v-list-item-title>
-                <v-list-item-subtitle>{{values.description}}</v-list-item-subtitle>
-                <v-list-item-action><dialog-utilizza></dialog-utilizza></v-list-item-action>
-              </v-list-item-content>
-            </v-list-item>
-          <p class="mt-3 font-weight-bold" :style="getColor(values.value)"> {{values.value}}€</p>
+        <v-list
+          v-for="item in orders"
+          :key="item.id"
+        >
+          <v-list-item
+            v-for="child in item.orderList"
+            :key="child.id"
+          >
+            <v-list-item-avatar tile class="rounded-lg">
+              <v-img :src="child.src"></v-img>
+            </v-list-item-avatar>
+
+            <v-list-item-content>
+              <v-list-item-title v-text="child.name"></v-list-item-title>
+              <v-list-item-subtitle v-text="child.description"></v-list-item-subtitle>
+              <v-list-item-action>
+                <dialog-utilizza></dialog-utilizza>
+              </v-list-item-action>
+            </v-list-item-content>
+            <v-list-item-action-text class="font-weight-bold" :style="getColor(child.value)">
+              {{child.value }}€
+            </v-list-item-action-text>
           </v-list-item>
         </v-list>
       </v-card-text>
@@ -46,6 +57,7 @@
 import CardCredito from "@/components/cardCredito";
 import dialogUtilizza from "@/components/dialogUtilizza";
 import Avatar from "@/components/avatar";
+
 export default {
   layout: 'default',
   components: {
@@ -53,15 +65,15 @@ export default {
     CardCredito,
     dialogUtilizza
   },
-  data: () =>  ({}),
-  methods:{
-    getColor(value){
-      if (value < 0){
+  data: () => ({}),
+  methods: {
+    getColor(value) {
+      if (value < 0) {
         return "color: #f76c6c"
-      } else if (value > 0){
+      } else if (value > 0) {
         return "color: #2573d5"
       }
-    }
+    },
   },
   computed: {
     orders() {

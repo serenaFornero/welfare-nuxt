@@ -52,20 +52,20 @@
     </v-list>
   </v-tab-item>
   <v-tab-item>
-    <v-list>
+    <v-list v-for="values in giftCards"
+            :key="values.id">
+
       <v-list-item
-        v-for="values in giftCards"
-        :key="values.id"
+        v-for="child in values.type"
+        :key="child.id"
       >
-        <v-list-item-avatar
-          tile
-          class="rounded-lg"
-        >
-          <v-img src=""></v-img>
+        <v-list-item-avatar tile class="rounded-lg">
+          <v-img :src="child.src"></v-img>
         </v-list-item-avatar>
+
         <v-list-item-content>
-          <v-list-item-title class="font-weight-bold" style="color: #29304d">{{}}</v-list-item-title>
-          <v-list-item-subtitle class="grey--text text--darken-1">{{}}</v-list-item-subtitle>
+          <v-list-item-title class="font-weight-bold text-center" style="color: #29304d">{{child.brand}}</v-list-item-title>
+          <v-list-item-subtitle class="grey--text text--darken-1 text-center">Buono Regalo valido per l’acquisto <br> di prodotti  disponibili su <br> {{child.webSite}}</v-list-item-subtitle>
           <v-list-item-action class="justify-center">
             <v-btn
               color="#2573d5"

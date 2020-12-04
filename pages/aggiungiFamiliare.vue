@@ -86,7 +86,6 @@
               type="submit"
               dark
               color="#2573d5"
-              @click="addRelative"
               v-bind="attrs"
               v-on="on"
             >

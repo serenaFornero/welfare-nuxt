@@ -6,50 +6,45 @@
       </p>
     </v-row>
     <v-card
-      class="rounded-lg"
+      class="rounded-lg d-flex flex-wrap flex-column justify-center"
       elevation="5"
     >
+      <v-card-text>
+        <v-list v-for="values in giftCards"
+                :key="values.id">
+          <v-list
+            class="text-center"
+            v-for="child in values.type"
+            :key="child.id">
 
-      <v-list
-        three-line
-        subheader
-      >
-        <v-list-item v-for="values in giftCards" :key="values.id">
-          <v-list-item-content>
-            <v-list-item-title
-              class="font-weight-bold"
-              style="color: #29304d"
-            >
-              Gift Card {{ values.name }}
-            </v-list-item-title>
-            <v-list-item>
-              <v-img
-                src="giftCardAmazon.png"
-                class="my-5"
-                contain
-                width="200"
-                height="150"
+            <v-list-item-content>
+              <v-list-item-title
+                class="font-weight-bold"
+                style="color: #29304d"
               >
-              </v-img>
-            </v-list-item>
-            <v-list-item-subtitle
-              class="text-center"
-            >
-              Buono Regalo valido per l’acquisto di prodotti disponibili su {{values.webSite}} del vaore di {{}}€
-            </v-list-item-subtitle>
-            <v-row justify="center">
-              <v-btn
-                color="#2573d5"
-                dark
-                class="text-capitalize my-5 rounded-lg"
-                to="/trasferimentoEffettuato"
+                Gift Card {{child.brand}}
+              </v-list-item-title>
+
+              <v-list-item
+                v-for="item in child.variants"
+                           :key="item.id"
               >
-                Acquista {{}}€
-              </v-btn>
-            </v-row>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+                <v-list-item-avatar class="rounded-lg">
+                  <v-img :src="item.src"></v-img>
+                </v-list-item-avatar>
+                <v-btn
+                  color="#2573d5"
+                  dark
+                  class="text-capitalize rounded-lg d-flex"
+                  to="/trasferimentoEffettuato"
+                >
+                  Acquista {{item.value}}€
+                </v-btn>
+              </v-list-item>
+            </v-list-item-content>
+          </v-list>
+        </v-list>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
