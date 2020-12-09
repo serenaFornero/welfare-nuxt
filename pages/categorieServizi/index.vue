@@ -16,7 +16,7 @@ import SearchField from "@/components/searchField";
 import categorie from "@/components/categorie";
 
 export default {
-  components: {
+  components: { 
     SearchField,
     categorie
   },

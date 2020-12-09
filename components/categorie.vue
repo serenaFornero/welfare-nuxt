@@ -1,5 +1,4 @@
 <template>
-
     <v-row>
       <v-col class="d-flex flex-wrap justify-center">
         <div class="d-flex flex-column">
@@ -12,7 +11,7 @@
             elevation="2"
             hover
           >
-            <nuxt-link :to="'/categorie/' + category.id"><v-img :src="category.src"></v-img></nuxt-link>
+            <nuxt-link :to="'/categorieServizi/' + category.id"><v-img :src="category.src"></v-img></nuxt-link>
           </v-card>
           <p class="text-center font-weight-bold" style="color: #29304d">{{category.name}}</p>
         </div>
@@ -31,15 +30,10 @@ export default {
   components: {},
   data: () => ({}),
 
-  computed: {
-    services(){
-      return this.$store.getters["services/getServices"]
-    },
-
-  },
-  /*mounted(){
+  computed: {},
+  mounted(){
     console.log(this.category)
-  }*/
+  }
 }
 
 </script>

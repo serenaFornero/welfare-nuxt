@@ -38,7 +38,7 @@ export const state = () => ({
     },
     {
       id: 5,
-      name: "Cultura e intrattenimento",
+      name: "Tempo libero",
       icon: "mdi-filmstrip-box",
       src: "ticket.png",
       color: "#232649"

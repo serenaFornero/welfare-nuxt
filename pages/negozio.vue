@@ -11,14 +11,14 @@
             fab
             dark
             small
-            to="/categorie"
+            to="/categorieServizi"
           >
             <v-icon>mdi-format-list-bulleted-square</v-icon>
           </v-btn>
       </v-row>
       <search-field></search-field>
       <div >
-        <services/>
+       <index></index>
       </div>
     </v-container>
 </template>
@@ -27,14 +27,16 @@
 
 <script>
 import SearchField from "@/components/searchField";
-import services from "@/components/services";
+import index from "@/pages/categorieGiftCards/index";
+
 
 export default {
 
   layout: 'default',
   components: {
     SearchField,
-    services
+    index
+
 
   },
   data () {

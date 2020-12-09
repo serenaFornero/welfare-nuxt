@@ -1,8 +1,8 @@
 <template>
-  <v-container fluid>
-    <v-row class="d-flex" >
+  <v-container fluid >
+    <v-row class="d-flex"  >
       <p class="headline" style="color: #29304d">
-
+        {{getCategoryItem(services[0].categoryId).name}}
       </p>
     </v-row>
     <search-field></search-field>
@@ -11,9 +11,9 @@
       elevation="5"
     >
       <v-list>
-        <v-list-item  v-for="value in services" :key="value.id">
+        <v-list-item v-for="value in services" :key="value.id">
           <v-list-item-avatar>
-            <v-icon :color="getIcon(value.categoryId).color">{{ getIcon(value.categoryId).icon }}</v-icon>
+            <v-icon :color="getCategoryItem(value.categoryId).color">{{ getCategoryItem(value.categoryId).icon }}</v-icon>
           </v-list-item-avatar>
           <nuxt-link to="/trasferimentoEffettuato" style="text-decoration: none">
             <v-list-item-content>
@@ -57,10 +57,9 @@ export default {
       /*console.log(this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id)))*/
       return this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id))
     },
-
   },
   methods: {
-    getIcon(categoryId) {
+    getCategoryItem(categoryId) {
       for (let i = 0; i < this.categories.length; i++) {
         if (categoryId === this.categories[i].id) {
           return this.categories[i]
@@ -68,9 +67,9 @@ export default {
       }
     },
   },
- /* mounted() {
+ mounted() {
     console.log(this.$route.params.id)
-  }*/
+  }
 }
 
 
