@@ -14,13 +14,14 @@
     <v-card class="rounded-lg" elevation="5" >
         <v-card-title class="justify-center" style="color: #232649">Shop Name</v-card-title>
         <v-card-subtitle class="text-center">shop address</v-card-subtitle>
-      <v-row justify="center" >
+      <v-row justify="center"  >
       <v-col
         cols="12"
         sm="6"
         md="3"
       >
         <v-text-field
+          v-model="creditAvailable"
           class="mx-2 rounded-lg my-5"
           label="Solo"
           placeholder="Inserisci importo"
@@ -34,7 +35,8 @@
           class="text-capitalize my-5 rounded-lg"
           dark
           large
-          to="/richiestaInviata"
+          to="/trasferimentoEffettuato"
+          @click="creditTransfer"
         >Invia</v-btn>
       </v-card-actions>
     </v-card>
@@ -53,9 +55,28 @@ export default {
   },
   data () {
     return {
+      creditAvailable: "",
+      cred:{
+        credD:''
+      }
 
     }
+
   },
+  computed: {
+    credit(){
+      return this.$store.getters['credit/getCredit']
+    },
+    cr(){
+      return this.$store.getters['credit/getAvailab']
+    },
+  },
+  methods:{
+    creditTransfer: function (){
+      this.$store.commit('credit/decrementCredit', this.creditAvailable)
+    },
+
+  }
 }
 </script>
 

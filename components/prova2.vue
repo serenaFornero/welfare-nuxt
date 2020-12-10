@@ -1,46 +1,60 @@
-
-
-
 <template>
-  <v-card>
-    <v-list v-for="values in giftCards"
-            :key="values.id">
-      <v-list v-for="child in values.type"
-              :key="child.id">
-        <v-list-item-title
-          class="font-weight-bold"
-          style="color: #29304d"
-        >
-          Gift Card {{child.brand}}
-        </v-list-item-title>
-        <v-list-item v-for="item in child.variants" :key="item.id">
-          {{item.value}}
-        </v-list-item>
-      </v-list>
-    </v-list>
-  </v-card>
+  <v-container fluid>
+    <v-row class="d-flex">
+      <p class="headline" style="color: #29304d;">
+        Negozio
+      </p>
+      <v-spacer></v-spacer>
+      <v-btn
+        class="mt-n1"
+        color="#2573d5"
+        fab
+        dark
+        small
+        to="/categorieServizi"
+      >
+        <v-icon>mdi-format-list-bulleted-square</v-icon>
+      </v-btn>
+    </v-row>
+    <search-field></search-field>
+    <div >
+      <index></index>
+    </div>
+  </v-container>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      dialog: false,
-      notifications: false,
-      sound: true,
-      widgets: false,
 
+
+<script>
+import SearchField from "@/components/searchField";
+import index from "@/pages/negozio/index";
+
+
+export default {
+
+  layout: 'default',
+  components: {
+    SearchField,
+    index
+
+
+  },
+  data () {
+    return {
+      tab: null,
     }
   },
+  methods:{},
   computed: {
+    services() {
+      return this.$store.getters["services/getServices"]
+    },
     giftCards() {
       return this.$store.getters["giftCards/getGiftCard"]
     }
   }
-
 }
 </script>
-
 
 
 

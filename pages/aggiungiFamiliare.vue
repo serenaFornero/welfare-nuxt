@@ -25,7 +25,8 @@
                max-width="500"
       >
         In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non necessariamente
-        conviventi o parte del nucleo familiare. Si tratta in particolare del coniuge, dei figli legittimi, naturali o adottivi,
+        conviventi o parte del nucleo familiare. Si tratta in particolare del coniuge, dei figli legittimi, naturali o
+        adottivi,
         dei genitori, fratelli o sorelle, dei suoceri, generi e nuore.
       </v-alert>
       <v-card-text>
@@ -81,17 +82,17 @@
               max-width="290"
             >
               <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              class="mb-5 text-capitalize rounded-lg"
-              type="submit"
-              dark
-              color="#2573d5"
-              v-bind="attrs"
-              v-on="on"
-            >
-              Aggiungi
+                <v-btn
+                  class="mb-5 text-capitalize rounded-lg"
+                  type="submit"
+                  dark
+                  color="#2573d5"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Aggiungi
 
-            </v-btn>
+                </v-btn>
               </template>
               <v-card class="text-center">
                 <v-card-actions class="justify-end">
@@ -101,7 +102,7 @@
                     color="#2573d5"
                     @click="dialog = false"
                   >
-                    <v-icon> mdi-close </v-icon>
+                    <v-icon> mdi-close</v-icon>
                   </v-btn>
                 </v-card-actions>
                 <v-card-text class="font-weight-bold mt-n5">Familiare aggiunto <br/> correttamente!</v-card-text>
@@ -110,7 +111,6 @@
           </v-card-actions>
         </v-form>
       </v-card-text>
-
     </v-card>
   </v-container>
 </template>
@@ -119,29 +119,17 @@
 
 
 export default {
-  components: {
-
-  },
+  components: {},
 
   data: () => ({
     dialog: false,
     relative: {
-      name: '',
-      surname: '',
-      birthDate: '',
-      relation: '',
       relationship: ["Coniuge", "Figlio", "Fratello", "Sorella", "Suocero"],
     }
   }),
   methods: {
     addRelative: function () {
-      this.$store.commit('relatives/addRelative',{...this.relative})
-      this.relative = {
-        name: '',
-        surname: '',
-        birthDate: '',
-        relation: '',
-      }
+      this.$store.commit('relatives/addRelative', {...this.relative})
     },
 
 

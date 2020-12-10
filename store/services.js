@@ -68,52 +68,35 @@ export const state = () => ({
       name: "Trattoria Rosa Bianca",
       address: "Via Stefano Fer 42, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "rosaBianca.jpg",
       rating: "3",
       categoryId: 2
     },
     {
       id: 2.2,
-      name: "La Mimosa",
-      address: "Via S. Giuseppe 15, Pinerolo",
+      name: "Tokio",
+      address: "Piazza Cavour 6, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "2",
+      src: "tokio.jpg",
+      rating: "5",
       categoryId: 2
     },
     {
       id: 2.3,
-      name: "Tokio",
-      address: "Piazza Cavour 6, Pinerolo",
-      description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "5",
-      categoryId: 2
-    },
-    {
-      id: 2.4,
       name: "Gigi Pizzeria",
       address: "Via Vigone 12, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "gigi.jpg",
       rating: "5",
       categoryId: 2
     },
+
     {
-      id: 2.5,
-      name: "Pinerolo Pizza",
-      address: "Viale della Rimembranza 40, Pinerolo",
-      description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "2",
-      categoryId: 2
-    },
-    {
-      id: 2.6,
+      id: 2.4,
       name: "Trattoria Primavera",
       address: "Via Savoia 5, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "trattoriaPrimavera.jpg",
       rating: "4",
       categoryId: 2
     },
@@ -122,7 +105,7 @@ export const state = () => ({
       name: "CFIQ",
       address: "Via Trieste, 15",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "cfiq.png",
       rating: "3",
       categoryId: 3
     },
@@ -131,7 +114,7 @@ export const state = () => ({
       name: "Atlas English school",
       address: "Via Montebello 17, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "atlas.png",
       rating: "5",
       categoryId: 3
     },
@@ -140,7 +123,7 @@ export const state = () => ({
       name: "Langage Life",
       address: "Piazza Barbieri, 15",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "languageLife.jpeg",
       rating: "5",
       categoryId: 3
     },
@@ -149,7 +132,7 @@ export const state = () => ({
       name: "Beatrice viaggi",
       address: "Piazza Roma 18, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "beatriceViaggi.jpg",
       rating: "3",
       categoryId: 4
     },
@@ -158,17 +141,8 @@ export const state = () => ({
       name: "Planet 3000",
       address: "Piazza Barbieri 32, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "planet3000.jpg",
       rating: "4",
-      categoryId: 4
-    },
-    {
-      id: 4.3,
-      name: "Lalla Viaggi",
-      address: "Corso Piave 27, Pinerolo",
-      description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "1",
       categoryId: 4
     },
     {
@@ -176,7 +150,7 @@ export const state = () => ({
       name: "Teatro Sociale",
       address: "Piazza Vittorio Veneto 24, Pinerolo ",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "teatroSociale.jpg",
       rating: "4",
       categoryId: 5
     },
@@ -185,7 +159,7 @@ export const state = () => ({
       name: "Teatro Incontro",
       address: "Via Caprilli 31, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "teatroIncontro.png",
       rating: "2",
       categoryId: 5
     },
@@ -194,35 +168,17 @@ export const state = () => ({
       name: "Cinema Ritz",
       address: "Via L. Luigi 11, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "cinemaRitz.jpg",
       rating: "5",
       categoryId: 5
     },
     {
       id: 5.4,
-      name: "Cinema Italia",
-      address: "Via Montegrappa 6, Pinerolo",
-      description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "5",
-      categoryId: 5
-    },
-    {
-      id: 5.5,
       name: "Museo del Mutuo Soccorso",
       address: "Via S. Pellico, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "museoMutuoSoccorso.jpeg",
       rating: "4",
-      categoryId: 5
-    },
-    {
-      id: 5.6,
-      name: "Museo della Cavalleria",
-      address: "Viale G. Giolitti 5, Pinerolo",
-      description: "Lorem ipsum dolor sit amet",
-      src: "",
-      rating: "3",
       categoryId: 5
     },
     {
@@ -230,7 +186,7 @@ export const state = () => ({
       name: "Villa Glicini",
       address: "Via Val Pellice 68, San Secondo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "villaGlicini.jpeg",
       rating: "3",
       categoryId: 6
     },
@@ -239,7 +195,7 @@ export const state = () => ({
       name: "Mamiani",
       address: "Viale Mamiani 9, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "mamiani.jpeg",
       rating: "4",
       categoryId: 6
     },
@@ -248,7 +204,7 @@ export const state = () => ({
       name: "Base",
       address: "Via Vastamiglio 5, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "base.png",
       rating: "3",
       categoryId: 6
     },
@@ -257,7 +213,7 @@ export const state = () => ({
       name: "Centro Estetico Sanybei",
       address: "Via Saluzzo 90, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "centroEstetico.jpg",
       rating: "3",
       categoryId: 6
     },
@@ -266,7 +222,7 @@ export const state = () => ({
       name: "Namastè",
       address: "Via Del Pino 35, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "namaste.jpg",
       rating: "5",
       categoryId: 7
     },
@@ -275,7 +231,7 @@ export const state = () => ({
       name: "OnBoard",
       address: "Via Duca degli Abruzzi 2, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "",
+      src: "onBoard.png",
       rating: "4",
       categoryId: 7
     },

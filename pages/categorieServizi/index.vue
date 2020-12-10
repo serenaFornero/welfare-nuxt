@@ -7,7 +7,7 @@
     <v-card
       class="rounded-lg d-flex flex-wrap" elevation="5"
     >
-      <categorie v-for="values in categories" :key="values.id" :category="values"></categorie>
+      <categorie v-for="value in categories" :key="value.id" :category="value"></categorie>
     </v-card>
   </v-container>
 </template>
@@ -16,7 +16,7 @@ import SearchField from "@/components/searchField";
 import categorie from "@/components/categorie";
 
 export default {
-  components: { 
+  components: {
     SearchField,
     categorie
   },
@@ -25,10 +25,6 @@ export default {
     categories() {
       return this.$store.getters["categories/getCategory"]
     },
-    services(){
-      return this.$store.getters["services/getServices"]
-    }
-
   }
 }
 

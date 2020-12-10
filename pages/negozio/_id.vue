@@ -26,13 +26,13 @@
               <v-img height="50" src="">{{}}</v-img>
               <p>{{ getGiftCardItem(giftCards[0].categoryId).description }}</p>
               <p>Valore: {{ item.value }} €</p>
+              <p>Nome: {{item.name}}</p>
               <v-btn
                 color="#2573d5"
                 class="text-capitalize rounded-lg"
                 dark
                 v-bind="attrs"
                 v-on="on"
-                @click="addOrder"
               >
                 Acquista
               </v-btn>
@@ -41,14 +41,13 @@
           </template>
           <v-card>
             <v-card-title class="headline" style="color: #29304d">
-              Gift Card {{ getGiftCardItem(giftCards[0].categoryId).brand }} {{ item.value }}
+              Gift Card {{item.name}}
             </v-card-title>
             <v-card-text>
               Cliccando su <strong>Procedi</strong> l'acquisto del buono acquisto <strong>
-              {{ getGiftCardItem(giftCards[0].categoryId).brand }} </strong> verrà confermato.
+              {{item.name}} </strong> verrà confermato.
             </v-card-text>
             <v-card-actions>
-
               <v-btn
                 color="#2573d5"
                 class="text-capitalize rounded-lg"
@@ -62,16 +61,12 @@
                 color="#2573d5"
                 class="text-capitalize rounded-lg"
                 dark
-
                 to="/trasferimentoEffettuato"
-
               >
                 Procedi
               </v-btn>
             </v-card-actions>
-
           </v-card>
-
         </v-dialog>
       </v-card-actions>
     </v-card>
@@ -80,6 +75,11 @@
 
 <script>
 export default {
+  props: {
+    category: {
+      type: Object
+    }
+  },
   data() {
     return {
       dialog: false,
@@ -106,7 +106,7 @@ export default {
         }
       }
     },
-    addOrder: function () {
+    /*addOrder: function () {
       this.$store.commit('orders/addOrder', {...this.order})
       this.order = {
         src: "",
@@ -114,7 +114,7 @@ export default {
         description: "",
         value: ""
       }
-    }
+    }*/
   },
   /*mounted() {
     console.log(this.$route.params.id)

@@ -13,9 +13,10 @@
       <v-list>
         <v-list-item v-for="value in services" :key="value.id">
           <v-list-item-avatar>
-            <v-icon :color="getCategoryItem(value.categoryId).color">{{ getCategoryItem(value.categoryId).icon }}</v-icon>
+            <v-img :src="value.src"></v-img>
+           <!-- <v-icon :color="getCategoryItem(value.categoryId).color">{{ getCategoryItem(value.categoryId).icon }}</v-icon>-->
           </v-list-item-avatar>
-          <nuxt-link to="/trasferimentoEffettuato" style="text-decoration: none">
+          <nuxt-link to="/trasferisci" style="text-decoration: none">
             <v-list-item-content>
               <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ value.name }}</v-list-item-title>
               <v-list-item-action-text class="font-weight-light">{{ value.address }}</v-list-item-action-text>
@@ -36,14 +37,14 @@
 
 <script>
 import SearchField from "@/components/searchField";
-import dialogOrdini from "@/components/dialogOrdini";
+
 
 export default {
 
   layout: 'default',
   components: {
     SearchField,
-    dialogOrdini
+
   },
   data() {
     return {}

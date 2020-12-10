@@ -3,8 +3,8 @@
     class="rounded-lg"
     style="background-color: #29304d"
   >
-    <v-card-title style="color: white" v-for="values in credit" :key="values.id">
-      Credito disponibile: {{ values.creditAvailable }} €
+    <v-card-title style="color: white" >
+      Credito disponibile: {{ credit }} €
     </v-card-title>
     <v-card-actions class="mx-3">
       <v-btn
@@ -36,8 +36,8 @@ export default {
   data: () => ({}),
   computed: {
     credit() {
-      return this.$store.getters["credit/getCredit"]
-    }
+      return this.$store.getters["credit/getCreditAvailable"]
+    },
   }
 }
 </script>

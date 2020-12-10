@@ -11,8 +11,8 @@
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-row>
-      <avatar></avatar>
+    <v-row v-for="values in users" :key="values.id">
+      <avatar class="d-flex" :user="values"></avatar>
     </v-row>
     <card-credito class="my-3"></card-credito>
     <v-card
@@ -60,22 +60,12 @@ export default {
     CardCredito,
   },
   data () {
-    return {
-      colors: [
-        'indigo',
-        'warning',
-        'pink darken-2',
-        'red lighten-1',
-        'deep-purple accent-4',
-      ],
-      slides: [
-        'First',
-        'Second',
-        'Third',
-        'Fourth',
-        'Fifth',
-      ],
-    }
-  },
+    return {}
+    },
+  computed: {
+    users() {
+      return this.$store.getters["users/getUser"]
+    },
+  }
 }
 </script>

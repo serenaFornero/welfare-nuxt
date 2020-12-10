@@ -1,43 +1,65 @@
 <template>
-  <v-card
-    class="rounded-lg"
-    elevation="5"
-  >
-    <v-tabs
-      color="#29304d"
-      centered
-      grow
-      slider-color="#29304d"
-    >
-      <v-tab class="text-capitalize">Servizi vicino a te</v-tab>
-      <v-tab class="text-capitalize">Buoni acquisto</v-tab>
-      <v-tab-item>
-        <v-row justify="center" class="d-md-none">
-          <v-btn
-            color="#2573d5"
-            dark
-            fixed
-            style="margin-top: 550px;"
-            top
-            fab
-            small
-            to="/mappa"
+    <v-container fluid>
+      <v-row class="d-flex">
+        <p class="headline" style="color: #29304d;">
+          Negozio
+        </p>
+        <v-spacer></v-spacer>
+        <v-btn
+          class="mt-n1"
+          color="#2573d5"
+          fab
+          dark
+          small
+          to="/categorieServizi"
+        >
+          <v-icon>mdi-format-list-bulleted-square</v-icon>
+        </v-btn>
+      </v-row>
+      <search-field></search-field>
+      <div >
+        <v-card
+          class="rounded-lg"
+          elevation="5"
+        >
+          <v-tabs
+            color="#29304d"
+            centered
+            grow
+            slider-color="#29304d"
           >
-            <v-icon>mdi-map-marker</v-icon>
-          </v-btn>
-        </v-row>
-        <lista-servizi></lista-servizi>
-      </v-tab-item>
-      <v-tab-item>
-        <lista-gift-cards></lista-gift-cards>
-      </v-tab-item>
-    </v-tabs>
-  </v-card>
-</template>
+            <v-tab class="text-capitalize">Servizi vicino a te</v-tab>
+            <v-tab class="text-capitalize">Buoni acquisto</v-tab>
+            <v-tab-item>
+              <v-row justify="center" class="d-md-none">
+                <v-btn
+                  color="#2573d5"
+                  dark
+                  fixed
+                  style="margin-top: 550px;"
+                  top
+                  fab
+                  small
+                  to="/mappa"
+                >
+                  <v-icon>mdi-map-marker</v-icon>
+                </v-btn>
+              </v-row>
+              <lista-servizi></lista-servizi>
+            </v-tab-item>
+            <v-tab-item>
+              <lista-gift-cards v-for="item in categories" :key="item.id" :category="item"></lista-gift-cards>
+            </v-tab-item>
+          </v-tabs>
+        </v-card>
+      </div>
+    </v-container>
+  </template>
+
 
 <script>
 
-
+import SearchField from "@/components/searchField";
 import ListaServizi from "@/components/listaServizi";
 import ListaGiftCards from "@/components/listaGiftCards";
 
@@ -45,7 +67,8 @@ export default {
   layout: 'default',
   components: {
     ListaGiftCards,
-    ListaServizi
+    ListaServizi,
+    SearchField,
 
   },
   data() {
@@ -55,6 +78,9 @@ export default {
   computed: {
     categories() {
       return this.$store.getters["giftCards/getCategory"]
+    },
+    giftCards() {
+      return this.$store.getters["giftCards/getGiftCard"]
     }
   },
 

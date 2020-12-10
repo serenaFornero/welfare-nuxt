@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
@@ -82,4 +82,4 @@ export default {
   }
 
 }
-</script>
+</script>-->

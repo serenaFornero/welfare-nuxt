@@ -48,3 +48,5 @@ export const getters = {
     return state.transactions
   }
 }
+
+

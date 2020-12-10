@@ -25,7 +25,7 @@
             </v-icon>
           </v-card-actions>
           </v-row>
-          <v-card-text class="font-weight-bold text-center title">Codice: {{}} </v-card-text>
+          <v-card-text class="font-weight-bold text-center title">Codice: {{orders.code}} </v-card-text>
           <v-card-subtitle class=" text-center">Tempo rimasto:  {{ timerCount }} </v-card-subtitle>
         </v-card>
       </v-dialog>
@@ -35,21 +35,24 @@
 
 <script>
 export default {
+  props:{
+    orders:{
+      type: Object
+    }
+  },
+
   data () {
     return {
       timerCount: 30.00,
-      dialog: false,
-      dialog2: false,
       dialog3: false,
-      notifications: false,
-      sound: true,
-      widgets: false,
       absolute: true,
       overlay: false,
     }
   },
-  watch: {
+  methods: {
 
+  },
+  watch: {
     timerCount: {
       handler(value) {
 
@@ -62,12 +65,8 @@ export default {
       },
       immediate: true // This ensures the watcher is triggered upon creation
     }
-
   },
   computed: {
-    orders() {
-      return this.$store.getters["orders/getOrder"]
-    }
   }
 }
 </script>

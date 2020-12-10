@@ -14,7 +14,7 @@ export const state = () => ({
       name: "Valeria",
       surname: "Bianchi",
       birthDate: "1/07/1980",
-      relation: "Moglie"
+      relation: "Coniuge"
     }
   ],
 })

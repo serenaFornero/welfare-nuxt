@@ -21,7 +21,7 @@
             class="mb-5"
           >
             <v-list-item-avatar>
-              <v-icon :color="getIconColor(transactions.idCategory)">{{ getIcon(transactions.idCategory) }}</v-icon>
+              <v-icon :color="getItem(transactions.idCategory).color">{{ getItem(transactions.idCategory).icon }}</v-icon>
               <!-- <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon> -->
             </v-list-item-avatar>
             <v-list-item-content>
@@ -62,22 +62,9 @@ export default {
     users() {
       return this.$store.getters["users/getUser"]
     },
-    concatenaColor(){
+    concatena(){
       return this.categories.concat(this.refund)
     },
-    concatenaIcons(){
-      return this.categories.concat(this.refund)
-    }
-
-    /* categories() {
-       return [
-         {
-           id: 0,
-           color: 'red',
-           icon: 'mdi-home'
-         }
-       ]
-     }*/
   },
   methods: {
     getColor(value) {
@@ -87,17 +74,10 @@ export default {
         return "color: #2573d5"
       }
     },
-    getIcon(idCategory) {
-      for (let i = 0; i < this.concatenaIcons.length; i++){
-        if (idCategory === this.concatenaIcons[i].id){
-          return this.concatenaIcons[i].icon
-        }
-      }
-    },
-    getIconColor(idCategory) {
-      for (let i = 0; i < this.concatenaColor.length; i++ ){
-        if (idCategory === this.concatenaColor[i].id) {
-          return this.concatenaColor[i].color
+    getItem(idCategory) {
+      for (let i = 0; i < this.concatena.length; i++ ){
+        if (idCategory === this.concatena[i].id) {
+          return this.concatena[i]
         }
       }
     },
