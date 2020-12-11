@@ -11,7 +11,6 @@
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-row class="d-flex flex-column justify-center">
       <v-card class="rounded-lg" elevation="5">
         <v-card-title style="color: #232649">
           Rimborsi in attesa
@@ -38,7 +37,6 @@
           <storico-rimborsi></storico-rimborsi>
         </v-card-text>
       </v-card>
-    </v-row>
   </v-container>
 </template>
 

@@ -4,6 +4,8 @@
       <p class="headline" style="color: #29304d">
         Ordini
       </p>
+    </v-row>
+
       <v-card
         class="rounded-lg d-flex flex-wrap flex-column justify-center"
         elevation="5"
@@ -25,7 +27,6 @@
       <lista-ordini v-for="item in orderList" :key="item.id" :orderList="item"></lista-ordini>
         </v-card-text>
       </v-card>
-    </v-row>
   </v-container>
 </template>
 

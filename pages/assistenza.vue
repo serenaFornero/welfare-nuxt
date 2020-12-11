@@ -1,6 +1,6 @@
 <template>
+  <v-container fluid>
   <v-card class="mt-2">
-    <v-row>
       <v-col class="d-flex flex-wrap justify-center">
         <div class="d-flex flex-column" v-for="cardAssistenza in cardsAssistenza" :key="cardAssistenza.id">
           <v-card
@@ -22,8 +22,9 @@
           <p class="text-center font-weight-bold " style="color: #29304d">{{cardAssistenza.description}}</p>
         </div>
       </v-col>
-    </v-row>
+
   </v-card>
+  </v-container>
 </template>
 
 <script>

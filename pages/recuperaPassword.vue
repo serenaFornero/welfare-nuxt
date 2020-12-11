@@ -1,10 +1,5 @@
 <template>
   <v-container fluid>
-    <v-card
-      class="d-flex justify-center"
-      color="transparent"
-      flat
-    >
       <v-card
         class="text-center mb-16 rounded-lg"
         width="400"
@@ -47,7 +42,6 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-card>
   </v-container>
 </template>
 

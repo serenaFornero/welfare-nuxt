@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="d-flex">
-      <p class="headline">
+      <p class="headline" style="color: #29304d">
         Portafoglio
       </p>
     </v-row>
@@ -9,9 +9,6 @@
       class="rounded-lg"
       hover
     >
-      <!-- <v-card-title>
-         <p class="title">Modalità di pagamento</p>
-       </v-card-title>-->
       <v-row>
         <v-col class="d-flex flex-wrap justify-center mt-3">
           <div class="d-flex flex-column">

@@ -23,7 +23,6 @@
   </v-container>
 </template>
 
-
 <script>
 import CardCredito from "@/components/CardCredito";
 import Avatar from "@/components/Avatar";

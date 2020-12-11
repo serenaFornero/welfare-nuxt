@@ -1,10 +1,11 @@
 <template>
-  <v-container>
-    <v-row class="d-flex">
+  <v-container fluid>
       <div v-for="item in ordersById" :key="item.id">
-        <p class="headline" style="color: #29304d">
-          Gift Card {{item.brand}}
-        </p>
+        <v-row>
+          <p class="headline" style="color: #29304d">
+            Gift Card {{item.brand}}
+          </p>
+        </v-row>
         <v-card
           class="rounded-lg d-flex flex-wrap flex-column justify-center"
           elevation="5"
@@ -38,7 +39,6 @@
           </v-list>
         </v-card>
       </div>
-    </v-row>
   </v-container>
 </template>
 
