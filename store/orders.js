@@ -12,7 +12,7 @@ export const state = () => ({
     {
       id: 1,
       idUser: 0,
-      src: "amazon.jpg",
+      src: "/amazon.jpg",
       categoryId: 0,
       brand: "Amazon",
       description: "Lorem Ipsum dolor sit amet",
@@ -22,7 +22,7 @@ export const state = () => ({
     {
       id: 2,
       idUser: 0,
-      src: "decathlon.png",
+      src: "/decathlon.png",
       categoryId: 2,
       brand: "Decathlon",
       description: "Lorem Ipsum dolor sit amet",
@@ -32,7 +32,7 @@ export const state = () => ({
     {
       id: 3,
       idUser: 0,
-      src: "netflix.jpeg",
+      src: "/netflix.jpeg",
       categoryId: 1,
       brand: "Netflix",
       description: "Lorem Ipsum dolor sit amet",
@@ -57,9 +57,6 @@ export const getters = {
 export const mutations = {
   addOrder(state, order) {
     state.orderList.push({
-      src: order.src,
-      brand: order.brand,
-      description: order.description,
       value: order.value,
     });
     console.log("mutations: ordine aggiunto");

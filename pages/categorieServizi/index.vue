@@ -3,7 +3,6 @@
     <p class="headline" style="color: #29304d">
       Categorie
     </p>
-    <search-field></search-field>
     <v-card
       class="rounded-lg d-flex flex-wrap" elevation="5"
     >
@@ -12,12 +11,12 @@
   </v-container>
 </template>
 <script>
-import SearchField from "@/components/searchField";
+
 import categorie from "@/components/categorie";
 
 export default {
   components: {
-    SearchField,
+
     categorie
   },
   data: () => ({}),

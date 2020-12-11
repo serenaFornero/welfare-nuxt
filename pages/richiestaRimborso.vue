@@ -57,7 +57,7 @@
 
             >
               1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale della spesa sostenuta).
-              <br> 2. Seleziona l'effettivo beneficiario. Se non è presente nell'elenco, vai in profilo e inseriscilo fra i tuoi familiari.
+              <br> 2. Seleziona l'effettivo beneficiario. Se non è presente nell'elenco, vai in <strong> Profilo </strong> > <strong>I miei familiari</strong> > <strong>Aggiungi nuovo familiare</strong>.
 
             </v-alert>
 

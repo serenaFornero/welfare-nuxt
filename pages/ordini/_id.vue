@@ -1,9 +1,9 @@
 <template>
   <v-container>
     <v-row class="d-flex">
-      <div>
+      <div v-for="item in ordersById" :key="item.id">
         <p class="headline" style="color: #29304d">
-{{}}
+          Gift Card {{item.brand}}
         </p>
         <v-card
           class="rounded-lg d-flex flex-wrap flex-column justify-center"
@@ -24,9 +24,9 @@
               I voucher potranno essere attivati cliccando sul pulsante "attiva". I voucher, dopo essere stati attivati,
               dovranno essere utilizzati entro 30 minuti.
             </v-alert>
-            <v-list-item v-for="item in ordersById" :key="item.id">
+            <v-list-item >
               <v-list-item-content>
-                <v-img src="" class="my-5" contain width="200" height="150">{{}}</v-img>
+                <v-img :src="item.src" class="my-5 rounded-lg" contain height="80" width="80" ></v-img>
                 <v-list-item-subtitle class="text-center">Buono Regalo valido per l’acquisto di prodotti <br>
                   disponibili su <strong>{{getGiftCardItem(item.categoryId).webSite}}</strong> del vaore di <strong>{{item.value}} €</strong>
                 </v-list-item-subtitle>
@@ -51,9 +51,7 @@ export default {
 
   },
   data() {
-    return {
-      dialog: false,
-    }
+    return {}
   },
 
   computed: {

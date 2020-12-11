@@ -12,7 +12,7 @@
     >
       <v-list>
         <v-list-item v-for="value in services" :key="value.id">
-          <v-list-item-avatar>
+          <v-list-item-avatar class="rounded-lg">
             <v-img :src="value.src"></v-img>
            <!-- <v-icon :color="getCategoryItem(value.categoryId).color">{{ getCategoryItem(value.categoryId).icon }}</v-icon>-->
           </v-list-item-avatar>

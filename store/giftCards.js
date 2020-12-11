@@ -1,34 +1,25 @@
 export const state = () => ({
-  giftCard: [
-    {
-      id: 15,
-      name: "GiftCard",
-      icon: "mdi-wallet-giftcard",
-      src: "",
-      color: "#232649",
-    }
-  ],
   categoriesGiftCard: [
     {
       id:0,
       brand: "Amazon",
       description: "Lorem Ipsum dolor sit amet",
       webSite: "www.amazon.it",
-      src:'amazon.jpg',
+      src:'/amazon.jpg',
     },
     {
       id:1,
       brand: "Netflix",
       description: "Lorem Ipsum dolor sit amet",
       webSite: "www.netflix.it",
-      src: 'netflix.jpeg',
+      src: '/netflix.jpeg',
     },
     {
       id:2,
       brand: "Decathlon",
       description: "Lorem Ipsum dolor sit amet",
       webSite: "www.decathlon.it",
-      src: 'decathlon.png',
+      src: '/decathlon.png',
     }
   ],
 
@@ -107,7 +98,7 @@ export const state = () => ({
     {
 
       id: 2.2,
-      name: 'Decathlon 50',
+      name: 'Decathlon 20',
       value: 20,
       code: "LOF25XS",
       categoryId: 2
@@ -115,7 +106,7 @@ export const state = () => ({
     {
 
       id: 2.3,
-      name: 'Decathlon 50',
+      name: 'Decathlon 15',
       value: 15,
       code: "JJF85DG",
       categoryId: 2
@@ -123,7 +114,7 @@ export const state = () => ({
     {
 
       id: 2.4,
-      name: 'Decathlon 50',
+      name: 'Decathlon 10',
       value: 10,
       code: "RPF25JR",
       categoryId: 2
@@ -138,7 +129,10 @@ export const getters = {
   getCategory(state){
    return state.categoriesGiftCard
   },
-  getCardById: (state) => (id) => {
+  getCategoryById: (state) => (categoryId) => {
+    return state.categoriesGiftCard.filter(el => el.id === categoryId)
+  },
+  getCardsById: (state) => (id) => {
     return state.giftCards.filter(el => el.categoryId === id);
   },
 }

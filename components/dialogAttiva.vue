@@ -49,9 +49,7 @@ export default {
       overlay: false,
     }
   },
-  methods: {
-
-  },
+  methods: {},
   watch: {
     timerCount: {
       handler(value) {

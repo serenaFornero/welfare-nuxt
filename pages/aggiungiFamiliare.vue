@@ -30,13 +30,14 @@
         dei genitori, fratelli o sorelle, dei suoceri, generi e nuore.
       </v-alert>
       <v-card-text>
-        <v-form @submit.stop.prevent="addRelative">
+        <v-form @submit.stop.prevent="addRelative" v-model="valid" ref="form">
           <v-row>
             <v-col
               cols="12"
               sm="6"
               md="3">
               <v-text-field
+                :rules="inputRules"
                 v-model="relative.name"
                 id="name"
                 label="Nome"
@@ -47,6 +48,7 @@
               sm="6"
               md="3">
               <v-text-field
+                :rules="inputRules"
                 v-model="relative.surname"
                 id="surname"
                 label="Cognome"
@@ -57,6 +59,7 @@
               sm="6"
               md="3">
               <v-text-field
+                :rules="inputRules"
                 v-model="relative.birthDate"
                 id="birthDate"
                 label="Data di nascita"
@@ -67,6 +70,7 @@
               sm="6"
               md="3">
               <v-select
+                :rules="inputRules"
                 v-model="relative.relation"
                 id="relation"
                 :items="relative.relationship"
@@ -83,23 +87,23 @@
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
-                  class="mb-5 text-capitalize rounded-lg"
+                  class="mb-5 text-capitalize rounded-lg white--text"
                   type="submit"
-                  dark
                   color="#2573d5"
                   v-bind="attrs"
                   v-on="on"
+                  :disabled="!valid"
+                  @click="submit"
+
                 >
                   Aggiungi
 
                 </v-btn>
               </template>
-              <v-card class="text-center">
+              <v-card class="text-center rounded-lg">
                 <v-card-actions class="justify-end">
                   <v-btn
                     icon
-                    dark
-                    color="#2573d5"
                     @click="dialog = false"
                   >
                     <v-icon> mdi-close</v-icon>
@@ -122,17 +126,31 @@ export default {
   components: {},
 
   data: () => ({
+    valid: true,
     dialog: false,
     relative: {
+      name:'',
+      surname: '',
+      birthDate:'',
+      relation: '',
       relationship: ["Coniuge", "Figlio", "Fratello", "Sorella", "Suocero"],
-    }
+    },
+    inputRules: [v => !!v || 'I campi sono obbligatori'],
+
+
+
   }),
   methods: {
     addRelative: function () {
       this.$store.commit('relatives/addRelative', {...this.relative})
     },
-
-
+    /*clear(){
+      this.name= ''
+      this.surname=''
+      this.birthDate=''
+      this.relation=''
+      this.$refs.form.reset()
+    }*/
   }
 }
 </script>

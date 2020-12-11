@@ -24,7 +24,7 @@
               elevation="2"
               hover
             >
-              <nuxt-link to=""><v-img src="no-border.png"></v-img></nuxt-link>
+              <nuxt-link to="/trasferimentiQrCode"><v-img src="no-border.png"></v-img></nuxt-link>
             </v-card>
             <p class="text-center font-weight-bold">Qr-code</p>
           </div>

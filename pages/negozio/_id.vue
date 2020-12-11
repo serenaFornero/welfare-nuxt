@@ -6,75 +6,58 @@
       </p>
     </v-row>
     <v-card
-      class="rounded-lg d-flex flex-wrap justify-center"
+      v-for="card in giftCards"
+      :key="card.id"
+      class="rounded-lg my-2"
       elevation="5"
+
     >
-      <v-card-title  style="color: #232649">
-        Gift Card {{ getGiftCardItem(giftCards[0].categoryId).brand }}
-      </v-card-title>
-      <v-card-actions v-for="item in giftCards" :key="item.id" class="mt-10">
+      <v-row class="d-flex" >
+        <v-col cols="3" >
+          <v-avatar tile class="rounded-lg mx-2 mt-5">
+            <v-img
+              contain
+              :src="getImageFromCategory(card.categoryId).src"
+            >
+            </v-img>
+          </v-avatar>
+        </v-col>
+        <v-col cols="9">
+          <v-card-title  style="color: #232649">
+            Gift Card {{ getImageFromCategory(card.categoryId).brand }}
+          </v-card-title>
+          <v-card-subtitle>
+            {{ getImageFromCategory(card.categoryId).description }}
+          </v-card-subtitle>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-card-text class="text-center mt-n7 font-weight-bold" :style="getColor(card.value)">
+          {{card.value}}€
+        </v-card-text>
+        <v-btn
+          @click="$refs.dialogAcquista.open(card)"
+          color="#2573d5"
+          dark
+          class="text-capitalize rounded-lg mb-3"
 
-        <v-dialog
-          v-model="dialog"
-          persistent
-          max-width="290"
         >
-
-
-          <template v-slot:activator="{ on, attrs }">
-            <div class="d-flex flex-column text-center my-5">
-              <v-img height="50" src="">{{}}</v-img>
-              <p>{{ getGiftCardItem(giftCards[0].categoryId).description }}</p>
-              <p>Valore: {{ item.value }} €</p>
-              <p>Nome: {{item.name}}</p>
-              <v-btn
-                color="#2573d5"
-                class="text-capitalize rounded-lg"
-                dark
-                v-bind="attrs"
-                v-on="on"
-              >
-                Acquista
-              </v-btn>
-            </div>
-
-          </template>
-          <v-card>
-            <v-card-title class="headline" style="color: #29304d">
-              Gift Card {{item.name}}
-            </v-card-title>
-            <v-card-text>
-              Cliccando su <strong>Procedi</strong> l'acquisto del buono acquisto <strong>
-              {{item.name}} </strong> verrà confermato.
-            </v-card-text>
-            <v-card-actions>
-              <v-btn
-                color="#2573d5"
-                class="text-capitalize rounded-lg"
-                text
-                to="/negozio"
-              >
-                Indietro
-              </v-btn>
-              <v-spacer></v-spacer>
-              <v-btn
-                color="#2573d5"
-                class="text-capitalize rounded-lg"
-                dark
-                to="/trasferimentoEffettuato"
-              >
-                Procedi
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-card-actions>
+          Acquista
+        </v-btn>
+      </v-row>
     </v-card>
+    <dialog-acquista
+      ref="dialogAcquista">
+    </dialog-acquista>
   </v-container>
 </template>
 
 <script>
+
+import DialogAcquista from "@/components/DialogAcquista";
+
 export default {
+  components: {DialogAcquista},
   props: {
     category: {
       type: Object
@@ -86,13 +69,12 @@ export default {
       notifications: false,
       sound: true,
       widgets: false,
-
+      dialog3: false,
     }
   },
   computed: {
     giftCards() {
-      console.log(this.$store.getters["giftCards/getCardById"](parseInt(this.$route.params.id)))
-      return this.$store.getters["giftCards/getCardById"](parseInt(this.$route.params.id))
+      return this.$store.getters["giftCards/getCardsById"](parseInt(this.$route.params.id))
     },
     categories() {
       return this.$store.getters["giftCards/getCategory"]
@@ -106,19 +88,19 @@ export default {
         }
       }
     },
-    /*addOrder: function () {
-      this.$store.commit('orders/addOrder', {...this.order})
-      this.order = {
-        src: "",
-        brand: "",
-        description: "",
-        value: ""
+    getImageFromCategory(categoryId)  {
+      const cat = this.$store.getters['giftCards/getCategoryById'](categoryId)[0]
+      console.log(cat)
+      return cat
+    },
+    getColor(value) {
+      if (value < 0) {
+        return "color: #f76c6c"
+      } else if (value > 0) {
+        return "color: #2573d5"
       }
-    }*/
-  },
-  /*mounted() {
-    console.log(this.$route.params.id)
-  }*/
+    },
 
+  },
 }
 </script>

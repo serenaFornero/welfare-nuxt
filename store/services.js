@@ -5,7 +5,7 @@ export const state = () => ({
       name: "Market Pinerolo",
       address: "Via Buniva 5, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "shop1.jpg",
+      src: "/shop1.jpg",
       rating: 5,
       categoryId: 0
     },
@@ -14,7 +14,7 @@ export const state = () => ({
       name: "Claudio Market",
       address: "Via Pasubio 15, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "shop2.jpg",
+      src: "/shop2.jpg",
       rating: 4,
       categoryId: 0
     },
@@ -23,7 +23,7 @@ export const state = () => ({
       name: "Natura Sì",
       address: "Via Trento 2, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "shop3.jpg",
+      src: "/shop3.jpg",
       rating: 2,
       categoryId: 0
     },
@@ -32,7 +32,7 @@ export const state = () => ({
       name: "Mini Market",
       address: "Corso Torino 300, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "shop4.jpg",
+      src: "/shop4.jpg",
       rating: 3,
       categoryId: 0
     },
@@ -41,7 +41,7 @@ export const state = () => ({
       name: "Alimentari Pinerolo",
       address: "Via Trieste 9, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "shop5.jpg",
+      src: "/shop5.jpg",
       rating: 5,
       categoryId: 0
     },
@@ -50,7 +50,7 @@ export const state = () => ({
       name: "Larc Pinerolo",
       address: "Via Riccardo Gatto 28, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "larc.png",
+      src: "/larc.png",
       rating: "5",
       categoryId: 1
     },
@@ -59,7 +59,7 @@ export const state = () => ({
       name: "Studio Medico San Francesco",
       address: "Via Bogliette 3/C, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "sanFrancesco.jpg",
+      src: "/sanFrancesco.jpg",
       rating: "5",
       categoryId: 1
     },
@@ -68,7 +68,7 @@ export const state = () => ({
       name: "Trattoria Rosa Bianca",
       address: "Via Stefano Fer 42, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "rosaBianca.jpg",
+      src: "/rosaBianca.jpg",
       rating: "3",
       categoryId: 2
     },
@@ -77,7 +77,7 @@ export const state = () => ({
       name: "Tokio",
       address: "Piazza Cavour 6, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "tokio.jpg",
+      src: "/tokio.jpg",
       rating: "5",
       categoryId: 2
     },
@@ -86,7 +86,7 @@ export const state = () => ({
       name: "Gigi Pizzeria",
       address: "Via Vigone 12, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "gigi.jpg",
+      src: "/gigi.jpg",
       rating: "5",
       categoryId: 2
     },
@@ -96,7 +96,7 @@ export const state = () => ({
       name: "Trattoria Primavera",
       address: "Via Savoia 5, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "trattoriaPrimavera.jpg",
+      src: "/trattoriaPrimavera.jpg",
       rating: "4",
       categoryId: 2
     },
@@ -105,7 +105,7 @@ export const state = () => ({
       name: "CFIQ",
       address: "Via Trieste, 15",
       description: "Lorem ipsum dolor sit amet",
-      src: "cfiq.png",
+      src: "/cfiq.png",
       rating: "3",
       categoryId: 3
     },
@@ -114,7 +114,7 @@ export const state = () => ({
       name: "Atlas English school",
       address: "Via Montebello 17, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "atlas.png",
+      src: "/atlas.png",
       rating: "5",
       categoryId: 3
     },
@@ -123,7 +123,7 @@ export const state = () => ({
       name: "Langage Life",
       address: "Piazza Barbieri, 15",
       description: "Lorem ipsum dolor sit amet",
-      src: "languageLife.jpeg",
+      src: "/languageLife.jpeg",
       rating: "5",
       categoryId: 3
     },
@@ -132,7 +132,7 @@ export const state = () => ({
       name: "Beatrice viaggi",
       address: "Piazza Roma 18, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "beatriceViaggi.jpg",
+      src: "/beatriceViaggi.jpg",
       rating: "3",
       categoryId: 4
     },
@@ -141,7 +141,7 @@ export const state = () => ({
       name: "Planet 3000",
       address: "Piazza Barbieri 32, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "planet3000.jpg",
+      src: "/planet3000.jpg",
       rating: "4",
       categoryId: 4
     },
@@ -150,7 +150,7 @@ export const state = () => ({
       name: "Teatro Sociale",
       address: "Piazza Vittorio Veneto 24, Pinerolo ",
       description: "Lorem ipsum dolor sit amet",
-      src: "teatroSociale.jpg",
+      src: "/teatroSociale.jpg",
       rating: "4",
       categoryId: 5
     },
@@ -159,7 +159,7 @@ export const state = () => ({
       name: "Teatro Incontro",
       address: "Via Caprilli 31, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "teatroIncontro.png",
+      src: "/teatroIncontro.png",
       rating: "2",
       categoryId: 5
     },
@@ -168,7 +168,7 @@ export const state = () => ({
       name: "Cinema Ritz",
       address: "Via L. Luigi 11, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "cinemaRitz.jpg",
+      src: "/cinemaRitz.jpg",
       rating: "5",
       categoryId: 5
     },
@@ -177,7 +177,7 @@ export const state = () => ({
       name: "Museo del Mutuo Soccorso",
       address: "Via S. Pellico, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "museoMutuoSoccorso.jpeg",
+      src: "/museoMutuoSoccorso.jpeg",
       rating: "4",
       categoryId: 5
     },
@@ -186,7 +186,7 @@ export const state = () => ({
       name: "Villa Glicini",
       address: "Via Val Pellice 68, San Secondo",
       description: "Lorem ipsum dolor sit amet",
-      src: "villaGlicini.jpeg",
+      src: "/villaGlicini.jpeg",
       rating: "3",
       categoryId: 6
     },
@@ -195,7 +195,7 @@ export const state = () => ({
       name: "Mamiani",
       address: "Viale Mamiani 9, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "mamiani.jpeg",
+      src: "/mamiani.jpeg",
       rating: "4",
       categoryId: 6
     },
@@ -204,7 +204,7 @@ export const state = () => ({
       name: "Base",
       address: "Via Vastamiglio 5, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "base.png",
+      src: "/base.png",
       rating: "3",
       categoryId: 6
     },
@@ -213,7 +213,7 @@ export const state = () => ({
       name: "Centro Estetico Sanybei",
       address: "Via Saluzzo 90, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "centroEstetico.jpg",
+      src: "/centroEstetico.jpg",
       rating: "3",
       categoryId: 6
     },
@@ -222,7 +222,7 @@ export const state = () => ({
       name: "Namastè",
       address: "Via Del Pino 35, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "namaste.jpg",
+      src: "/namaste.jpg",
       rating: "5",
       categoryId: 7
     },
@@ -231,7 +231,7 @@ export const state = () => ({
       name: "OnBoard",
       address: "Via Duca degli Abruzzi 2, Pinerolo",
       description: "Lorem ipsum dolor sit amet",
-      src: "onBoard.png",
+      src: "/onBoard.png",
       rating: "4",
       categoryId: 7
     },
