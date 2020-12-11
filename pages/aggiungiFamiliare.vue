@@ -30,7 +30,7 @@
         dei genitori, fratelli o sorelle, dei suoceri, generi e nuore.
       </v-alert>
       <v-card-text>
-        <v-form @submit.stop.prevent="addRelative" v-model="valid" ref="form">
+        <v-form @submit.stop.prevent="addRelative" ref="form">
           <v-row>
             <v-col
               cols="12"
@@ -93,7 +93,6 @@
                   v-bind="attrs"
                   v-on="on"
                   :disabled="!valid"
-                  @click="submit"
 
                 >
                   Aggiungi
@@ -151,6 +150,7 @@ export default {
       this.relation=''
       this.$refs.form.reset()
     }*/
+
   }
 }
 </script>

@@ -22,7 +22,14 @@ export const state = () => ({
 export const getters = {
   getRelative(state) {
     return state.relatives
+  },
+  getRelNames(state){
+    return state.relatives.map(el => el.name)
+  },
+  getRelSurnames(state){
+    return state.relatives.map(el => el.surname)
   }
+
 }
 
 export const mutations = {
@@ -35,4 +42,6 @@ export const mutations = {
     });
     console.log("mutations: relative aggiunto");
   },
+
+
 }

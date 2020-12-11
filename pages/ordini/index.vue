@@ -31,9 +31,9 @@
 
 
 <script>
-import CardCredito from "@/components/cardCredito";
-import listaOrdini from "@/components/listaOrdini";
-import Avatar from "@/components/avatar";
+import CardCredito from "@/components/CardCredito";
+import listaOrdini from "@/components/ListaOrdini";
+import Avatar from "@/components/Avatar";
 
 export default {
   layout: 'default',

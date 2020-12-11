@@ -1,7 +1,7 @@
 <template>
   <form>
   <v-text-field
-    :type="showPassword ? 'text' : 'password'"
+    :type="showPassword ? 'text' : 'Password.vue'"
     :label="label"
     v-model="password"
     :rules="rules"

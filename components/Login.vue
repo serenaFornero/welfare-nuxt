@@ -11,16 +11,22 @@
             </v-card-title>
       </v-row>
       <v-card-text>
-        <v-form>
+        <v-form class="login" ref="form"  v-model="valid">
           <v-text-field
             v-model="email"
-            :rules="[rules.emailRules, rules.required, rules.emailMatch]"
+            :rules="[rules.emailRules, rules.required]"
             label="E-mail"
             prepend-icon="mdi-account-circle"
           />
+          <!--
+           :rules="[rules.emailRules, rules.required, rules.emailMatch]"
+          :rules="[rules.required, rules.emailMatch]"
+          -->
           <v-text-field
-            :type="showPassword ? 'text' : 'password'"
-            :rules="[rules.required, rules.emailMatch]"
+            v-model="password"
+            :type="showPassword ? 'text' : 'Password.vue'"
+            :rules="[rules.required]"
+
             label="Password"
             prepend-icon="mdi-lock"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -48,11 +54,10 @@
       <v-card-actions class="justify-center">
           <v-btn
             color="#2573d5"
-            class="my-5 text-capitalize rounded-lg"
+            class="my-5 text-capitalize rounded-lg white--text"
             large
-            dark
             to="/credito"
-
+            :disabled="!valid"
           >
             Login
           </v-btn>
@@ -64,16 +69,21 @@
 
 <script>
 
+import Password from "@/components/Password";
 export default {
+  components: {Password},
   data: () => ({
+    valid: true,
     showPassword: false,
     checkbox: true,
     email: '',
+    password: '',
     rules: {
-      required: value => !!value || 'Required.',
-      emailMatch: () => (`The email and password you entered don't match`),
-      emailRules: v => /.+@.+/.test(v) || 'E-mail must be valid',
+      required: value => !!value || 'Il campo è obbligatorio',
+      emailMatch: () => (`L'email e la password non corrispondono`),
+      emailRules: v => /.+@.+/.test(v) || 'Email non valida' ,
     },
   }),
+  methods:{}
 }
 </script>

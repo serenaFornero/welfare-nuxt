@@ -51,8 +51,8 @@
 
 
 <script>
-import CardCredito from "@/components/cardCredito";
-import Avatar from "@/components/avatar";
+import CardCredito from "@/components/CardCredito";
+import Avatar from "@/components/Avatar";
 export default {
   layout: 'default',
   components: {

@@ -36,7 +36,7 @@
 
 
 <script>
-import SearchField from "@/components/searchField";
+import SearchField from "@/components/SearchField";
 
 
 export default {

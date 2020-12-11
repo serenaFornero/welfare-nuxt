@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
     <v-card
-      class="d-flex justify-center rounded-lg"
+      class="d-flex justify-center"
       color="transparent"
       flat
     >
       <v-card
-        class="text-center mb-16"
+        class="text-center mb-16 rounded-lg"
         width="400"
         elevation="5"
       >
@@ -25,6 +25,7 @@
           ></v-img>
           <v-form
             ref="form"
+            v-model="valid"
           >
             <v-text-field
               v-model="email"
@@ -38,10 +39,9 @@
           <v-btn
             color="#2573d5"
             large
-            dark
-            class="mb-5 text-capitalize rounded-lg"
+            class="mb-5 text-capitalize rounded-lg white--text"
             to="/resetPassword"
-
+            :disabled="!valid"
           >
             Invia
           </v-btn>
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import Password from "@/components/password";
+import Password from "@/components/Password";
 export default {
   components: {Password},
   layout: 'notAutenticated',
@@ -64,17 +64,14 @@ export default {
   },
 
   data: () => ({
+    valid: true,
     email: '',
     rules: {
-      required: value => !!value || 'Required.',
-      emailRules: v => /.+@.+/.test(v) || 'E-mail must be valid',
+      required: value => !!value || 'Il campo è obbligatorio',
+      emailRules: v => /.+@.+/.test(v) || 'Email non valida',
     },
   }),
-  methods: {
-    reset () {
-      this.$refs.form.reset()
-    },
-  }
+  methods: {}
 }
 </script>
 

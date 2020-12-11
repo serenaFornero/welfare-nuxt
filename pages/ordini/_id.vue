@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import dialogAttiva from "@/components/dialogAttiva";
+import dialogAttiva from "@/components/DialogAttiva";
 
 export default {
   components: {

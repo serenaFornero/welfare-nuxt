@@ -40,12 +40,17 @@ export const state = () => ({
       date: "6-10-2020",
       userId: 0
     }
-  ]
+  ],
+
+
 })
 
 export const getters = {
   getTransactions(state){
     return state.transactions
+  },
+  getRefund(state){
+    return state.transactions.filter(el => el.value > 0)
   }
 }
 

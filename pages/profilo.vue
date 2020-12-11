@@ -176,9 +176,9 @@
 
 <script>
 
-import Password from "@/components/password";
+import Password from "@/components/Password";
 import RelativesAutocomplete from "~/components/RelativesAutocomplete";
-import avatar from "@/components/avatar";
+import avatar from "@/components/Avatar";
 
 export default {
   layout: 'default',

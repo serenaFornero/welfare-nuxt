@@ -59,9 +59,9 @@
 
 <script>
 
-import SearchField from "@/components/searchField";
-import ListaServizi from "@/components/listaServizi";
-import ListaGiftCards from "@/components/listaGiftCards";
+import SearchField from "@/components/SearchField";
+import ListaServizi from "@/components/ListaServizi";
+import ListaGiftCards from "@/components/ListaGiftCards";
 
 export default {
   layout: 'default',

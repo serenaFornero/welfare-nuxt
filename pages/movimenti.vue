@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import CardCredito from "@/components/cardCredito";
-import Avatar from "@/components/avatar";
-import SearchField from "@/components/searchField";
+import CardCredito from "@/components/CardCredito";
+import Avatar from "@/components/Avatar";
+import SearchField from "@/components/SearchField";
 
 export default {
   layout: 'default',

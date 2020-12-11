@@ -246,6 +246,7 @@ export const getters = {
   getServiceById: (state) => (id) => {
     return state.services.filter(el => el.categoryId === id);
   },
+
 }
 
 

@@ -12,7 +12,7 @@
 </template>
 <script>
 
-import categorie from "@/components/categorie";
+import categorie from "@/components/Categorie";
 
 export default {
   components: {

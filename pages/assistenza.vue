@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import dialogAssistenza from "@/components/dialogAssistenza";
+import dialogAssistenza from "@/components/DialogAssistenza";
 
 export default {
   components: {

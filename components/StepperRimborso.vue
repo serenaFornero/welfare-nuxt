@@ -1,0 +1,295 @@
+<template>
+  <v-stepper v-model="e6">
+    <v-stepper-header>
+      <v-stepper-step
+        :complete="e6 > 1"
+        color="#2573d5"
+        step="1"
+      >
+        Dettagli spesa
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
+      <v-stepper-step
+        :complete="e6 > 2"
+        color="#2573d5"
+        step="2"
+
+      >
+        Caricamento documenti
+      </v-stepper-step>
+
+      <v-divider></v-divider>
+
+      <v-stepper-step
+        step="3"
+        color="#2573d5"
+      >
+        Conferma e invia
+      </v-stepper-step>
+    </v-stepper-header>
+
+    <v-stepper-items>
+      <v-stepper-content step="1">
+        <v-alert border="top"
+                 colored-border
+                 type="info"
+                 elevation="2"
+                 class="mx-3 subtitle-2 grey--text text--darken-1"
+                 max-width="500"
+
+        >
+          1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale
+          della spesa sostenuta).
+          <br> 2. Seleziona l'effettivo beneficiario. Se non è presente nell'elenco, vai in <strong>
+          Profilo </strong> > <strong>I miei familiari</strong> > <strong>Aggiungi nuovo familiare</strong>.
+
+        </v-alert>
+
+        <v-card
+          flat
+        >
+          <v-form
+            v-model="valid"
+            ref="form"
+          >
+            <v-row>
+              <v-col
+                cols="12"
+                sm="6"
+                md="3"
+              >
+                <v-text-field
+                  :rules="rules"
+                  v-model="select"
+                  max-width="50"
+                  label="Inserisci importo da rimborsare"
+                  placeholder="0,00"
+                  type="number"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="3"
+              >
+                <v-select
+                    :rules="rules"
+                    v-model="select1"
+                    max-width="50"
+                    :items="getCategory"
+                    placeholder=""
+                    label="Scegli la categoria di spesa"
+
+                  ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="3"
+              >
+                <v-select
+                  :rules="rules"
+                  v-model="select2"
+                  label="Scegli il tipo di spesa"
+                  max-width="50"
+                  :items="getType"
+
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="3"
+              >
+                <v-select
+                  :rules="rules"
+                  v-model="select3"
+                  label="Scegli l'effettivo beneficiario"
+                  max-width="50"
+                  :items="beneficiario"
+
+                ></v-select>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-card>
+        <div class="d-flex justify-center my-3">
+          <v-btn
+            @click="e6 = 2"
+            color="#2573d5"
+            class="text-capitalize rounded-lg white--text"
+            :disabled="!valid"
+          >
+            Avanti
+          </v-btn>
+        </div>
+      </v-stepper-content>
+
+      <v-stepper-content step="2">
+        <v-alert border="top"
+                 colored-border
+                 type="info"
+                 elevation="2"
+                 class="mx-3 subtitle-2 grey--text text--darken-1"
+                 max-width="500"
+
+        >
+          1. Seleziona il file da allegare (sono consenti file pdf, jpg, png, bmp). <br>
+          2. Clicca su Upload per caricare il file.<br>
+          3. Ripeti l'operazione per ogni file da allegare
+        </v-alert>
+        <v-card-subtitle>
+
+        </v-card-subtitle>
+        <v-card
+          flat
+        >
+          <v-form v-model="valid">
+            <v-card-text>
+              <v-file-input
+                :rules="rules"
+                v-model="select4"
+                accept="image/*"
+                label="Scegli i file da allegare"
+                placeholder=""
+                max-width="50"
+              ></v-file-input>
+            </v-card-text>
+          </v-form>
+        </v-card>
+        <div class="d-flex justify-center my-3">
+          <v-btn
+            @click="e6 = 3"
+            color="#2573d5"
+            class="text-capitalize rounded-lg white--text"
+            :disabled="!valid"
+          >
+            Avanti
+          </v-btn>
+        </div>
+      </v-stepper-content>
+
+      <v-stepper-content step="3">
+        <v-alert border="top"
+                 colored-border
+                 type="info"
+                 elevation="2"
+                 class="mx-3 subtitle-2 grey--text text--darken-1"
+                 max-width="500"
+
+        >
+          1. Controlla che tutti i dati siano corretti. <br>
+          2. Clicca su Invia richiesta per completare la richiesta di rimborso.
+        </v-alert>
+        <v-row>
+          <v-col cols="12"
+                 sm="6"
+                 md="3">
+            <v-text-field
+              v-model="select"
+              label="Importo da rimborsare"
+              max-width="50"
+              readonly
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12"
+                 sm="6"
+                 md="3">
+            <v-text-field
+              v-model="select1"
+              label="Categoria di spesa"
+              max-width="50"
+              readonly
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12"
+                 sm="6"
+                 md="3">
+            <v-text-field
+              v-model="select2"
+              label="Tipo di spesa"
+              max-width="50"
+              readonly
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12"
+                 sm="6"
+                 md="3">
+            <v-text-field
+              v-model="select3"
+              label="Effettivo beneficiario"
+              max-width="50"
+              readonly
+            ></v-text-field>
+
+          </v-col>
+          <v-col cols="12"
+                 sm="6"
+                 md="3">
+            <v-text-field
+              v-model="select4"
+              label="File allegato"
+              max-width="50"
+              readonly
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row justify="center" class="my-3">
+          <v-btn
+            color="#2573d5"
+            class="text-capitalize rounded-lg white--text"
+
+            to="/richiestaInviata"
+          >
+            Invia richiesta
+          </v-btn>
+        </v-row>
+      </v-stepper-content>
+    </v-stepper-items>
+  </v-stepper>
+</template>
+
+<script>
+export default {
+  name: "stepperRimborso",
+  layouts: 'default',
+  data() {
+    return {
+      valid: true,
+      select: "",
+      select1: "",
+      select2: "",
+      select3: "",
+      select4: null,
+      e6: 1,
+      beneficiario: ["Carlo Rossi", "Valeria Bianchi", "Ginevra Rossi"],
+      rules: [
+        v => !!v || 'Il campo è cobbligatorio',
+      ],
+    }
+  },
+
+  computed:{
+    getCategory(){
+      console.log(this.$store.getters["refund/getCategory"])
+      return this.$store.getters["refund/getCategory"]
+    },
+    getType(){
+      return this.$store.getters["refund/getType"]
+    },
+    getNames(){
+      return this.$store.getters["relatives/getRelNames"]
+    },
+    getSurnames(){
+      return this.$store.getters["relatives/getRelSurnames"]
+    },
+
+  },
+  methods: {},
+}
+
+</script>
+
+
