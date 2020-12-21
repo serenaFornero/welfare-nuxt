@@ -17,15 +17,28 @@
         </v-card-title>
         <v-card-text>
           <v-alert
-            border="top"
+            dismissible
+            close-text="Close Alert"
+            v-model="alert"
+            border="left"
             colored-border
-            type="info"
+            color="info"
             elevation="2"
-            class="mx-3 subtitle-2 grey--text text--darken-1"
+            class="mx-3 subtitle-2 grey--text text--darken-1 mb-12"
             max-width="500"
           >
             Le richieste di rimborso verranno processate in 7 giorni lavorativi.
           </v-alert>
+          <div class="text-right mt-n13 mx-2">
+            <v-btn
+              color="info"
+              icon
+              v-if="!alert"
+              @click="alert = true"
+            >
+              <v-icon>mdi-information</v-icon>
+            </v-btn>
+          </div>
           <rimborsi></rimborsi>
         </v-card-text>
       </v-card>
@@ -52,7 +65,9 @@ export default {
     Rimborsi
 
   },
-  data: () => ({}),
+  data: () => ({
+    alert: false,
+  }),
   computed: {},
   methods: {},
 }

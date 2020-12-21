@@ -13,16 +13,30 @@
         <v-card-title style="color: #29304d">
           I miei ordini
         </v-card-title>
-        <v-alert border="top"
+        <v-alert
+          dismissible
+          close-text="Close Alert"
+          v-model="alert"
+          border="left"
+          color="info"
                  colored-border
-                 type="info"
                  elevation="2"
-                 class="mx-3 subtitle-2 grey--text text--darken-1"
+                 class="mx-3 subtitle-2 grey--text text--darken-1 mb-16"
                  max-width="500"
 
         >
           I voucher sono solitamente disponibili entro 48 ore lavorative dall'ordine.
         </v-alert>
+        <div class="text-right mt-n13 mx-2">
+          <v-btn
+            color="info"
+            icon
+            v-if="!alert"
+            @click="alert = true"
+          >
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+        </div>
         <v-card-text class="mt-n5">
       <lista-ordini v-for="item in orderList" :key="item.id" :orderList="item"></lista-ordini>
         </v-card-text>
@@ -43,7 +57,9 @@ export default {
     CardCredito,
     listaOrdini
   },
-  data: () => ({}),
+  data: () => ({
+    alert:false,
+  }),
   methods: {},
   computed: {
     orderList(){

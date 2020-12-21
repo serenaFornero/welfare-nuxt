@@ -32,12 +32,16 @@
 
     <v-stepper-items>
       <v-stepper-content step="1">
-        <v-alert border="top"
-                 colored-border
-                 type="info"
-                 elevation="2"
-                 class="mx-3 subtitle-2 grey--text text--darken-1"
-                 max-width="500"
+        <v-alert
+          dismissible
+          close-text="Close Alert"
+          v-model="alert"
+          border="left"
+          colored-border
+          color="info"
+          elevation="2"
+          class="mx-3 subtitle-2 grey--text text--darken-1"
+          max-width="500"
 
         >
           1. Inserisci l'importo di cui desideri richiedere il rimborso (è possibile richiedere un rimborso parziale
@@ -46,7 +50,16 @@
           Profilo </strong> > <strong>I miei familiari</strong> > <strong>Aggiungi nuovo familiare</strong>.
 
         </v-alert>
-
+        <div class="text-right">
+          <v-btn
+            color="info"
+            icon
+            v-if="!alert"
+            @click="alert = true"
+          >
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+        </div>
         <v-card
           flat
         >
@@ -75,14 +88,14 @@
                 md="3"
               >
                 <v-select
-                    :rules="rules"
-                    v-model="select1"
-                    max-width="50"
-                    :items="getCategory"
-                    placeholder=""
-                    label="Scegli la categoria di spesa"
+                  :rules="rules"
+                  v-model="select1"
+                  max-width="50"
+                  :items="getCategory"
+                  placeholder=""
+                  label="Scegli la categoria di spesa"
 
-                  ></v-select>
+                ></v-select>
               </v-col>
               <v-col
                 cols="12"
@@ -128,18 +141,32 @@
       </v-stepper-content>
 
       <v-stepper-content step="2">
-        <v-alert border="top"
-                 colored-border
-                 type="info"
-                 elevation="2"
-                 class="mx-3 subtitle-2 grey--text text--darken-1"
-                 max-width="500"
+        <v-alert
+          dismissible
+          close-text="Close Alert"
+          v-model="alert"
+          border="left"
+          color="info"
+          colored-border
+          elevation="2"
+          class="mx-3 subtitle-2 grey--text text--darken-1"
+          max-width="500"
 
         >
           1. Seleziona il file da allegare (sono consenti file pdf, jpg, png, bmp). <br>
           2. Clicca su Upload per caricare il file.<br>
           3. Ripeti l'operazione per ogni file da allegare
         </v-alert>
+        <div class="text-right">
+          <v-btn
+            color="info"
+            icon
+            v-if="!alert"
+            @click="alert = true"
+          >
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+        </div>
         <v-card-subtitle>
 
         </v-card-subtitle>
@@ -172,17 +199,32 @@
       </v-stepper-content>
 
       <v-stepper-content step="3">
-        <v-alert border="top"
-                 colored-border
-                 type="info"
-                 elevation="2"
-                 class="mx-3 subtitle-2 grey--text text--darken-1"
-                 max-width="500"
+        <v-alert
+          dismissible
+          close-text="Close Alert"
+          v-model="alert"
+          border="left"
+          color="info"
+          colored-border
+          elevation="2"
+          class="mx-3 subtitle-2 grey--text text--darken-1"
+          max-width="500"
 
         >
           1. Controlla che tutti i dati siano corretti. <br>
           2. Clicca su Invia richiesta per completare la richiesta di rimborso.
         </v-alert>
+        <div class="text-right">
+          <v-btn
+            color="info"
+            icon
+            v-if="!alert"
+            @click="alert = true"
+          >
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+        </div>
+
         <v-row>
           <v-col cols="12"
                  sm="6"
@@ -257,6 +299,7 @@ export default {
   layouts: 'default',
   data() {
     return {
+      alert: false,
       valid: true,
       select: "",
       select1: "",
@@ -271,18 +314,18 @@ export default {
     }
   },
 
-  computed:{
-    getCategory(){
+  computed: {
+    getCategory() {
       console.log(this.$store.getters["refund/getCategory"])
       return this.$store.getters["refund/getCategory"]
     },
-    getType(){
+    getType() {
       return this.$store.getters["refund/getType"]
     },
-    getNames(){
+    getNames() {
       return this.$store.getters["relatives/getRelNames"]
     },
-    getSurnames(){
+    getSurnames() {
       return this.$store.getters["relatives/getRelSurnames"]
     },
 

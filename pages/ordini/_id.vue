@@ -14,9 +14,13 @@
             two-line
             subheader
           >
-            <v-alert border="top"
+            <v-alert
+              dismissible
+              close-text="Close Alert"
+              v-model="alert"
+              border="left"
+              color="info"
                      colored-border
-                     type="info"
                      elevation="2"
                      class="mx-3 mt-5 subtitle-2 grey--text text--darken-1"
                      max-width="500"
@@ -25,6 +29,16 @@
               I voucher potranno essere attivati cliccando sul pulsante "attiva". I voucher, dopo essere stati attivati,
               dovranno essere utilizzati entro 30 minuti.
             </v-alert>
+            <div class="text-right mx-2">
+              <v-btn
+                color="info"
+                icon
+                v-if="!alert"
+                @click="alert = true"
+              >
+                <v-icon>mdi-information</v-icon>
+              </v-btn>
+            </div>
             <v-list-item >
               <v-list-item-content>
                 <v-img :src="item.src" class="my-5 rounded-lg" contain height="80" width="80" ></v-img>
@@ -51,7 +65,9 @@ export default {
 
   },
   data() {
-    return {}
+    return {
+      alert: false
+    }
   },
 
   computed: {
