@@ -8,7 +8,7 @@
           <v-list-item-subtitle>{{ transaction.date }}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <p class="mt-3 font-weight-bold" :style="getColor(transaction.value)"> {{transaction.value}}</p>
+      <p class="mt-3 font-weight-bold" :style="getColor(transaction.value)"> {{transaction.value}}€</p>
     </v-list-item>
   </v-list>
 </template>

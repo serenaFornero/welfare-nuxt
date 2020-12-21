@@ -42,6 +42,15 @@ export const mutations = {
     });
     console.log("mutations: relative aggiunto");
   },
+  removeRel(state, relative){
+    state.relatives.splice({
+      name: relative.name,
+      surname: relative.surname,
+      birthDate: relative.birthDate,
+      relation: relative.relation,
+    })
+    console.log("mutations: relative eliminato");
+  }
 
 
 }

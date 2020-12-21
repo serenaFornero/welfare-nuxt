@@ -1,57 +1,34 @@
 <template>
-  <v-container fluid>
-      <v-card
-        class="text-center mb-16 rounded-lg"
-        width="400"
-        elevation="5"
-      >
-        <v-row justify="center">
-          <v-card-title class="mb-2 mt-3"  style="color: #29304d">Recupera Password</v-card-title>
-          <v-card-subtitle>Inserisci l'indirizzo e-mail associato <br> al tuo account</v-card-subtitle>
-        </v-row>
-
-        <v-card-text>
+  <v-app>
+    <v-container class="mx-auto">
+      <v-row class="my-10" align="center" justify="center">
+        <v-col class="d-flex flex-row mt-n10">
           <v-img
             contain
+            class="d-none d-md-block "
             fluid
-            height="200"
-            src="/forgot-password.png"
-            class="d-none d-sm-flex"
-          ></v-img>
-          <v-form
-            ref="form"
-            v-model="valid"
-          >
-            <v-text-field
-              v-model="email"
-              :rules="[rules.emailRules, rules.required]"
-              label="E-mail"
-              prepend-icon="mdi-account-circle"
-            />
-          </v-form>
-        </v-card-text>
-        <v-card-actions class="justify-center">
-          <v-btn
-            color="#2573d5"
-            large
-            class="mb-5 text-capitalize rounded-lg white--text"
-            to="/resetPassword"
-            :disabled="!valid"
-          >
-            Invia
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-  </v-container>
+            max-width="40%"
+            src="/directions.png">
+          </v-img>
+          <recupera-password-form></recupera-password-form>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
 import Password from "@/components/Password";
+import RecuperaPasswordForm from "@/components/RecuperaPasswordForm";
+
 export default {
-  components: {Password},
+  components: {
+    Password,
+    RecuperaPasswordForm
+  },
   layout: 'notAutenticated',
 
-  watch:{
+  watch: {
     password(val) {
       console.log(val)
     }

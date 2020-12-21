@@ -27,6 +27,7 @@
                         {{ item.relation }} - {{ item.birthDate }}
                     </v-list-item-subtitle>
                 </v-list-item-content>
+              <v-icon @click="removeRel">mdi-close</v-icon>
             </v-list-item>
         </template>
     </v-autocomplete>
@@ -77,7 +78,20 @@ export default {
   computed: {
     relatives(){
       return this.$store.getters["relatives/getRelative"]
-    }
+    },
+  },
+  methods: {
+    removeRel: function () {
+      this.$store.commit('relatives/removeRel', {...this.relative})
+    },
+    /*clear(){
+      this.name= ''
+      this.surname=''
+      this.birthDate=''
+      this.relation=''
+      this.$refs.form.reset()
+    }*/
+
   }
 }
 </script>

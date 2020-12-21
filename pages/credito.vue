@@ -26,15 +26,19 @@
 <script>
 import CardCredito from "@/components/CardCredito";
 import Avatar from "@/components/Avatar";
+import Alert from "@/components/Alert"
 
 export default {
   layout: 'default',
   components: {
     Avatar,
     CardCredito,
+    Alert
   },
+
   data() {
-    return {}
+    return {
+    }
   },
   computed: {
     credit() {

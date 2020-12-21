@@ -6,12 +6,12 @@
       elevation="5"
     >
       <v-row justify="center">
-            <v-card-title class=" mt-3" style="color: #29304d" >
-              Accedi alla tua area personale
-            </v-card-title>
+        <v-card-title class=" mt-3" style="color: #29304d">
+          Accedi alla tua area personale
+        </v-card-title>
       </v-row>
       <v-card-text>
-        <v-form class="login" ref="form"  v-model="valid">
+        <v-form class="login" ref="form" v-model="valid">
           <v-text-field
             v-model="email"
             :rules="[rules.emailRules, rules.required]"
@@ -34,33 +34,33 @@
           />
         </v-form>
         <v-row justify="center">
-            <v-checkbox class="mt-1 ml-3 font-weight-light "
-                        v-model="checkbox"
-                        label="Ricordami"
-                        color="#2573d5"
+          <v-checkbox class="mt-1 ml-3 font-weight-light "
+                      v-model="checkbox"
+                      label="Ricordami"
+                      color="#2573d5"
 
-            ></v-checkbox>
-            <v-spacer></v-spacer>
-            <nuxt-link
-              to="/recuperaPassword"
-              style="color: #757575"
-              class="font-weight-light mt-2 mr-2 text-decoration-none"
-            >
-              Password dimenticata?
-            </nuxt-link>
+          ></v-checkbox>
+          <v-spacer></v-spacer>
+          <nuxt-link
+            to="/recuperaPassword"
+            style="color: #757575"
+            class="font-weight-light mt-2 mr-2 text-decoration-none"
+          >
+            Password dimenticata?
+          </nuxt-link>
         </v-row>
       </v-card-text>
       <v-divider></v-divider>
       <v-card-actions class="justify-center">
-          <v-btn
-            color="#2573d5"
-            class="my-5 text-capitalize rounded-lg white--text"
-            large
-            to="/credito"
-            :disabled="!valid"
-          >
-            Login
-          </v-btn>
+        <v-btn
+          color="#2573d5"
+          class="my-5 text-capitalize rounded-lg white--text"
+          large
+          to="/credito"
+          :disabled="!valid"
+        >
+          Login
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -70,6 +70,7 @@
 <script>
 
 import Password from "@/components/Password";
+
 export default {
   components: {Password},
   data: () => ({
@@ -81,9 +82,9 @@ export default {
     rules: {
       required: value => !!value || 'Il campo è obbligatorio',
       emailMatch: () => (`L'email e la password non corrispondono`),
-      emailRules: v => /.+@.+/.test(v) || 'Email non valida' ,
+      emailRules: v => /.+@.+/.test(v) || 'Email non valida',
     },
   }),
-  methods:{}
+  methods: {}
 }
 </script>

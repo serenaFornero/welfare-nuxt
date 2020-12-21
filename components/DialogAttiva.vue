@@ -5,12 +5,12 @@
     >
       <v-btn
         color="#2573d5"
-        class="text-capitalize rounded-lg"
-        dark
+        class="text-capitalize rounded-lg white--text"
         @click="dialog3 = true"
       >
         Attiva
       </v-btn>
+
       <v-dialog
         v-model="dialog3"
         max-width="500px"
@@ -38,18 +38,16 @@ export default {
   props:{
     orders:{
       type: Object
-    }
-  },
+    },},
 
   data () {
     return {
-      timerCount: 30.00,
+      timerCount: 30,
       dialog3: false,
       absolute: true,
       overlay: false,
     }
   },
-  methods: {},
   watch: {
     timerCount: {
       handler(value) {
@@ -57,7 +55,7 @@ export default {
         if (value > 0) {
           setTimeout(() => {
             this.timerCount--;
-          }, 1000);
+          }, 1000 );
         }
 
       },

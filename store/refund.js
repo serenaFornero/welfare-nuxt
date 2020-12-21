@@ -1,5 +1,3 @@
-import categorie from "@/components/Categorie";
-
 export const state = () => ({
   refundRequest: [
     {
@@ -15,14 +13,44 @@ export const state = () => ({
     {
       id: 0,
       category: "Spese per servizi di educazione e istruzione",
+      type: [
+        {
+          id: 0.1,
+          name: "rette scolastiche",
+        },
+        {
+          id: 0.2,
+          name: "Corsi",
+        },
+        {
+          id: 0.3,
+          name: "Libri scolastici",
+        },
+      ]
     },
     {
       id: 1,
       category: "Spese per servizi di assistenza ai familiari",
+      type: [
+        {
+          id: 1.1,
+          name: "Spese mediche",
+        },
+        {
+          id: 1.2,
+          name: "Spese badante",
+        },
+      ]
     },
     {
       id: 2,
       category: "Abbonamenti a trasporto pubblico",
+      type: [
+        {
+          id: 2.1,
+          name: "Abbonamento mensile trasporti",
+        },
+      ]
     },
   ],
   type: [

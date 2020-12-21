@@ -154,15 +154,18 @@
             sm="6"
             md="3">
             <v-text-field
+              readonly
               v-model="birthDate"
               label="Data di nascita"
             ></v-text-field>
           </v-col>
           <v-col
+
             cols="12"
             sm="6"
             md="3">
             <v-text-field
+              readonly
               v-model="relation"
               label="Legame di parentela"
             ></v-text-field>

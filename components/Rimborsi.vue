@@ -9,7 +9,7 @@
           <v-list-item-action-text class="mt-2"> {{ item.date }}</v-list-item-action-text>
         </v-list-item-content>
       </v-list-item>
-      <p class="mt-3 font-weight-bold" style="color: #f76c6c"> {{item.credit}}</p>
+      <p class="mt-3 font-weight-bold" style="color: #f76c6c"> {{item.credit}}€</p>
     </v-list-item>
   </v-list>
 </template>

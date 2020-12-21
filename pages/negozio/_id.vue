@@ -8,31 +8,25 @@
     <v-card
       v-for="card in giftCards"
       :key="card.id"
-      class="rounded-lg my-2"
+      class="rounded-lg my-2 text-center"
       elevation="5"
-
     >
-      <v-row class="d-flex" >
-        <v-col cols="3" >
-          <v-avatar tile class="rounded-lg mx-2 mt-5">
+      <v-card-title  style="color: #232649">
+        Gift Card {{ getImageFromCategory(card.categoryId).brand }}
+      </v-card-title>
+          <v-avatar
+            rounded
+            size="80"
+          >
             <v-img
-              contain
               :src="getImageFromCategory(card.categoryId).src"
             >
             </v-img>
           </v-avatar>
-        </v-col>
-        <v-col cols="9">
-          <v-card-title  style="color: #232649">
-            Gift Card {{ getImageFromCategory(card.categoryId).brand }}
-          </v-card-title>
-          <v-card-subtitle>
-            {{ getImageFromCategory(card.categoryId).description }}
-          </v-card-subtitle>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-card-text class="text-center mt-n7 font-weight-bold" :style="getColor(card.value)">
+      <v-card-subtitle>
+        {{ getImageFromCategory(card.categoryId).description }}
+      </v-card-subtitle>
+        <v-card-text class="font-weight-bold" :style="getColor(card.value)">
           {{card.value}}€
         </v-card-text>
         <v-btn
@@ -40,11 +34,9 @@
           color="#2573d5"
           dark
           class="text-capitalize rounded-lg mb-3"
-
         >
           Acquista
         </v-btn>
-      </v-row>
     </v-card>
     <dialog-acquista
       ref="dialogAcquista">
