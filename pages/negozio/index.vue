@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
       <v-row class="d-flex">
-        <p class="headline" style="color: #29304d;">
+        <p class="headline ml-4" style="color: #29304d;">
           Negozio
         </p>
         <v-spacer></v-spacer>

@@ -1,16 +1,6 @@
 <template>
   <v-container fluid>
-    <v-btn
-      fab
-      x-small
-      class="mt-n10"
-      to="/credito"
-      color="#29304d"
-      outlined
-      dark
-    >
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
+   <go-back/>
     <v-row v-for="values in users" :key="values.id">
       <avatar class="d-flex" :user="values"></avatar>
     </v-row>
@@ -48,9 +38,11 @@
 <script>
 import CardCredito from "@/components/CardCredito";
 import Avatar from "@/components/Avatar";
+import GoBack from "@/components/GoBack";
 export default {
   layout: 'default',
   components: {
+    GoBack,
     Avatar,
     CardCredito,
   },

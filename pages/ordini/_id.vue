@@ -1,11 +1,10 @@
 <template>
   <v-container fluid>
+    <go-back/>
     <div v-for="item in ordersById" :key="item.id">
-      <v-row>
         <p class="headline" style="color: #29304d">
           Gift Card {{ item.brand }}
         </p>
-      </v-row>
       <v-card
         class="rounded-lg d-flex flex-wrap flex-column justify-center"
         elevation="5"
@@ -60,9 +59,11 @@
 
 <script>
 import dialogAttiva from "@/components/DialogAttiva";
+import GoBack from "@/components/GoBack";
 
 export default {
   components: {
+    GoBack,
     dialogAttiva
 
   },

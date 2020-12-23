@@ -9,7 +9,7 @@
                 <nuxt-link to="/assistenza" style="text-decoration: none">
                   <v-icon
                     class="mt-n15"
-                  >mdi-information-outline
+                  >mdi-progress-question
                   </v-icon>
                 </nuxt-link>
 

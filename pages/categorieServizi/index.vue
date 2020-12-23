@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <go-back/>
     <p class="headline" style="color: #29304d">
       Categorie
     </p>
@@ -13,10 +14,11 @@
 <script>
 
 import categorie from "@/components/Categorie";
+import GoBack from "@/components/GoBack";
 
 export default {
   components: {
-
+    GoBack,
     categorie
   },
   data: () => ({}),

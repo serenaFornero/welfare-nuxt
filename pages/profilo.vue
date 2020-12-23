@@ -1,36 +1,11 @@
 <template>
   <v-container fluid>
-    <v-btn
-      fab
-      x-small
-      class="mt-n10"
-      to="/credito"
-      color="#29304d"
-      outlined
-      dark
-    >
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
-
-    <v-card
-      class="rounded-lg flex-column justify-center" elevation="5"
-    >
-      <div class="text-center"
-      >
+    <go-back class=""></go-back>
+    <v-card class="rounded-lg flex-column justify-center" elevation="5">
+      <div class="text-center">
         <v-row class="d-flex flex-column" v-for="values in users" :key="values.id">
           <avatar :user="values"></avatar>
         </v-row>
-        <!--<v-avatar size="70" class="my-2">
-          <nuxt-link
-            tag="img"
-            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-            alt="user"
-            to="/profilo">
-          </nuxt-link>
-        </v-avatar>
-        <p class="mt-2 ml-2 headline" style="color: #29304d">
-          John Doe
-        </p>-->
         <v-btn
           class="my-2 text-capitalize rounded-lg"
           outlined
@@ -182,13 +157,15 @@
 import Password from "@/components/Password";
 import RelativesAutocomplete from "~/components/RelativesAutocomplete";
 import avatar from "@/components/Avatar";
+import GoBack from "@/components/GoBack";
 
 export default {
   layout: 'default',
   components: {
     RelativesAutocomplete,
     Password,
-    avatar
+    avatar,
+    GoBack
   },
   data: () => ({
     color: 'red',

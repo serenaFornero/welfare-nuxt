@@ -1,10 +1,9 @@
 <template>
   <v-container fluid>
-    <v-row class="d-flex">
+    <go-back/>
       <p class="headline" style="color: #232649">
         Buoni Acquisto
       </p>
-    </v-row>
     <v-card
       v-for="card in giftCards"
       :key="card.id"
@@ -47,9 +46,13 @@
 <script>
 
 import DialogAcquista from "@/components/DialogAcquista";
+import GoBack from "@/components/GoBack";
 
 export default {
-  components: {DialogAcquista},
+  components: {
+    DialogAcquista,
+    GoBack
+  },
   props: {
     category: {
       type: Object

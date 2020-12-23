@@ -1,11 +1,8 @@
 <template>
   <v-container fluid>
-    <v-row class="d-flex">
       <p class="headline" style="color: #29304d">
         Ordini
       </p>
-    </v-row>
-
       <v-card
         class="rounded-lg d-flex flex-wrap flex-column justify-center"
         elevation="5"

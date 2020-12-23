@@ -1,16 +1,6 @@
 <template>
   <v-container fluid>
-    <v-btn
-      fab
-      x-small
-      class="mt-n10"
-      to="/profilo"
-      color="#29304d"
-      outlined
-      dark
-    >
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
+    <go-back/>
     <v-card
       class="rounded-lg flex-column justify-center" elevation="5"
     >
@@ -53,9 +43,12 @@
 
 <script>
 import RelativesForm from "@/components/RelativesForm";
+import GoBack from "@/components/GoBack";
+
 export default {
   components: {
-    RelativesForm
+    RelativesForm,
+    GoBack
   },
 
   data: () => ({

@@ -1,16 +1,6 @@
 <template>
   <v-container fluid>
-    <v-btn
-      fab
-      x-small
-      class="mt-n10"
-      to="/portafoglio"
-      color="#29304d"
-      outlined
-      dark
-    >
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
+    <go-back/>
       <v-card class="rounded-lg" elevation="5">
         <v-card-title style="color: #232649">
           Versamenti in attesa
@@ -56,9 +46,11 @@
 <script>
 
 import StoricoVersamenti from "@/components/StoricoVersamenti";
+import GoBack from "@/components/GoBack";
 export default {
   layout: 'default',
   components: {
+    GoBack,
     StoricoVersamenti
   },
   data: () => ({

@@ -1,10 +1,11 @@
 <template>
   <v-container fluid >
-    <v-row class="d-flex"  >
+    <go-back/>
+
       <p class="headline" style="color: #29304d">
         {{getCategoryItem(services[0].categoryId).name}}
       </p>
-    </v-row>
+
     <search-field></search-field>
     <v-card
       class="rounded-lg"
@@ -37,12 +38,14 @@
 
 <script>
 import SearchField from "@/components/SearchField";
+import GoBack from "@/components/GoBack";
 
 
 export default {
 
   layout: 'default',
   components: {
+    GoBack,
     SearchField,
 
   },

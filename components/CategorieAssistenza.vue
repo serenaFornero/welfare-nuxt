@@ -3,7 +3,7 @@
       <v-col class="d-flex flex-wrap justify-center">
         <div class="d-flex flex-column">
           <v-card
-            class="my-5 mx-5 pa-5"
+            class="mb-2 mx-2 pa-5"
             height="100"
             width="100"
             outlined
