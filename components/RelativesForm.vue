@@ -1,5 +1,6 @@
 <template>
-  <v-form @submit.stop.prevent="addRelative" ref="form">
+  <!--<v-form @submit.stop.prevent="addRelative" ref="form">-->
+    <v-form @submit.stop.prevent="addRelative" ref="form" v-model="valid">
     <v-row>
       <v-col
         cols="12"
@@ -49,6 +50,61 @@
       </v-col>
     </v-row>
     <v-card-actions class="justify-center">
+
+      <v-dialog
+        v-model="dialog"
+        persistent
+        max-width="290"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="mb-5 text-capitalize rounded-lg white--text"
+            type="submit"
+            color="#2573d5"
+            v-bind="attrs"
+            v-on="on"
+            :disabled="!valid"
+          >
+            Aggiungi
+
+          </v-btn>
+        </template>
+        <v-card>
+          <v-card-title class="headline" style="color: #232649">
+            Aggiungi Familiare
+          </v-card-title>
+          <v-card-text>
+            Sei sicuro di voler aggiungere il familiare dalla lista?
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              class="text-capitalize"
+              color="#2573d5"
+              text
+              @click="dialog = false"
+            >
+              Indietro
+            </v-btn>
+            <v-btn
+              class="text-capitalize"
+              color="#2573d5"
+              text
+              @click="addRelative"
+            >
+              Procedi
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+
+
+
+
+
+      <!--
+
       <v-dialog
         v-model="dialog"
         persistent
@@ -68,9 +124,10 @@
 
           </v-btn>
         </template>
-        <v-card class="text-center rounded-lg">
+       <v-card class="text-center rounded-lg">
           <v-card-actions class="justify-end">
-            <v-btn
+
+           <v-btn
               icon
               @click="dialog = false"
             >
@@ -79,7 +136,7 @@
           </v-card-actions>
           <v-card-text class="font-weight-bold mt-n5">Familiare aggiunto <br/> correttamente!</v-card-text>
         </v-card>
-      </v-dialog>
+      </v-dialog>-->
     </v-card-actions>
   </v-form>
 </template>

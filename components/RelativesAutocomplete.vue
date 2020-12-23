@@ -1,82 +1,125 @@
 <template>
-    <v-autocomplete
-            clearable
-            item-value="id"
-            :prepend-inner-icon="prependInnerIcon"
-            :rules="rules"
-            :label="label"
-            :items="relatives"
-            return-object
-            v-model="relative">
-        <template v-slot:selection="{item}">
-            <div class="text-capitalize">{{ item.name + ' ' + item.surname }}</div>
-        </template>
-        <template v-slot:item="{ attrs, item, on }">
-            <v-list-item
-                    v-bind="attrs"
-                    active-class="primary elevation-4 white--text text-capitalize"
-                    class="ma-2 v-sheet"
-                    elevation="0"
-                    v-on="on"
+  <v-autocomplete
+    clearable
+    item-value="id"
+    :prepend-inner-icon="prependInnerIcon"
+    :rules="rules"
+    :label="label"
+    :items="relatives"
+    return-object
+    v-model="relative">
+    <template v-slot:selection="{item}">
+      <div class="text-capitalize">{{ item.name + ' ' + item.surname }}</div>
+    </template>
+    <template v-slot:item="{ attrs, item, on }">
+      <v-list-item
+        v-bind="attrs"
+        active-class="primary elevation-4 white--text text-capitalize"
+        class="ma-2 v-sheet"
+        elevation="0"
+        v-on="on"
+      >
+        <v-list-item-content>
+          <v-list-item-title>
+            {{ item.name + ' ' + item.surname }}
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            {{ item.relation }} - {{ item.birthDate }}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+        <v-dialog
+          v-model="dialog"
+          persistent
+          max-width="290"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon
+              v-bind="attrs"
+              v-on="on"
             >
-                <v-list-item-content>
-                    <v-list-item-title>
-                        {{ item.name + ' ' + item.surname }}
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                        {{ item.relation }} - {{ item.birthDate }}
-                    </v-list-item-subtitle>
-                </v-list-item-content>
-              <v-icon @click="removeRel">mdi-close</v-icon>
-            </v-list-item>
-        </template>
-    </v-autocomplete>
+              mdi-close
+            </v-icon>
+          </template>
+          <v-card>
+            <v-card-title class="headline" style="color: #232649">
+              Elimina familiare
+            </v-card-title>
+            <v-card-text>
+              Sei sicuro di voler eliminare il familiare dalla lista?
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                class="text-capitalize"
+                color="#2573d5"
+                text
+                @click="dialog = false"
+              >
+                Indietro
+              </v-btn>
+              <v-btn
+                class="text-capitalize"
+                color="#2573d5"
+                text
+                @click="removeRel"
+              >
+                Procedi
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+
+        <!--<v-icon @click="removeRel">mdi-close</v-icon>-->
+      </v-list-item>
+    </template>
+  </v-autocomplete>
 </template>
 
 
 <script>
 export default {
-    name: 'RelativesAutocomplete',
-    props: {
-        prependInnerIcon: {
-            type: String,
-            default: 'mdi-account-multiple'
-        },
-        value: {
-            type: Object
-        },
-        label: {
-            type: String,
-            default: 'Seleziona Famliare'
-        },
-        multiple: {
-            type: Boolean,
-            default: false
-        },
-        dense: {
-            type: Boolean,
-            default: false
-        },
-        rules: {
-            type: Array,
-            default: () => []
-        }
+  name: 'RelativesAutocomplete',
+  props: {
+    prependInnerIcon: {
+      type: String,
+      default: 'mdi-account-multiple'
     },
-    data() {
-        return {
-            relative: this.value,
-        }
+    value: {
+      type: Object
     },
-    watch: {
-        value(val) {
-            this.relative = val
-        },
-        relative(val) {
-            this.$emit('input', val)
-        }
+    label: {
+      type: String,
+      default: 'Seleziona Famliare'
     },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    dense: {
+      type: Boolean,
+      default: false
+    },
+    rules: {
+      type: Array,
+      default: () => []
+    }
+  },
+  data() {
+    return {
+      relative: this.value,
+      dialog: false,
+    }
+  },
+  watch: {
+    value(val) {
+      this.relative = val
+    },
+    relative(val) {
+      this.$emit('input', val)
+    }
+  },
   computed: {
-    relatives(){
+    relatives() {
       return this.$store.getters["relatives/getRelative"]
     },
   },
@@ -91,7 +134,6 @@ export default {
       this.relation=''
       this.$refs.form.reset()
     }*/
-
   }
 }
 </script>
