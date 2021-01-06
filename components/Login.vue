@@ -18,20 +18,15 @@
             label="E-mail"
             prepend-icon="mdi-account-circle"
           />
-          <!--
-           :rules="[rules.emailRules, rules.required, rules.emailMatch]"
-          :rules="[rules.required, rules.emailMatch]"
-          -->
           <v-text-field
             v-model="password"
-            :type="showPassword ? 'text' : 'Password.vue'"
+            :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             :rules="[rules.required]"
-
+            :type=" showPassword ? 'text' : 'password'"
             label="Password"
             prepend-icon="mdi-lock"
-            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="showPassword = !showPassword"
-          />
+            @click:append=" showPassword = ! showPassword"
+          ></v-text-field>
         </v-form>
         <v-row justify="center">
           <v-checkbox class="mt-1 ml-3 font-weight-light "

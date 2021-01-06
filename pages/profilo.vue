@@ -17,86 +17,39 @@
       <v-card-title style="color: #232649">
         I miei dati
       </v-card-title>
-      <v-card-text>
-        <v-row v-for="user in users"
-               :key="user.id">
-          <v-col
-            cols="12"
-            sm="6"
-            md="3"
-
-          >
-            <v-text-field
-              max-width="50"
-              :value="user.name + user.surname"
-              readonly
-              label="Nome e cognome"
-            ></v-text-field>
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-            md="3"
-          >
-            <v-text-field
-              :value="user.email"
-              label="E-mail"
-              readonly
-            ></v-text-field>
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-            md="3"
-          >
-            <v-text-field
-              :value="user.birthDate"
-              label="Data di nascita"
-              readonly
-            ></v-text-field>
-          </v-col>
-        </v-row>
-      </v-card-text>
+      <PersonalDataForm></PersonalDataForm>
       <v-card-title style="color: #232649">
-        Modifica password
+        Residenza
       </v-card-title>
-      <v-card-text>
-        <v-row>
-          <v-col
-            cols="12"
-            sm="6"
-            md="3"
-          >
-            <password
-              label="Nuova Password"
-              cols="12"
-              sm="6"
-              md="3"
-              class="mx-2"
-            ></password>
-          </v-col>
-          <v-col
-            cols="12"
-            sm="6"
-            md="3"
-          >
-            <password
-              label="Ripeti Password"
-              cols="12"
-              sm="6"
-              md="3"
-              class="mx-2"
-            ></password>
-          </v-col>
+      <ResidenceForm></ResidenceForm>
+      <v-card-title style="color: #232649">
+        Coordinate Bancarie
+      </v-card-title>
+      <v-alert
+        dismissible
+        close-text="Close Alert"
+        v-model="alert"
+        border="left"
+        colored-border
+        color="info"
+        elevation="2"
+        class="mx-3 mb-10 subtitle-2 grey--text text--darken-1"
+        max-width="500"
+      >
+      per ususfruire del servizio rimborsi spese è necessario inserire il codice IBAN del tuo conto corrente bancario
 
-        </v-row>
-        <div class="text-center">
-          <v-btn class="my-5 text-capitalize rounded-lg" dark color="#2573d5" outlined>
-            Aggiorna
-          </v-btn>
-        </div>
-      </v-card-text>
-      <v-divider></v-divider>
+      </v-alert>
+      <div class="text-right mt-n12">
+        <v-btn
+          color="info"
+          icon
+          v-if="!alert"
+          @click="alert = true"
+        >
+          <v-icon>mdi-information</v-icon>
+        </v-btn>
+      </div>
+      <bank-details-form></bank-details-form>
       <v-card-title style="color: #232649">
         I miei familiari
       </v-card-title>
@@ -153,15 +106,20 @@
 
 
 <script>
-
+import BankDetailsForm from "@/components/BankDetailsForm";
 import Password from "@/components/Password";
 import RelativesAutocomplete from "~/components/RelativesAutocomplete";
 import avatar from "@/components/Avatar";
 import GoBack from "@/components/GoBack";
+import PersonalDataForm from "@/components/PersonalDataForm";
+import ResidenceForm from "@/components/ResidenceForm";
 
 export default {
   layout: 'default',
   components: {
+    BankDetailsForm,
+    ResidenceForm,
+    PersonalDataForm,
     RelativesAutocomplete,
     Password,
     avatar,
@@ -173,6 +131,7 @@ export default {
     birthDate: null,
     relation: null,
     dialog: false,
+    alert: false,
 
   }),
   computed: {

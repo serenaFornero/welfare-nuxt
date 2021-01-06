@@ -14,7 +14,9 @@
       </v-toolbar-title>
     </v-app-bar>
     <v-main>
-      <nuxt/>
+      <transition name="slide" mode="out-in">
+        <nuxt/>
+      </transition>
     </v-main>
     <my-footer></my-footer>
   </v-app>
@@ -31,3 +33,17 @@ export default {
 
 }
 </script>
+
+<style>
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-20%);
+}
+</style>

@@ -40,7 +40,7 @@
               mdi-close
             </v-icon>
           </template>
-          <v-card>
+          <v-card class="rounded-lg">
             <v-card-title class="headline" style="color: #232649">
               Elimina familiare
             </v-card-title>
@@ -58,9 +58,8 @@
                 Indietro
               </v-btn>
               <v-btn
-                class="text-capitalize"
+                class="text-capitalize white--text rounded-lg"
                 color="#2573d5"
-                text
                 @click="removeRel"
               >
                 Procedi
@@ -68,8 +67,6 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-
-        <!--<v-icon @click="removeRel">mdi-close</v-icon>-->
       </v-list-item>
     </template>
   </v-autocomplete>

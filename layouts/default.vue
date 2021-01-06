@@ -50,6 +50,6 @@ export default {
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
-  transform: translateY(-20%);
+  transform: translateX(-20%);
 }
 </style>
