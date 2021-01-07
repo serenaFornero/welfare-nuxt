@@ -1,15 +1,12 @@
 <template>
   <div class="mt-n8">
-  <v-btn
-    fab
-    x-small
-    color="#29304d"
-    outlined
-    @click="goBack"
-    class="my-3"
-  >
-    <v-icon>mdi-arrow-left</v-icon>
-  </v-btn>
+    <v-icon
+      class="my-3"
+      color="#29304d"
+      @click="goBack"
+    >
+      mdi-arrow-left</v-icon>
+
   </div>
 </template>
 

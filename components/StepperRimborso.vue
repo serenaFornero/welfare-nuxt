@@ -153,9 +153,11 @@
           max-width="500"
 
         >
-          1. Seleziona il file da allegare (sono consenti file pdf, jpg, png, bmp). <br>
+          1. Seleziona il file da allegare (sono consenti file pdf, jpg, png, bmp).
+          Puoi sceglierlo tra i file presenti nel tuo telefono, comuter, tablet oppure tra i file caricati in
+          <strong>Ricevute</strong> presente nella sezione Portafoglio. <br>
           2. Clicca su Upload per caricare il file.<br>
-          3. Ripeti l'operazione per ogni file da allegare
+          3. Ripeti l'operazione per ogni file da allegare.
         </v-alert>
         <div class="text-right">
           <v-btn
@@ -175,6 +177,7 @@
         >
           <v-form v-model="valid">
             <v-card-text>
+              <!--
               <v-file-input
                 :rules="rules"
                 v-model="select4"
@@ -183,6 +186,7 @@
                 placeholder=""
                 max-width="50"
               ></v-file-input>
+              -->
             </v-card-text>
           </v-form>
         </v-card>

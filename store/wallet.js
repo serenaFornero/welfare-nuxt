@@ -49,6 +49,15 @@ export const state = () => ({
       color: "#232649"
     },
   ],
+  receipts: [
+    {
+      id: 14,
+      name: "Ricevute",
+      icon: "mdi-cash-plus",
+      src: "billing.png",
+      color: "#232649"
+    }
+  ]
 
 })
 

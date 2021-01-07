@@ -36,7 +36,7 @@
         class="mx-3 mb-10 subtitle-2 grey--text text--darken-1"
         max-width="500"
       >
-      per ususfruire del servizio rimborsi spese è necessario inserire il codice IBAN del tuo conto corrente bancario
+      Per ususfruire del servizio rimborsi spese è necessario inserire il codice IBAN del tuo conto corrente bancario
 
       </v-alert>
       <div class="text-right mt-n12">
