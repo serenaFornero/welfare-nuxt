@@ -27,7 +27,6 @@ export const getters = {
     state.receipts.push({
       fileName: receipt.name,
       description: receipt.description,
-      date: receipt.date,
     });
     console.log("mutations: receipt aggiunta");
   },
