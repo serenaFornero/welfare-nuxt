@@ -26,7 +26,6 @@
           color="#2573d5"
           class="text-capitalize white--text rounded-lg"
           to="/trasferimentoEffettuato"
-          @click="addOrder"
         >
           Procedi
         </v-btn>
@@ -61,12 +60,9 @@ export default {
         name: null,
       }
     },
-    addOrder: function () {
-      this.$store.commit('orders/addOrder', {...this.order})
-      this.order = {
-        value: ""
-      }
-    }
+    /*addOrder: function () {
+      this.$store.commit('orders/addOrder')
+    }*/
 
   }
 

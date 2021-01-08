@@ -42,7 +42,7 @@ export const mutations = {
     });
     console.log("mutations: relative aggiunto");
   },
-  removeRel(state, relative){
+ /* removeRel(state, relative){
     state.relatives.splice({
       name: relative.name,
       surname: relative.surname,
@@ -50,7 +50,11 @@ export const mutations = {
       relation: relative.relation,
     })
     console.log("mutations: relative eliminato");
-  }
+  }*/
+  removeRel(state, index) {
+    state.relatives.splice(index, 1)
+    console.log("mutations: relative eliminato");
+  },
 
 
 }

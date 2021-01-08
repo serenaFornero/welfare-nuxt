@@ -38,8 +38,9 @@
                 <v-list-item-content>
                   <v-list-item-title>{{ item.category }}</v-list-item-title>
                   <v-list-item-subtitle>{{item.type}} </v-list-item-subtitle>
+                  <v-list-item-subtitle>{{item.beneficiary}} </v-list-item-subtitle>
                 </v-list-item-content>
-              <p class="mt-3 font-weight-bold" style="color:#F4976C"> {{item.credit}}€</p>
+              <p class="mt-3 font-weight-bold" style="color:#F4976C"> {{item.value}}€</p>
             </v-list-item>
           </v-list>
         </v-card-text>
@@ -72,17 +73,18 @@
           </v-btn>
         </div>
         <v-card-text>
-        <v-card-subtitle v-if="getRefund.length === 0">
-          Al momento non ci sono richieste di rimborso in attesa di essere confermate.
+        <v-card-subtitle v-if="refund.length === 0">
+          Al momento non ci sono rimborsi.
         </v-card-subtitle>
           <v-list v-else>
-            <v-list-item two-line v-for="transaction in getRefund" :key="transaction.id" class="mb-5">
+            <v-list-item two-line v-for="item in refund" :key="item.id" class="mb-5">
               <v-icon class="mr-5"  color="#29304d">mdi-cash-refund</v-icon>
                 <v-list-item-content>
-                  <v-list-item-title> {{transaction.name}}</v-list-item-title>
-                  <v-list-item-subtitle>{{ transaction.date }}</v-list-item-subtitle>
+                  <v-list-item-title> {{item.category}}</v-list-item-title>
+                  <v-list-item-subtitle>{{ item.type }}</v-list-item-subtitle>
+                  <v-list-item-subtitle>{{ item.beneficiary }}</v-list-item-subtitle>
                 </v-list-item-content>
-              <p class="mt-3 font-weight-bold" :style="getColor(transaction.value)"> {{transaction.value}}€</p>
+              <p class="mt-3 font-weight-bold" :style="getColor(item.value)"> {{item.value}}€</p>
             </v-list-item>
           </v-list>
         </v-card-text>
@@ -107,8 +109,8 @@ export default {
     getRefundRequest(){
       return this.$store.getters["refund/getRequest"]
     },
-    getRefund(){
-      return this.$store.getters["transactions/getRefund"]
+    refund(){
+      return this.$store.getters["refund/getRefund"]
     },
   },
   methods: {

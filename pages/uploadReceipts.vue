@@ -5,7 +5,6 @@
       <v-card-title style="color: #232649">
         Carica Ricevuta
       </v-card-title>
-      <v-card-text>
         <v-alert
           dismissible
           close-text="Close Alert"
@@ -34,6 +33,7 @@
             <v-icon>mdi-information</v-icon>
           </v-btn>
         </div>
+      <v-card-text>
         <v-form ref="form" v-model="valid">
           <v-file-input label="File name"></v-file-input>
           <v-textarea
@@ -60,14 +60,15 @@
         Storico Ricevute
       </v-card-title>
       <v-card-text>
-        <v-list>
+        <v-card-subtitle v-if="receipts.length === 0">
+          Al momento non ci sono ricevute.
+        </v-card-subtitle>
+        <v-list v-else>
           <v-list-item two-line v-for="item in receipts" :key="item.id">
-            <v-icon color="#29304d" class="mr-5">mdi-shopping</v-icon>
+            <v-icon color="#29304d" class="mr-5">mdi-receipt</v-icon>
             <v-list-item-content>
               <v-list-item-title>{{ item.fileName }}</v-list-item-title>
-              <v-list-item-subtitle>
-                {{ item.description }}
-              </v-list-item-subtitle>
+              <v-list-item-subtitle>{{ item.description }}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-list>

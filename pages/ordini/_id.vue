@@ -45,7 +45,7 @@
               </v-list-item-avatar>
               <v-list-item-subtitle class="my-2">Buono Regalo valido per l’acquisto di prodotti <br>
                 disponibili su <strong>{{ getGiftCardItem(item.categoryId).webSite }}</strong> del vaore di
-                <strong>{{ item.value }} €</strong>
+                <strong>{{ item.value }}€</strong>
               </v-list-item-subtitle>
             <v-list-item-action>
               <dialog-attiva v-for="item in ordersById" :key="item.id" :orders="item"></dialog-attiva>

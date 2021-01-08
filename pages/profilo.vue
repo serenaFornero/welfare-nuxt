@@ -88,7 +88,6 @@
             ></v-text-field>
           </v-col>
           <v-col
-
             cols="12"
             sm="6"
             md="3">
@@ -126,7 +125,6 @@ export default {
     GoBack
   },
   data: () => ({
-    color: 'red',
     relative: null,
     birthDate: null,
     relation: null,
@@ -147,7 +145,6 @@ export default {
         if (!value) {
           return false
         }
-
         this.relation = value.relation
         this.birthDate = value.birthDate
       }

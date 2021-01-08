@@ -77,8 +77,7 @@
                   :rules="rules"
                   v-model="select"
                   max-width="50"
-                  label="Inserisci importo da rimborsare"
-                  placeholder="0,00"
+                  label="Inserisci l'importo da rimborsare"
                   type="number"
                 ></v-text-field>
               </v-col>
@@ -87,43 +86,26 @@
                 sm="6"
                 md="3"
               >
-                <v-select
-                  :rules="rules"
-                  v-model="select1"
-                  max-width="50"
-                  :items="getCategory"
-                  placeholder=""
-                  label="Scegli la categoria di spesa"
-
-                ></v-select>
+                <AutocompleteRefund v-model="category"></AutocompleteRefund>
               </v-col>
               <v-col
                 cols="12"
                 sm="6"
                 md="3"
               >
-                <v-select
-                  :rules="rules"
-                  v-model="select2"
-                  label="Scegli il tipo di spesa"
-                  max-width="50"
-                  :items="getType"
 
-                ></v-select>
+                <v-text-field
+                  v-model="type"
+                  label="Tipo di spesa"
+                  max-width="50"
+                ></v-text-field>
               </v-col>
               <v-col
                 cols="12"
                 sm="6"
                 md="3"
               >
-                <v-select
-                  :rules="rules"
-                  v-model="select3"
-                  label="Scegli l'effettivo beneficiario"
-                  max-width="50"
-                  :items="concatRel"
-
-                ></v-select>
+                <AutocompleteBeneficiaries v-model="relative"></AutocompleteBeneficiaries>
               </v-col>
             </v-row>
           </v-form>
@@ -169,15 +151,9 @@
             <v-icon>mdi-information</v-icon>
           </v-btn>
         </div>
-        <v-card-subtitle>
-
-        </v-card-subtitle>
-        <v-card
-          flat
-        >
+        <v-card flat>
           <v-form v-model="valid">
             <v-card-text>
-
               <v-file-input
                 :rules="rules"
                 v-model="select4"
@@ -186,7 +162,6 @@
                 placeholder=""
                 max-width="50"
               ></v-file-input>
-
             </v-card-text>
           </v-form>
         </v-card>
@@ -244,7 +219,7 @@
                  sm="6"
                  md="3">
             <v-text-field
-              v-model="select1"
+              v-model="category"
               label="Categoria di spesa"
               max-width="50"
               readonly
@@ -254,7 +229,7 @@
                  sm="6"
                  md="3">
             <v-text-field
-              v-model="select2"
+              v-model="type"
               label="Tipo di spesa"
               max-width="50"
               readonly
@@ -264,7 +239,7 @@
                  sm="6"
                  md="3">
             <v-text-field
-              v-model="select3"
+              v-model="relative"
               label="Effettivo beneficiario"
               max-width="50"
               readonly
@@ -286,7 +261,6 @@
           <v-btn
             color="#2573d5"
             class="text-capitalize rounded-lg white--text"
-
             to="/richiestaInviata"
           >
             Invia richiesta
@@ -298,56 +272,65 @@
 </template>
 
 <script>
+import AutocompleteBeneficiaries from "@/components/AutocompleteBeneficiaries";
+import AutocompleteRefund from "@/components/AutocompleteRefund";
+
 export default {
   name: "stepperRimborso",
+  components: {
+    AutocompleteRefund,
+    AutocompleteBeneficiaries
+  },
   layouts: 'default',
   data() {
     return {
       alert: false,
       valid: true,
       select: "",
-      select1: "",
-      select2: "",
-      select3: "",
       select4: null,
       e6: 1,
-      beneficiario: ["Carlo Rossi", "Valeria Bianchi", "Ginevra Rossi"],
-      rules: [
-        v => !!v || 'Il campo è cobbligatorio',
-      ],
+      relative: null,
+      birthDate: null,
+      relation: null,
+      category: null,
+      type: null,
+      rules: [v => !!v || 'Il campo è cobbligatorio'],
+
     }
+  },
+  watch: {
+    relative: {
+      immediate: false,
+      deep: true,
+      handler(value) {
+        if (!value) {
+          return false
+        }
+
+        this.relation = value.relation
+        this.birthDate = value.birthDate
+      }
+    },
+    category: {
+      immediate: false,
+      deep: true,
+      handler(value) {
+        if (!value) {
+          return false
+        }
+        this.type = value.type
+      }
+    }
+
   },
 
   computed: {
-    getCategory() {
-      console.log(this.$store.getters["refund/getCategory"])
-      return this.$store.getters["refund/getCategory"]
+    relatives() {
+      return this.$store.getters["relatives/getRelative"]
     },
-    getType() {
-      return this.$store.getters["refund/getType"]
+    refund() {
+      return this.$store.getters["refund/getRefundCategory"]
     },
-    getNames() {
-      return this.$store.getters["relatives/getRelNames"]
-    },
-    getSurnames() {
-      return this.$store.getters["relatives/getRelSurnames"]
-    },
-    concatRel(){
-      return this.getNames.concat(this.getSurnames)
-    },
-   /*
-    getUserName(){
-      return this.$store.getters['users/getUserName']
-    },
-    getUserSurname(){
-      return this.$store.getters['users/getUserSurname']
-    },
-    concatUser(){
-      return this.getUserName.concat(this.getUserSurname)
-    },
-    concatUserRel(){
-      return this.concatRel.concat(this.concatUser)
-    }*/
   },
   methods: {},
 }

@@ -122,9 +122,12 @@ export default {
   },
   methods: {
     removeRel: function () {
+      this.$store.commit("relatives/removeRel");
+    },
+    /*removeRel: function () {
       this.$store.commit('relatives/removeRel', {...this.relative})
     },
-    /*clear(){
+    clear(){
       this.name= ''
       this.surname=''
       this.birthDate=''

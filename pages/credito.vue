@@ -17,7 +17,7 @@
         <p class="pb-3 ml-3 font-weight-black " style="color: #2573d5">{{ values.giftCardCredit }} €</p>
         <v-divider></v-divider>
         <p class="subtitle-1 pt-3 mx-3">Scadenza credito disponibile:</p>
-        <p class="pb-3 ml-3 font-weight-black " style="color: #f76c6c">{{ values.expiration }}</p>
+        <p class="pb-3 ml-3 font-weight-black " style="color:#F4976C">{{ values.expiration }}</p>
       </v-card-text>
     </v-card>
   </v-container>

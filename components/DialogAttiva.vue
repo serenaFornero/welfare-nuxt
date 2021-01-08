@@ -15,18 +15,20 @@
         v-model="dialog3"
         max-width="500px"
       >
-        <v-card>
-          <v-row justify="end" class="mr-2">
-          <v-card-actions>
-            <v-icon
-              @click="dialog3 = false"
-            >
-              mdi-close
-            </v-icon>
-          </v-card-actions>
-          </v-row>
-          <v-card-text class="font-weight-bold text-center title">Codice: {{orders.code}} </v-card-text>
+        <v-card class="rounded-lg">
+          <v-card-text class="font-weight-bold text-center title pt-5">Codice: {{orders.code}} </v-card-text>
           <v-card-subtitle class=" text-center">Tempo rimasto:  {{ timerCount }} </v-card-subtitle>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              class="text-capitalize"
+              color="#2573d5"
+              text
+              @click="removeOrder"
+          >
+            Chiudi
+          </v-btn>
+          </v-card-actions>
         </v-card>
       </v-dialog>
     </v-row>
@@ -62,7 +64,11 @@ export default {
       immediate: true // This ensures the watcher is triggered upon creation
     }
   },
-  computed: {
+  computed: {},
+  methods:{
+    removeOrder: function () {
+      this.$store.commit("orders/removeOrder");
+    },
   }
 }
 </script>

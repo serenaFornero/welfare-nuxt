@@ -18,8 +18,8 @@ export const state = () => ({
     },
     {
       id: 3,
-      name: "Trasporti" ,
-      value: 100,
+      name: "Visita medica" ,
+      value: -50,
       idCategory: 11,
       date: "10-10-2020",
       userId: 0
@@ -34,8 +34,8 @@ export const state = () => ({
     },
     {
       id: 5,
-      name: "Retta Scolastica" ,
-      value: 300,
+      name: "Esame medico" ,
+      value: -300,
       idCategory: 11,
       date: "6-10-2020",
       userId: 0

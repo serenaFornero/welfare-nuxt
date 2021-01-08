@@ -34,11 +34,8 @@ export default {
     orderList: {
       type: Object
     }
-
   },
-  components: {
-
-  },
+  components: {},
   data: () => ({}),
   methods: {
     getColor(value) {
@@ -49,16 +46,7 @@ export default {
       }
     },
   },
-  mounted() {
-    console.log(this.orderList)
-  }
-  /*computed: {
-    orders() {
-      return this.$store.getters["orders/getOrder"]
-    },
-    orderList(){
-      return this.$store.getters['orders/getOrderList']
-    }
-  }*/
+
+
 }
 </script>

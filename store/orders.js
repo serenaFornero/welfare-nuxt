@@ -55,10 +55,18 @@ export const getters = {
 }
 
 export const mutations = {
-  addOrder(state, order) {
+  /*addOrder(state, order) {
     state.orderList.push({
       value: order.value,
     });
     console.log("mutations: ordine aggiunto");
+  },*/
+ /* addOrder(state,index){
+    state.orderList.splice(index, 0)
+    console.log("mutations: Ordine aggiunto");
+  },*/
+  removeOrder(state, index) {
+    state.orderList.splice(index, 1)
+    console.log("mutations: Ordine eliminato");
   },
 }

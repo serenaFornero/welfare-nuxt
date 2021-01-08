@@ -35,7 +35,10 @@
           </v-btn>
         </div>
         <v-card-text class="mt-n5">
-      <lista-ordini v-for="item in orderList" :key="item.id" :orderList="item"></lista-ordini>
+          <v-card-subtitle v-if="orderList.length === 0">
+            Al momento non ci sono ordini da visualizzare.
+          </v-card-subtitle>
+      <lista-ordini v-else v-for="item in orderList" :key="item.id" :orderList="item"></lista-ordini>
         </v-card-text>
       </v-card>
   </v-container>
