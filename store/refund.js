@@ -2,10 +2,9 @@ export const state = () => ({
   refundRequest: [
     {
       id: 0,
-      description: "Spese per i servizi di educazione e istruzione" ,
-      name: "Rette scolastiche",
+      type: "Spese per i servizi di educazione e istruzione" ,
+      category: "Rette scolastiche",
       credit: 500,
-      date: "12-12-2020"
     },
   ],
 

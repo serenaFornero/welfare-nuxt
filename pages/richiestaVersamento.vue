@@ -36,15 +36,61 @@
         </v-btn>
       </div>
       <v-card-text>
-        <v-form>
+        <v-form ref="form" v-model="valid" @submit.prevent="addDeposit">
           <v-text-field
+            v-model="pendingDeposit.name"
+            max-width="50"
+            label="Inserisci un nome"
+            placeholder="es. versamento fondo previdenza"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="pendingDeposit.credit"
             max-width="50"
             label="Inserisci importo da versare"
             placeholder="0,00"
             required
           ></v-text-field>
+          <v-dialog
+            ref="dialog"
+            v-model="modal"
+            :return-value.sync="date"
+            persistent
+            width="290px"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
+                v-model="date"
+                label="Inserisci la data odierna"
+                append-icon="mdi-calendar"
+                readonly
+                v-bind="attrs"
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+              v-model="date"
+              scrollable
+            >
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="#2573d5"
+                @click="modal = false"
+              >
+                Indietro
+              </v-btn>
+              <v-btn
+                text
+                color="#2573d5"
+                @click="$refs.dialog.save(date)"
+              >
+                OK
+              </v-btn>
+            </v-date-picker>
+          </v-dialog>
           <div class="d-flex justify-center">
-            <v-btn class="mt-10 text-capitalize mb-3 rounded-lg" dark color="#2573d5" to="/richiestaInviata">
+            <v-btn class="mt-10 text-capitalize mb-3 rounded-lg" dark color="#2573d5" type="submit">
               Invia richiesta
             </v-btn>
           </div>
@@ -62,10 +108,24 @@ export default {
   layout: 'default',
 
   data: () => ({
+    valid: true,
     alert: false,
+    date: new Date().toISOString().substr(0, 10),
+    modal: false,
+    pendingDeposit: {
+      name: "",
+      credit: "",
+      date: "",
+      show: true
+
+    }
   }),
   computed: {},
-  methods: {},
+  methods: {
+    addDeposit(){
+      this.$store.commit("deposit/addDeposit", {...this.pendingDeposit})
+    }
+  },
 }
 </script>
 

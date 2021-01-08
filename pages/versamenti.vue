@@ -28,25 +28,37 @@
             <v-icon>mdi-information</v-icon>
           </v-btn>
         </div>
-        <v-card-subtitle>
+        <v-card-subtitle v-if="pendingDeposit.length === 0">
           Al momento non ci sono versamenti in attesa di essere confermati.
         </v-card-subtitle>
+        <v-list v-else>
+          <v-list-item two-line class="mb-5" v-for="item in pendingDeposit" :key="item.id">
+            <v-icon color="#29304d" class="mr-5">mdi-cash-plus</v-icon>
+            <v-list-item-content>
+              <v-list-item-title>{{item.name}}</v-list-item-title>
+              <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
+            </v-list-item-content>
+            <p class="mt-4 font-weight-bold" style="color:#F4976C">{{item.credit}}€</p>
+          </v-list-item>
+        </v-list>
+
       </v-card>
       <v-card class="mt-5 rounded-lg" elevation="5">
         <v-card-title style="color: #232649">
           Storico versamenti
         </v-card-title>
+        <v-card-subtitle v-if="deposits.length === 0">
+          Al momento non ci sono versamenti da mostrare.
+        </v-card-subtitle>
         <v-card-text>
           <v-list>
-            <v-list-item v-for="transaction in transactions" :key="transaction.id" class="mb-5">
-              <v-icon color="#29304d">mdi-shopping</v-icon>
-              <v-list-item two-line>
+            <v-list-item two-line v-for="item in deposits" :key="item.id" class="mb-5">
+              <v-icon color="#29304d" class="mr-5">mdi-cash-plus</v-icon>
                 <v-list-item-content>
-                  <v-list-item-title>{{ transaction.name }}</v-list-item-title>
-                  <v-list-item-subtitle>{{ transaction.date }}</v-list-item-subtitle>
+                  <v-list-item-title>{{ item.name }}</v-list-item-title>
+                  <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
                 </v-list-item-content>
-              </v-list-item>
-              <p class="mt-3 font-weight-bold" :style="getColor(transaction.credit)"> {{transaction.credit}}€</p>
+              <p class="mt-3 font-weight-bold" :style="getColor(item.credit)"> {{item.credit}}€</p>
             </v-list-item>
           </v-list>
         </v-card-text>
@@ -64,21 +76,16 @@ export default {
   },
   data: () => ({
     alert: false,
-    transactions : [
-      {
-        id: 0,
-        name: "Versamento previdenza",
-        credit:  1000,
-        date: "12-12-2020"
-      },
-      {
-        id: 1,
-        name: "Versamento previdenza",
-        credit:  3000,
-        date: "14-12-2020"
-      }
-    ],
+
   }),
+  computed:{
+    deposits(){
+      return this.$store.getters["deposit/getDeposit"]
+    },
+    pendingDeposit(){
+      return this.$store.getters["deposit/getPendingDeposit"]
+    },
+  },
   methods: {
     getColor(credit){
       console.log(credit)
@@ -87,8 +94,7 @@ export default {
       } else if (credit > 0){
         return "color: #2573d5"
       }
-
-    }
+    },
   },
 }
 </script>

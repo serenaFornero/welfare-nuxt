@@ -67,6 +67,9 @@ export const getters = {
   },
   getIconRefund(state){
     return state.refund.map(el => el.icon)
+  },
+  getIconDeposit(state){
+    return state.deposit.map(el => el.icon)
   }
 
 }

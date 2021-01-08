@@ -24,5 +24,12 @@ export const state = () => ({
 export const getters = {
   getUser(state){
     return state.users
+  },
+  getUserName(state){
+    return state.users.map(el => el.name)
+  },
+  getUserSurname(state){
+    return state.users.map(el => el.surname)
   }
+
 }

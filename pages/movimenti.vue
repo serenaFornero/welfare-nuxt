@@ -16,19 +16,19 @@
       <v-card-text class="mt-n5">
         <v-list>
           <v-list-item
-            v-for="transactions in transaction"
-            :key="transactions.id"
+            v-for="item in transaction"
+            :key="item.id"
             class="mb-5"
           >
             <v-list-item-avatar>
-              <v-icon :color="getItem(transactions.idCategory).color">{{ getItem(transactions.idCategory).icon }}</v-icon>
+              <v-icon :color="getItem(item.idCategory).color">{{ getItem(item.idCategory).icon }}</v-icon>
               <!-- <v-icon>{{getTransactionCategory(transaction.id).icon}}</v-icon> -->
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title>{{ transactions.name }}</v-list-item-title>
-              <v-list-item-subtitle>{{ transactions.date }}</v-list-item-subtitle>
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+              <v-list-item-subtitle>{{ item.date }}</v-list-item-subtitle>
             </v-list-item-content>
-            <p class="mt-3 font-weight-bold" :style="getColor(transactions.value)"> {{ transactions.value }} €</p>
+            <p class="mt-3 font-weight-bold" :style="getColor(item.value)"> {{ item.value }} €</p>
           </v-list-item>
         </v-list>
       </v-card-text>
@@ -82,28 +82,5 @@ export default {
       }
     },
   }
-  /*
-    getIcon(idCategory) {
-      for (let i = 0; i < this.categories.length; i++) {
-        if (idCategory === this.categories[i].id) {
-          return this.categories[i].icon
-        }
-      }
-    },*/
-
-  /*
-  getIconRefund(idCategory) {
-    for (let i = 0; i < this.refund.length; i++) {
-      if (idCategory === this.refund[i].id) {
-        return this.refund[i].icon
-      }
-    }
-  },*/
-
-  /* getTransactionCategory(categoryId) {
-     return this.categories.filter(el => el.id === 0)[0]
-   }
-
-   },*/
 }
 </script>

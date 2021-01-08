@@ -28,7 +28,7 @@ export const getters = {
   },
   getRelSurnames(state){
     return state.relatives.map(el => el.surname)
-  }
+  },
 
 }
 

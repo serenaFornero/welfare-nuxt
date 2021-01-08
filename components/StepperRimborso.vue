@@ -121,7 +121,7 @@
                   v-model="select3"
                   label="Scegli l'effettivo beneficiario"
                   max-width="50"
-                  :items="beneficiario"
+                  :items="concatRel"
 
                 ></v-select>
               </v-col>
@@ -177,7 +177,7 @@
         >
           <v-form v-model="valid">
             <v-card-text>
-              <!--
+
               <v-file-input
                 :rules="rules"
                 v-model="select4"
@@ -186,7 +186,7 @@
                 placeholder=""
                 max-width="50"
               ></v-file-input>
-              -->
+
             </v-card-text>
           </v-form>
         </v-card>
@@ -332,7 +332,22 @@ export default {
     getSurnames() {
       return this.$store.getters["relatives/getRelSurnames"]
     },
-
+    concatRel(){
+      return this.getNames.concat(this.getSurnames)
+    },
+   /*
+    getUserName(){
+      return this.$store.getters['users/getUserName']
+    },
+    getUserSurname(){
+      return this.$store.getters['users/getUserSurname']
+    },
+    concatUser(){
+      return this.getUserName.concat(this.getUserSurname)
+    },
+    concatUserRel(){
+      return this.concatRel.concat(this.concatUser)
+    }*/
   },
   methods: {},
 }
