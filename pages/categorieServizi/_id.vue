@@ -58,7 +58,7 @@ export default {
       return this.$store.getters["categories/getCategory"]
     },
     services(){
-      /*console.log(this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id)))*/
+      console.log(this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id)))
       return this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id))
     },
   },
@@ -71,9 +71,9 @@ export default {
       }
     },
   },
- mounted() {
+ /*mounted() {
     console.log(this.$route.params.id)
-  }
+  }*/
 }
 
 

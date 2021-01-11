@@ -20,6 +20,18 @@
 
     <v-btn
       height="100%"
+      to="/servizi"
+    >
+        <span
+          class="d-none d-sm-flex mt-2"
+        >
+        Negozio
+      </span>
+      <v-icon>mdi-shopping</v-icon>
+    </v-btn>
+
+    <v-btn
+      height="100%"
       to="/credito"
     >
        <span

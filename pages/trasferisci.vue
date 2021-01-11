@@ -2,9 +2,11 @@
   <v-container fluid>
     <go-back/>
     <v-card class="rounded-lg" elevation="5" >
-        <v-card-title class="justify-center" style="color: #232649">Shop Name</v-card-title>
-        <v-card-subtitle class="text-center">shop address</v-card-subtitle>
-      <v-row justify="center"  >
+      <div>
+        <v-card-title class="justify-center" style="color: #232649">shop name </v-card-title>
+        <v-card-subtitle class="text-center"> shop address </v-card-subtitle>
+      </div>
+      <v-row justify="center">
       <v-col
         cols="12"
         sm="6"
@@ -15,6 +17,7 @@
           class="mx-2 rounded-lg my-5"
           label="Solo"
           placeholder="Inserisci importo"
+          type="number"
           solo
         ></v-text-field>
       </v-col>
@@ -30,10 +33,7 @@
         >Invia</v-btn>
       </v-card-actions>
     </v-card>
-
-
   </v-container>
-
 </template>
 
 <script>
@@ -48,10 +48,6 @@ export default {
   data () {
     return {
       creditAvailable: "",
-      cred:{
-        credD:''
-      }
-
     }
 
   },
@@ -68,7 +64,7 @@ export default {
       this.$store.commit('credit/decrementCredit', this.creditAvailable)
     },
 
-  }
+  },
 }
 </script>
 

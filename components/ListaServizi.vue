@@ -12,7 +12,7 @@
           :src="item.src"
         ></v-img>
       </v-list-item-avatar>
-      <nuxt-link to="/trasferisci" style="text-decoration: none">
+      <nuxt-link :to="'/servizi/' + item.id" style="text-decoration: none">
         <v-list-item-content>
           <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ item.name}}</v-list-item-title>
           <v-list-item-action-text class="font-weight-light" >{{ item.address}}</v-list-item-action-text>
@@ -26,19 +26,22 @@
 </template>
 
 <script>
+import DialogTrasferisci from "@/components/DialogTrasferisci";
 export default {
+  props: {
 
-  components: {},
+  },
+
+  components: {DialogTrasferisci},
   data () {
-    return {
-
-    }
+    return {}
   },
   methods:{},
   computed: {
     services() {
       return this.$store.getters["services/getServices"]
     },
+
   },
 }
 </script>
