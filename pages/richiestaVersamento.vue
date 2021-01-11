@@ -50,6 +50,7 @@
             label="Inserisci importo da versare"
             placeholder="0,00"
             required
+            type="number"
           ></v-text-field>
           <v-dialog
             ref="dialog"

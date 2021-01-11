@@ -26,6 +26,7 @@
           color="#2573d5"
           class="text-capitalize white--text rounded-lg"
           to="/trasferimentoEffettuato"
+          @click="addOrder(card)"
         >
           Procedi
         </v-btn>
@@ -43,9 +44,6 @@ export default {
         name: null
       },
       dialog: false,
-      order:{
-        value: ""
-      }
     }
   },
   computed:{},
@@ -53,6 +51,7 @@ export default {
     open(giftCard) {
       this.card = giftCard
       this.dialog = true
+      console.log()
     },
     close() {
       this.dialog = false
@@ -60,10 +59,9 @@ export default {
         name: null,
       }
     },
-    /*addOrder: function () {
-      this.$store.commit('orders/addOrder')
-    }*/
-
+    addOrder(card){
+      this.$store.commit("orders/addOrder", card)
+    },
   }
 
 }

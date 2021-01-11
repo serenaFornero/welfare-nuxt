@@ -28,14 +28,13 @@
         <v-card-text class="font-weight-bold" :style="getColor(card.value)">
           {{card.value}}€
         </v-card-text>
-        <v-btn
-          @click="$refs.dialogAcquista.open(card)"
-          color="#2573d5"
-          dark
-          class="text-capitalize rounded-lg mb-3"
-        >
-          Acquista
-        </v-btn>
+         <v-btn
+           @click="$refs.dialogAcquista.open(card)"
+           color="#2573d5"
+           class="text-capitalize rounded-lg mb-3 white--text"
+         >
+           Acquista
+         </v-btn>
     </v-card>
     <dialog-acquista
       ref="dialogAcquista">

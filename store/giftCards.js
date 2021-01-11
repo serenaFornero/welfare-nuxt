@@ -123,9 +123,9 @@ export const state = () => ({
 })
 
 export const getters = {
- getGiftCard(state){
+ /*getGiftCard(state){
     return state.giftCard
-  },
+  },*/
   getCategory(state){
    return state.categoriesGiftCard
   },
@@ -135,5 +135,10 @@ export const getters = {
   getCardsById: (state) => (id) => {
     return state.giftCards.filter(el => el.categoryId === id);
   },
+
+}
+
+export const mutations = {
+
 }
 
