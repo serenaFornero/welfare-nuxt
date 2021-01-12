@@ -10,8 +10,8 @@ export const state = () => ({
      sex: "M",
      password: "mario12",
      birthDate: "12/12/1980",
-     phone: '3408864992',
-     address: "Via Lequio",
+     phone: "3408864992",
+     address: "Via Lequio ",
      civic: "12",
      iban: "MJF45LGFEMMFD7784KKD",
      state: "Italia",
@@ -33,3 +33,24 @@ export const getters = {
   }
 
 }
+export const mutations = {
+  changePassword(state, password){
+    state.users.fill(password, 7)
+    console.log("mutations: password modificata")
+
+  },
+  addRelative(state, relative) {
+    state.relatives.push({
+      name: relative.name,
+      surname: relative.surname,
+      birthDate: relative.birthDate,
+      relation: relative.relation,
+    });
+    console.log("mutations: relative aggiunto");
+  },
+
+
+
+
+}
+

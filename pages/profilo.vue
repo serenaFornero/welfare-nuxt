@@ -19,10 +19,6 @@
       </v-card-title>
       <PersonalDataForm></PersonalDataForm>
       <v-card-title style="color: #232649">
-        Residenza
-      </v-card-title>
-      <ResidenceForm></ResidenceForm>
-      <v-card-title style="color: #232649">
         Coordinate Bancarie
       </v-card-title>
       <v-alert
@@ -70,6 +66,7 @@
         </v-btn>
       </v-card-actions>
       <v-card-text>
+        <v-form>
         <v-row>
           <v-col
             cols="12"
@@ -98,6 +95,7 @@
             ></v-text-field>
           </v-col>
         </v-row>
+        </v-form>
       </v-card-text>
     </v-card>
   </v-container>
@@ -111,13 +109,12 @@ import RelativesAutocomplete from "~/components/RelativesAutocomplete";
 import avatar from "@/components/Avatar";
 import GoBack from "@/components/GoBack";
 import PersonalDataForm from "@/components/PersonalDataForm";
-import ResidenceForm from "@/components/ResidenceForm";
+
 
 export default {
   layout: 'default',
   components: {
     BankDetailsForm,
-    ResidenceForm,
     PersonalDataForm,
     RelativesAutocomplete,
     Password,

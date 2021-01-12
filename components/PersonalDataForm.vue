@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
 
     <form v-for="user in users" :key="user.id" >
       <v-row>
@@ -86,8 +86,10 @@
           :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           :type=" showPassword ? 'text' : 'password'"
           label="Password"
+          :hint="!isEditing ? 'Clicca l\'icona a sinistra per modificare' : 'Clicca l\'icona per salvare'"
           :value="user.password"
           @click:append=" showPassword = ! showPassword"
+          persistent-hint
         >
 
           <template v-slot:prepend-inner>
@@ -114,14 +116,12 @@
 
 export default {
 name: "PersonalDataForm",
-  components:{
-
-
-  },
+  components:{},
   data () {
     return {
       isEditing: false,
       showPassword: false,
+      password: ""
     }
       },
   computed: {
@@ -129,5 +129,10 @@ name: "PersonalDataForm",
       return this.$store.getters["users/getUser"]
     }
   },
+  methods:{
+  updatePassword(){
+    this.$store.commit("users/changePassword");
+  }
+  }
 }
 </script>

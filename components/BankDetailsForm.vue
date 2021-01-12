@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <form v-for="user in users" :key="user.id" >
      <v-row>
       <v-col
@@ -12,8 +12,21 @@
           :value="user.name + user.surname"
           readonly
           label="Intestatario"
+          :hint="!isEditing ? 'Clicca l\'icona a sinistra per modificare' : 'Clicca l\'icona per salvare'"
+          persistent-hint
         >
-
+          <template v-slot:prepend-inner>
+            <v-slide-x-reverse-transition
+                mode="out-in"
+            >
+              <v-icon
+                  :key="`icon-${isEditing}`"
+                  :color="isEditing ? 'success' : 'gray'"
+                  @click="isEditing = !isEditing"
+                  v-text="isEditing ? 'mdi-check-outline' : 'mdi-border-color'"
+              ></v-icon>
+            </v-slide-x-reverse-transition>
+          </template>
         </v-text-field>
       </v-col>
       <v-col
@@ -26,7 +39,22 @@
           :value="user.iban"
           label="IBAN"
           readonly
-        ></v-text-field>
+          :hint="!isEditing ? 'Clicca l\'icona a sinistra per modificare' : 'Clicca l\'icona per salvare'"
+          persistent-hint
+        >
+          <template v-slot:prepend-inner>
+            <v-slide-x-reverse-transition
+                mode="out-in"
+            >
+              <v-icon
+                  :key="`icon-${isEditing}`"
+                  :color="isEditing ? 'success' : 'gray'"
+                  @click="isEditing = !isEditing"
+                  v-text="isEditing ? 'mdi-check-outline' : 'mdi-border-color'"
+              ></v-icon>
+            </v-slide-x-reverse-transition>
+          </template>
+        </v-text-field>
 
       </v-col>
      </v-row>
@@ -44,6 +72,7 @@ export default {
   },
   data () {
     return {
+      isEditing: false,
     }
   },
   computed: {
