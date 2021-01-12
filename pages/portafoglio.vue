@@ -19,11 +19,11 @@
               elevation="2"
               hover
             >
-              <nuxt-link to="/negozio">
-                <v-img src="up-arrow.png"></v-img>
+              <nuxt-link to="/ordini">
+                <v-img src="orders.png"></v-img>
               </nuxt-link>
             </v-card>
-            <p class="text-center font-weight-bold" style="color: #29304d">Trasferimenti</p>
+            <p class="text-center font-weight-bold" style="color: #29304d">Ordini</p>
           </div>
           <div class="d-flex flex-column">
             <v-card

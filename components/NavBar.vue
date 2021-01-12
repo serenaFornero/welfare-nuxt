@@ -42,20 +42,6 @@
     </v-btn>
     <v-btn
       height="100%"
-      to="/ordini"
-    >
-       <span
-         class="d-none d-sm-flex mt-2"
-       >
-        Ordini
-      </span>
-
-      <v-icon>mdi-shopping</v-icon>
-    </v-btn>
-
-
-    <v-btn
-      height="100%"
       to="/portafoglio"
     >
       <span
