@@ -11,26 +11,32 @@
       class="rounded-lg"
       elevation="5"
     >
-      <v-list>
-        <v-list-item v-for="value in services" :key="value.id">
+      <v-list >
+        <v-list-item four-line v-for="item in services" :key="item.id" >
           <v-list-item-avatar class="rounded-lg">
-            <v-img :src="value.src"></v-img>
-           <!-- <v-icon :color="getCategoryItem(value.categoryId).color">{{ getCategoryItem(value.categoryId).icon }}</v-icon>-->
+            <v-img :src="item.src"></v-img>
           </v-list-item-avatar>
-          <nuxt-link to="/trasferisci" style="text-decoration: none">
             <v-list-item-content>
-              <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ value.name }}</v-list-item-title>
-              <v-list-item-action-text class="font-weight-light">{{ value.address }}</v-list-item-action-text>
-              <v-list-item-subtitle class="grey--text text--darken-1">{{ value.description }}</v-list-item-subtitle>
-              <v-list-item-action-text class="grey--text text--darken-1 mt-2">{{ value.rating }}/5
-              </v-list-item-action-text>
-              <v-list-item-content>
-                <v-divider></v-divider>
-              </v-list-item-content>
+              <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ item.name }}</v-list-item-title>
+              <v-list-item-subtitle class="font-weight-light">{{ item.address }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="grey--text text--darken-1">{{ item.description }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="grey--text text--darken-1 mt-2">{{ item.rating }}/5</v-list-item-subtitle>
             </v-list-item-content>
-          </nuxt-link>
+              <v-list-item-action >
+                <v-btn
+                fab
+                @click="$refs.dialog.open(item)"
+                color="#2573d5"
+                x-small
+                class="white--text"
+              >
+                <v-icon> mdi-arrow-right-bold-circle </v-icon>
+              </v-btn>
+              </v-list-item-action>
         </v-list-item>
       </v-list>
+
+      <dialog-trasferisci ref="dialog"></dialog-trasferisci>
     </v-card>
   </v-container>
 </template>
@@ -39,6 +45,7 @@
 <script>
 import SearchField from "@/components/SearchField";
 import GoBack from "@/components/GoBack";
+import DialogTrasferisci from "@/components/DialogTrasferisci";
 
 
 export default {
@@ -47,6 +54,8 @@ export default {
   components: {
     GoBack,
     SearchField,
+    DialogTrasferisci
+
 
   },
   data() {

@@ -67,4 +67,37 @@ export default {
   },
 }
 </script>
+<!--
+<template>
+  <v-container fluid>
+    <go-back/>
+    <v-card class="rounded-lg" elevation="5" >
+      <div v-for="item in services" :key="item.id">
+        <v-btn
+          @click="$refs.dialog.open(item)"
+          color="#2573d5"
+          class="text-capitalize rounded-lg mb-3 white--text"
+        >
+          Trasferisci
+        </v-btn>
+      </div>
+      <dialog-trasferisci ref="dialog"></dialog-trasferisci>
+    </v-card>
+  </v-container>
+</template>
+
+<script>
+import DialogTrasferisci from "@/components/DialogTrasferisci";
+import GoBack from "@/components/GoBack";
+export default {
+  components: {DialogTrasferisci, GoBack},
+  computed: {
+    services(){
+      return this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id))
+    }
+  },
+
+}
+</script>-->
+
 

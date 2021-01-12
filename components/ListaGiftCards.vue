@@ -15,7 +15,7 @@
             color="#2573d5"
             dark
             class="text-capitalize rounded-lg"
-            :to="'/negozio/' + category.id"
+            :to="'/giftCards/' + category.id"
           >
             Scopri
           </v-btn>

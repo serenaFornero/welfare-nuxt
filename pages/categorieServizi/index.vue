@@ -2,7 +2,7 @@
   <v-container fluid>
     <go-back/>
     <p class="headline" style="color: #29304d">
-      Categorie
+      Servizi vicino a te
     </p>
     <v-card
       class="rounded-lg d-flex flex-wrap" elevation="5"

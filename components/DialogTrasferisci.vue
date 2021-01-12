@@ -5,26 +5,27 @@
     max-width="500px"
   >
     <v-card class="rounded-lg" elevation="5" >
-      <div>
         <v-card-title class="justify-center" style="color: #232649">{{item.name}}</v-card-title>
         <v-card-subtitle class="text-center"> {{ item.address }} </v-card-subtitle>
-      </div>
       <v-row justify="center">
         <v-col
           cols="12"
           sm="6"
-          md="3"
+          md="6"
         >
           <v-text-field
-            class="mx-2 rounded-lg my-5"
+            v-model="creditAvailable"
+            class="mx-3 rounded-lg my-3"
             label="Solo"
-            placeholder="Inserisci importo"
+            placeholder="0,00"
             type="number"
             solo
-          ></v-text-field>
+          >
+
+          </v-text-field>
         </v-col>
       </v-row>
-      <v-card-actions class="justify-center">
+      <v-card-actions class="mx-3 py-3">
         <v-btn
           class="text-capitalize"
           color="#2573d5"
@@ -33,10 +34,12 @@
         >
           Indietro
         </v-btn>
+        <v-spacer></v-spacer>
         <v-btn
           color="#2573d5"
           class="text-capitalize white--text rounded-lg"
           to="/trasferimentoEffettuato"
+          @click="creditTransfer"
         >
           Procedi
         </v-btn>
@@ -47,16 +50,24 @@
 
 <script>
 export default {
-  name: "DialogAcquista",
+  name: "DialogTrasferisci",
   data() {
     return {
       item: {
         name: null
       },
       dialog: false,
+      creditAvailable: "",
     }
   },
-  computed:{},
+  computed:{
+    credit(){
+      return this.$store.getters['credit/getCredit']
+    },
+    cr(){
+      return this.$store.getters['credit/getAvailab']
+    },
+  },
   methods: {
     open(service) {
       this.item = service
@@ -68,6 +79,9 @@ export default {
       this.item = {
         name: null,
       }
+    },
+    creditTransfer: function (){
+      this.$store.commit('credit/decrementCredit', this.creditAvailable)
     },
   }
 

@@ -1,18 +1,17 @@
 <template>
-  <v-list class="mt-5">
+  <v-container fluid>
+  <v-list  v-for="item in services"
+           :key="item.id">
     <v-row class="d-none d-lg-block ml-3 mb-3 ">
       <span class="font-weight-light grey--text text--darken-1 ">Visualizza sulla </span> <nuxt-link style="text-decoration: none" class="font-weight-bold" to="/mappa"> Mappa</nuxt-link>
     </v-row>
-    <v-list-item
-      v-for="item in services"
-      :key="item.id"
-    >
+    <v-list-item>
       <v-list-item-avatar  tile class="rounded-lg">
         <v-img
           :src="item.src"
         ></v-img>
       </v-list-item-avatar>
-      <nuxt-link :to="'/servizi/' + item.id" style="text-decoration: none">
+      <nuxt-link  :to="'/negozio/' + item.id" style="text-decoration: none" >
         <v-list-item-content>
           <v-list-item-title class="font-weight-bold" style="color: #29304d">{{ item.name}}</v-list-item-title>
           <v-list-item-action-text class="font-weight-light" >{{ item.address}}</v-list-item-action-text>
@@ -23,16 +22,14 @@
       </nuxt-link>
     </v-list-item>
   </v-list>
+  </v-container>
 </template>
 
 <script>
-import DialogTrasferisci from "@/components/DialogTrasferisci";
 export default {
-  props: {
+  props: {},
 
-  },
-
-  components: {DialogTrasferisci},
+  components: {},
   data () {
     return {}
   },
@@ -41,6 +38,7 @@ export default {
     services() {
       return this.$store.getters["services/getServices"]
     },
+
 
   },
 }

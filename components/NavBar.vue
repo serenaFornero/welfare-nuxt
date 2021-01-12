@@ -8,28 +8,26 @@
   >
     <v-btn
       height="100%"
-      to="/negozio"
+      to="/categorieServizi"
     >
         <span
           class="d-none d-sm-flex mt-2"
         >
         Negozio
       </span>
-      <v-icon>mdi-shopping</v-icon>
+      <v-icon>mdi-storefront</v-icon>
     </v-btn>
-
     <v-btn
       height="100%"
-      to="/servizi"
+      to="/giftCards"
     >
         <span
           class="d-none d-sm-flex mt-2"
         >
-        Negozio
+        Gift Cards
       </span>
-      <v-icon>mdi-shopping</v-icon>
+      <v-icon>mdi-gift</v-icon>
     </v-btn>
-
     <v-btn
       height="100%"
       to="/credito"
@@ -52,7 +50,7 @@
         Ordini
       </span>
 
-      <v-icon>mdi-gift</v-icon>
+      <v-icon>mdi-shopping</v-icon>
     </v-btn>
 
 
