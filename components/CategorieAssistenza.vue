@@ -1,9 +1,8 @@
 <template>
-    <v-row>
-      <v-col class="d-flex flex-wrap justify-center">
+      <v-col class="d-flex flex-wrap justify-center mt-3">
         <div class="d-flex flex-column">
           <v-card
-            class="mb-2 mx-2 pa-5"
+            class="mb-2 pa-5"
             height="100"
             width="100"
             outlined
@@ -16,7 +15,6 @@
           <p class="text-center font-weight-bold" style="color: #29304d">{{category.name}}</p>
         </div>
       </v-col>
-    </v-row>
   </template>
 
   <script>

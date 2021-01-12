@@ -57,8 +57,7 @@ export const state = () => ({
       src: "billing.png",
       color: "#232649"
     }
-  ]
-
+  ],
 })
 
 export const getters = {
@@ -70,6 +69,7 @@ export const getters = {
   },
   getIconDeposit(state){
     return state.deposit.map(el => el.icon)
-  }
+  },
+
 
 }

@@ -4,11 +4,8 @@
     <p class="headline" style="color: #29304d">
       Assistenza
     </p>
-    <v-card
-      class="rounded-lg d-flex flex-wrap" elevation="5"
-    >
+    <v-card class="rounded-lg d-flex flex-wrap" hover>
       <categorie-assistenza v-for="value in categories" :key="value.id" :category="value"></categorie-assistenza>
-
     </v-card>
   </v-container>
 </template>

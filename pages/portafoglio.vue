@@ -9,21 +9,6 @@
     >
       <v-row>
         <v-col class="d-flex flex-wrap justify-center mt-3">
-          <!--
-          <div class="d-flex flex-column">
-            <v-card
-              class="mb-2 mx-5 pa-5"
-              height="100"
-              width="100"
-              outlined
-              rounded
-              elevation="2"
-              hover
-            >
-              <nuxt-link to="/trasferimentiQrCode"><v-img src="no-border.png"></v-img></nuxt-link>
-            </v-card>
-            <p class="text-center font-weight-bold" style="color: #29304d">Qr-code</p>
-          </div>-->
           <div class="d-flex flex-column">
             <v-card
               class="mb-2 mx-5 pa-5"
@@ -58,9 +43,6 @@
           </div>
         </v-col>
       </v-row>
-      <!-- <v-card-title>
-         <p class="title">Rimborsi</p>
-       </v-card-title>-->
       <v-row>
         <v-col class="d-flex flex-wrap justify-center">
           <div class="d-flex flex-column">
@@ -97,9 +79,6 @@
           </div>
         </v-col>
       </v-row>
-      <!--<v-card-title>
-        <p class="title">Versamenti</p>
-      </v-card-title>-->
       <v-row>
         <v-col class="d-flex flex-wrap justify-center">
           <div class="d-flex flex-column">
@@ -141,15 +120,10 @@
 </template>
 
 <script>
-
 export default {
-
+  components: {},
   layout: 'default',
 
-  computed: {
-    categoriesWallet() {
-      return this.$store.getters["categories/getCategoryWallet"]
-    }
-  },
+  computed: {},
 }
 </script>
