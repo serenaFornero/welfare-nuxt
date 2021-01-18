@@ -30,7 +30,7 @@
     </v-btn>
     <v-btn
       height="100%"
-      to="/credito"
+      to="/home"
     >
        <span
          class="d-none d-sm-flex mt-2"

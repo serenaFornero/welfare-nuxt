@@ -13,7 +13,7 @@ export const state = () => ({
       id: 1,
       idUser: 0,
       src: "/amazon.jpg",
-      categoryId: 0,
+      categoryId: 8,
       brand: "Amazon",
       description: "Lorem Ipsum dolor sit amet",
       value: 15,
@@ -23,7 +23,7 @@ export const state = () => ({
       id: 2,
       idUser: 0,
       src: "/decathlon.png",
-      categoryId: 2,
+      categoryId: 10,
       brand: "Decathlon",
       description: "Lorem Ipsum dolor sit amet",
       value: 20,
@@ -33,7 +33,7 @@ export const state = () => ({
       id: 3,
       idUser: 0,
       src: "/netflix.jpeg",
-      categoryId: 1,
+      categoryId: 9,
       brand: "Netflix",
       description: "Lorem Ipsum dolor sit amet",
       value: 50,
@@ -59,14 +59,6 @@ export const mutations = {
     state.orderList.push({...card})
     console.log("mutations: Ordine aggiunto");
   },
- /*
-   addOrder(state, card) {
-    state.orderList.push({
-      value: card.value,
-    });
-    console.log("mutations: ordine aggiunto");
-  },
-  */
   removeOrder(state, index) {
     state.orderList.splice(index, 1)
     console.log("mutations: Ordine eliminato");

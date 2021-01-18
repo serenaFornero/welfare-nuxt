@@ -22,7 +22,7 @@
         dark
         outlined
         class="mb-5 text-capitalize rounded-lg"
-        to="/credito"
+        to="/home"
         width="100"
       >
         Crediti

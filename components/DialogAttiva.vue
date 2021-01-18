@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <v-row
-      justify="center"
-    >
+  <div >
+    <v-row justify="center">
       <v-btn
         color="#2573d5"
         class="text-capitalize rounded-lg white--text"
@@ -10,7 +8,7 @@
       >
         Attiva
       </v-btn>
-
+    </v-row>
       <v-dialog
         v-model="dialog3"
         max-width="500px"
@@ -31,7 +29,7 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-    </v-row>
+
   </div>
 </template>
 
@@ -40,7 +38,8 @@ export default {
   props:{
     orders:{
       type: Object
-    },},
+    },
+  },
 
   data () {
     return {
@@ -64,7 +63,11 @@ export default {
       immediate: true // This ensures the watcher is triggered upon creation
     }
   },
-  computed: {},
+  computed: {
+    orderList(){
+      return this.$store.getters["orders/getOrderList"]
+    }
+  },
   methods:{
     removeOrder: function () {
       this.$store.commit("orders/removeOrder");

@@ -27,7 +27,7 @@
           color="#2573d5"
           class="my-5 text-capitalize rounded-lg white--text"
           large
-          to="/credito"
+          to="/home"
           :disabled="!valid"
         >
           Login

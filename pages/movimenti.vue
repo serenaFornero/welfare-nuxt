@@ -56,6 +56,12 @@ export default {
     categories() {
       return this.$store.getters["categories/getCategory"]
     },
+    catGiftCard(){
+      return this.$store.getters["giftCards/getCategory"]
+    },
+    concat(){
+      return this.categories.concat(this.catGiftCard)
+    },
     refund() {
       return this.$store.getters["wallet/getRefund"]
     },
@@ -75,9 +81,9 @@ export default {
       }
     },
     getItem(idCategory) {
-      for (let i = 0; i < this.concatena.length; i++ ){
-        if (idCategory === this.concatena[i].id) {
-          return this.concatena[i]
+      for (let i = 0; i < this.concat.length; i++ ){
+        if (idCategory === this.concat[i].id) {
+          return this.concat[i]
         }
       }
     },
