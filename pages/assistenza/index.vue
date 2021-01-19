@@ -5,19 +5,19 @@
       Assistenza
     </p>
     <v-card class="rounded-lg d-flex flex-wrap" hover>
-      <categorie-assistenza v-for="value in categories" :key="value.id" :category="value"></categorie-assistenza>
+      <CategoriesSupport v-for="value in categories" :key="value.id" :category="value"></CategoriesSupport>
     </v-card>
   </v-container>
 </template>
 <script>
 
-import CategorieAssistenza from "@/components/CategorieAssistenza"
+import CategoriesSupport from "@/components/CategoriesSupport"
 import GoBack from "@/components/GoBack";
 
 export default {
   components: {
     GoBack,
-   CategorieAssistenza
+      CategoriesSupport
   },
   data: () => ({}),
   computed: {

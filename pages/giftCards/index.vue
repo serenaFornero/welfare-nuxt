@@ -11,7 +11,7 @@
         class="rounded-lg"
         elevation="5"
       >
-            <lista-gift-cards v-for="item in categories" :key="item.id" :category="item"></lista-gift-cards>
+            <giftCardsList v-for="item in categories" :key="item.id" :category="item"></giftCardsList>
       </v-card>
     </div>
   </v-container>
@@ -21,14 +21,12 @@
 <script>
 
 import SearchField from "@/components/SearchField";
-import ListaServizi from "@/components/ListaServizi";
-import ListaGiftCards from "@/components/ListaGiftCards";
+import giftCardsList from "@/components/GiftCardsList";
 
 export default {
   layout: 'default',
   components: {
-    ListaGiftCards,
-    ListaServizi,
+      giftCardsList,
     SearchField,
 
   },

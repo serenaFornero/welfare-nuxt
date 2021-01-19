@@ -6,7 +6,7 @@
             elevation="5"
         >
             <v-row justify="center">
-                <v-card-title class="mb-2 mt-3" style="color: #29304d">Recupera Password</v-card-title>
+                <v-card-title class="mb-2 mt-3 primary--text">Recupera Password</v-card-title>
                 <v-card-subtitle>Inserisci l'indirizzo e-mail associato <br> al tuo account</v-card-subtitle>
             </v-row>
 
@@ -32,9 +32,8 @@
             </v-card-text>
             <v-card-actions class="justify-center">
                 <v-btn
-                    color="#2573d5"
                     large
-                    class="mb-5 text-capitalize rounded-lg white--text"
+                    class="mb-5 text-capitalize rounded-lg white--text accent"
                     to="/resetPassword"
                     :disabled="!valid"
                 >
@@ -49,16 +48,15 @@
 import Password from '@/components/Password'
 
 export default {
-    components: { Password },
-    name: 'RecuperaPassword',
-    layout: 'notAuthenticated',
-
+    name: 'RecoverPasswordForm',
+    components: {
+        Password
+    },
     watch: {
         password(val) {
             console.log(val)
         }
     },
-
     data: () => ({
         valid: true,
         email: '',
@@ -67,7 +65,6 @@ export default {
             emailRules: v => /.+@.+/.test(v) || 'Email non valida'
         }
     }),
-    methods: {}
 }
 </script>
 

@@ -49,7 +49,7 @@
                             <strong>{{ item.value }}€</strong>
                         </v-list-item-subtitle>
                         <v-list-item-action>
-                            <dialog-attiva v-for="item in ordersById" :key="item.id" :orders="item"></dialog-attiva>
+                            <DialogActivateGiftCard v-for="item in ordersById" :key="item.id" :orders="item"></DialogActivateGiftCard>
                         </v-list-item-action>
                     </v-list-item-group>
                 </v-list>
@@ -59,13 +59,13 @@
 </template>
 
 <script>
-import dialogAttiva from '@/components/DialogAttiva'
+import DialogActivateGiftCard from '@/components/DialogActivateGiftCard'
 import GoBack from '@/components/GoBack'
 
 export default {
     components: {
         GoBack,
-        dialogAttiva
+        DialogActivateGiftCard
 
     },
     data() {

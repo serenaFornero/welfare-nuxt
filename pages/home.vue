@@ -3,7 +3,7 @@
         <v-row v-for="values in users" :key="values.id">
             <avatar class="d-flex" :user="values"></avatar>
         </v-row>
-        <card-credito class="my-3"></card-credito>
+        <CardCreditAvailable class="my-3"></CardCreditAvailable>
         <v-card
             class="rounded-lg d-flex flex-wrap" elevation="5">
             <v-card-title style="color: #232649">
@@ -24,15 +24,13 @@
 </template>
 
 <script>
-import Alert from '@/components/Alert'
 import Avatar from '@/components/Avatar'
-import CardCredito from '@/components/CardCredito'
+import CardCreditAvailable from '@/components/CardCreditAvailable'
 
 export default {
     components: {
         Avatar,
-        CardCredito,
-        Alert
+        CardCreditAvailable,
     },
 
     data() {

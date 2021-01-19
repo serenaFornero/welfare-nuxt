@@ -4,7 +4,7 @@
     <v-row v-for="values in users" :key="values.id">
       <avatar class="d-flex" :user="values"></avatar>
     </v-row>
-    <card-credito class="my-3"></card-credito>
+    <CardCreditAvailable class="my-3"></CardCreditAvailable>
         <v-card
           class="rounded-lg" elevation="5">
           <v-row>
@@ -30,7 +30,7 @@
 
 
 <script>
-import CardCredito from "@/components/CardCredito";
+import CardCreditAvailable from "@/components/CardCreditAvailable";
 import Avatar from "@/components/Avatar";
 import GoBack from "@/components/GoBack";
 export default {
@@ -38,7 +38,7 @@ export default {
   components: {
     GoBack,
     Avatar,
-    CardCredito,
+      CardCreditAvailable,
   },
   data () {
     return{

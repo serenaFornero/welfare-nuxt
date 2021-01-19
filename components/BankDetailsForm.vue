@@ -1,6 +1,6 @@
 <template>
     <v-container fluid>
-        <form v-for="user in users" :key="user.id">
+        <form v-for="item in getUser" :key="item.id">
             <v-row>
                 <v-col
                     cols="12"
@@ -9,7 +9,7 @@
                 >
                     <v-text-field
                         max-width="50"
-                        :value="user.name + user.surname"
+                        :value="item.name + item.surname"
                         readonly
                         label="Intestatario"
                         :hint="!isEditing ? 'Clicca l\'icona a sinistra per modificare' : 'Clicca l\'icona per salvare'"
@@ -33,10 +33,9 @@
                     cols="12"
                     sm="6"
                     md="3"
-
                 >
                     <v-text-field
-                        :value="user.iban"
+                        :value="item.iban"
                         label="IBAN"
                         readonly
                         :hint="!isEditing ? 'Clicca l\'icona a sinistra per modificare' : 'Clicca l\'icona per salvare'"
@@ -55,7 +54,6 @@
                             </v-slide-x-reverse-transition>
                         </template>
                     </v-text-field>
-
                 </v-col>
             </v-row>
         </form>
@@ -65,15 +63,14 @@
 <script>
 
 export default {
-    name: '',
-    components: {},
+    name: 'BankDetailsForm',
     data() {
         return {
             isEditing: false
         }
     },
     computed: {
-        users() {
+        getUser() {
             return this.$store.getters['users/getUser']
         }
     }

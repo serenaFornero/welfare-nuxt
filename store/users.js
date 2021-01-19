@@ -16,7 +16,9 @@ export const state = () => ({
      iban: "MJF45LGFEMMFD7784KKD",
      state: "Italia",
      province: "Torino",
-     zipCode: '10121'
+     zipCode: '10121',
+       relation: "Utente"
+
    }
  ],
 })

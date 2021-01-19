@@ -4,7 +4,7 @@
         item-value="id"
         :rules="rules"
         :label="label"
-        :items="concat"
+        :items="getBeneficiaries"
         return-object
         v-model="relative">
         <template v-slot:selection="{item}">
@@ -20,10 +20,10 @@
             >
                 <v-list-item-content>
                     <v-list-item-title>
-                        {{ item.name + ' ' + item.surname }}
+                        {{ getFullName(item.name, item.surname) }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                        {{ item.relation }} {{ item.birthDate }}
+                        {{ getRelDetails(item.relation, item.birthDate) }}
                     </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
@@ -74,19 +74,22 @@ export default {
         }
     },
     computed: {
-        relatives() {
+        getRelatives() {
             return this.$store.getters['relatives/getRelative']
         },
-        user() {
+        getUser() {
             return this.$store.getters['users/getUser']
         },
-        concat() {
-            return this.relatives.concat(this.user)
+        getBeneficiaries() {
+            return this.getRelatives.concat(this.getUser)
         }
     },
     methods: {
         getFullName(name, surname) {
             return name + ' ' + surname
+        },
+        getRelDetails(relation, birthDate) {
+            return relation + ' ' + birthDate
         }
 
     }

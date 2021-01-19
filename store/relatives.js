@@ -17,12 +17,16 @@ export const state = () => ({
       relation: "Coniuge"
     }
   ],
+    relation:["Coniuge", "Figlio", "Fratello", "Sorella", "Suocero"]
 })
 
 export const getters = {
   getRelative(state) {
     return state.relatives
   },
+    getRelationship(state){
+      return state.relation
+    },
   getRelNames(state){
     return state.relatives.map(el => el.name)
   },

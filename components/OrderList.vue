@@ -10,15 +10,13 @@
             <v-list-item-subtitle v-text="orderList.description"></v-list-item-subtitle>
             <v-list-item-action>
              <v-btn :to="'/ordini/' + orderList.id"
-                    color="#2573d5"
-                    dark
-                    class="text-capitalize rounded-lg"
+                    class="text-capitalize rounded-lg accent white--text"
              >
                Utilizza
              </v-btn>
             </v-list-item-action>
           </v-list-item-content>
-          <v-list-item-action-text class="font-weight-bold" :style="getColor(orderList.value)">
+          <v-list-item-action-text class="font-weight-bold accent--text">
             {{orderList.value }}€
           </v-list-item-action-text>
         </v-list-item>
@@ -29,24 +27,11 @@
 
 
 export default {
-  layout: 'default',
+  name: "OrderList",
   props:{
     orderList: {
       type: Object
     }
   },
-  components: {},
-  data: () => ({}),
-  methods: {
-    getColor(value) {
-      if (value < 0) {
-        return "color: #f76c6c"
-      } else if (value > 0) {
-        return "color: #2573d5"
-      }
-    },
-  },
-
-
 }
 </script>

@@ -32,7 +32,7 @@
         </v-list-item>
       </v-list>
     </v-card>
-    <dialog-trasferisci ref="dialog"></dialog-trasferisci>
+    <DialogCreditTransfer ref="dialog"></DialogCreditTransfer>
   </v-container>
 </template>
 
@@ -40,7 +40,7 @@
 <script>
 import SearchField from "@/components/SearchField";
 import GoBack from "@/components/GoBack";
-import DialogTrasferisci from "@/components/DialogTrasferisci";
+import DialogCreditTransfer from "@/components/DialogCreditTransfer";
 
 
 export default {
@@ -49,7 +49,7 @@ export default {
   components: {
     GoBack,
     SearchField,
-    DialogTrasferisci
+      DialogCreditTransfer
 
 
   },

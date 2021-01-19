@@ -3,7 +3,7 @@
     <v-row v-for="values in users" :key="values.id">
       <avatar class="d-flex" :user="values"></avatar>
     </v-row>
-    <card-credito class="my-3"></card-credito>
+    <CardCreditAvailable class="my-3"></CardCreditAvailable>
     <search-field></search-field>
     <v-card
       class="rounded-lg d-flex flex-wrap"
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import CardCredito from "@/components/CardCredito";
+import CardCreditAvailable from "@/components/CardCreditAvailable";
 import Avatar from "@/components/Avatar";
 import SearchField from "@/components/SearchField";
 
@@ -46,7 +46,7 @@ export default {
   components: {
     SearchField,
     Avatar,
-    CardCredito,
+      CardCreditAvailable,
   },
   data: () => ({}),
   computed: {

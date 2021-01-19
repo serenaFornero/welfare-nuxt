@@ -15,7 +15,7 @@
                         <v-img :src="category.src"></v-img>
                     </nuxt-link>
                 </v-card>
-                <p class="text-center font-weight-bold" style="color: #29304d">{{ category.name }}</p>
+                <p class="text-center font-weight-bold primary--text">{{ category.name }}</p>
             </div>
         </v-col>
     </v-row>
@@ -23,18 +23,12 @@
 
 <script>
 export default {
+    name: 'CategoriesServices',
     props: {
         category: {
             type: Object
         }
     },
-    components: {},
-    data: () => ({}),
-
-    computed: {},
-    mounted() {
-        console.log(this.category)
-    }
 }
 
 </script>

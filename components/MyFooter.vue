@@ -1,14 +1,10 @@
 <template>
     <v-footer
-        dark
         fixed
-        color="#F7F9FC"
+        class="background"
     >
-        <v-col
-            class="text-center"
-            style="color: #2573d5"
-        >
-            {{ new Date().getFullYear() }} — <strong>WeCare</strong>
+        <v-col class="text-center accent--text">
+            {{ new Date().getFullYear() }} — <strong>WeLocal</strong>
         </v-col>
     </v-footer>
 </template>

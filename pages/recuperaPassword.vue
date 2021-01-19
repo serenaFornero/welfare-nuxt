@@ -2,7 +2,7 @@
     <v-container fill-height>
         <v-row align="center" justify="end">
             <v-col cols="12" sm="6">
-                <recupera-password-form></recupera-password-form>
+                <recover-password-form></recover-password-form>
             </v-col>
         </v-row>
     </v-container>
@@ -10,12 +10,12 @@
 
 <script>
 import Password from '@/components/Password'
-import RecuperaPasswordForm from '@/components/RecuperaPasswordForm'
+import RecoverPasswordForm from "@/components/RecoverPasswordForm";
 
 export default {
     components: {
+        RecoverPasswordForm,
         Password,
-        RecuperaPasswordForm
     },
     layout: 'notAuthenticated',
 

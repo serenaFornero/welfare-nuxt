@@ -1,47 +1,47 @@
 <template>
-  <form>
-    <v-text-field
-      v-model="password"
-      :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-      :rules="[rules.required]"
-      :type=" showPassword ? 'text' : 'password'"
-      label="Password"
-      @click:append=" showPassword = ! showPassword"
-    ></v-text-field>
-  </form>
+    <form>
+        <v-text-field
+            v-model="password"
+            :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required]"
+            :type=" showPassword ? 'text' : 'password'"
+            label="Password"
+            @click:append=" showPassword = ! showPassword"
+        ></v-text-field>
+    </form>
 </template>
 <script>
 
 export default {
-  name: "provaPassword",
-  props: {
-    value: {
-      type: String
+    name: "Password",
+    props: {
+        value: {
+            type: String
+        },
+        label: {
+            default: () => 'Password'
+        },
+        rules: {
+            type: Array,
+            default: () => [
+                v => !!v || 'Il campo è obbligatorio'
+            ]
+        }
     },
-    label:{
-      default: () => 'Password'
+    watch: {
+        value(val) {
+            this.password = val
+        },
+        password(val) {
+            this.$emit('input', val)
+        }
     },
-    rules: {
-      type: Array,
-      default: () => [
-        v => !!v || 'Il campo è obbligatorio'
-      ]
+    data() {
+        return {
+            showPassword: false,
+            password: '',
+        }
     }
-  },
-  watch:{
-    value(val) {
-      this.password = val
-    },
-    password(val) {
-      this.$emit('input', val)
-    }
-  },
-  data() {
-    return {
-      showPassword: false,
-      password: '',
-    }
-  }
 }
 
 </script>

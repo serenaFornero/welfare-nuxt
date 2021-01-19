@@ -29,27 +29,27 @@
           {{card.value}}€
         </v-card-text>
          <v-btn
-           @click="$refs.dialogAcquista.open(card)"
+           @click="$refs.DialogPurchaseGiftCard.open(card)"
            color="#2573d5"
            class="text-capitalize rounded-lg mb-3 white--text"
          >
            Acquista
          </v-btn>
     </v-card>
-    <dialog-acquista
-      ref="dialogAcquista">
-    </dialog-acquista>
+    <DialogPurchaseGiftCard
+      ref="DialogPurchaseGiftCard">
+    </DialogPurchaseGiftCard>
   </v-container>
 </template>
 
 <script>
 
-import DialogAcquista from "@/components/DialogAcquista";
+import DialogPurchaseGiftCard from "@/components/DialogPurchaseGiftCard";
 import GoBack from "@/components/GoBack";
 
 export default {
   components: {
-    DialogAcquista,
+      DialogPurchaseGiftCard,
     GoBack
   },
   props: {

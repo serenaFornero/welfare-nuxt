@@ -6,7 +6,7 @@
             elevation="5"
         >
             <v-row justify="center">
-                <v-card-title class=" mt-3" style="color: #29304d">
+                <v-card-title class=" mt-3 primary--text">
                     Accedi alla tua area personale
                 </v-card-title>
             </v-row>
@@ -33,17 +33,15 @@
                     ></v-text-field>
 
                     <v-row justify="center">
-                        <v-checkbox class="mt-1 ml-3 font-weight-light "
+                        <v-checkbox class="mt-1 ml-3 font-weight-light accent--text "
                                     v-model="checkbox"
                                     label="Ricordami"
-                                    color="#2573d5"
 
                         ></v-checkbox>
                         <v-spacer></v-spacer>
                         <nuxt-link
                             to="/recuperaPassword"
-                            style="color: #757575"
-                            class="font-weight-light mt-2 mr-2 text-decoration-none"
+                            class="font-weight-light mt-2 mr-2 text-decoration-none secondary--text"
                         >
                             Password dimenticata?
                         </nuxt-link>
@@ -53,8 +51,7 @@
                 <v-card-actions class="justify-center">
                     <v-btn
                         type="submit"
-                        color="#2573d5"
-                        class="my-5 text-capitalize rounded-lg white--text"
+                        class="my-5 text-capitalize rounded-lg white--text accent"
                         large
                         :disabled="!valid"
                     >
@@ -68,11 +65,13 @@
 
 
 <script>
-
 import Password from '@/components/Password'
 
 export default {
-    components: { Password },
+    components: {
+        Password
+    },
+    name: "Login",
     data: () => ({
         valid: true,
         showPassword: false,

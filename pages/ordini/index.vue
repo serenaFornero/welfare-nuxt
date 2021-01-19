@@ -38,7 +38,7 @@
           <v-card-subtitle v-if="orderList.length === 0">
             Al momento non ci sono ordini da visualizzare.
           </v-card-subtitle>
-      <lista-ordini v-else v-for="item in orderList" :key="item.id" :orderList="item"></lista-ordini>
+      <order-list v-else v-for="item in orderList" :key="item.id" :orderList="item"></order-list>
         </v-card-text>
       </v-card>
   </v-container>
@@ -46,16 +46,14 @@
 
 
 <script>
-import CardCredito from "@/components/CardCredito";
-import listaOrdini from "@/components/ListaOrdini";
+import OrderList from "@/components/OrderList";
 import Avatar from "@/components/Avatar";
 
 export default {
   layout: 'default',
   components: {
     Avatar,
-    CardCredito,
-    listaOrdini
+    OrderList
   },
   data: () => ({
     alert:false,

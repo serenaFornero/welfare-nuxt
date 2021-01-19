@@ -10,7 +10,7 @@
     <v-card
       class="rounded-lg d-flex flex-wrap" hover
     >
-      <categorie v-for="value in categories" :key="value.id" :category="value"></categorie>
+      <CategoriesServices v-for="value in categories" :key="value.id" :category="value"></CategoriesServices>
     </v-card>
     <v-row justify="center" class="d-md-none">
       <v-btn
@@ -31,13 +31,13 @@
 
 <script>
 
-import categorie from "@/components/Categorie";
+import CategoriesServices from "@/components/CategoriesServices";
 import GoBack from "@/components/GoBack";
 
 export default {
   components: {
     GoBack,
-    categorie
+      CategoriesServices
   },
   data: () => ({}),
   computed: {
