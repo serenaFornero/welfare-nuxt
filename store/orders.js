@@ -55,8 +55,11 @@ export const getters = {
 }
 
 export const mutations = {
-    addOrder(state, card) {
-        state.orderList.push({...card})
+    addOrder(state, card){
+      state.orderList.push({
+          brand: card.brand,
+          value: card.value
+      })
         console.log("mutations: Ordine aggiunto");
     },
     removeOrder(state, index) {

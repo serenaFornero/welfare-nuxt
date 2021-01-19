@@ -65,6 +65,9 @@ export default {
             const cat = this.$store.getters['giftCards/getCategoryById'](categoryId)[0]
             return cat
         },
+        addOrder: function (){
+            this.$store.commit('orders/addOrder', {...this.card})
+        }
     },
 }
 </script>

@@ -21,7 +21,7 @@
                         class="mb-5"
                     >
                         <v-list-item-avatar>
-                            <v-icon :color="getItem(item.idCategory).color">{{ getItem(item.idCategory).icon }}</v-icon>
+                           <v-icon :color="getItem(item.idCategory).color">{{ getItem(item.idCategory).icon }}</v-icon>
                         </v-list-item-avatar>
                         <v-list-item-content>
                             <v-list-item-title>{{ item.name }}</v-list-item-title>
@@ -53,12 +53,12 @@ export default {
             return this.$store.getters["transactions/getTransactions"]
         },
         categoriesServices() {
-            return this.$store.getters["categories/getCategory"]
+            return this.$store.getters["services/getCategory"]
         },
         categoriesGiftCard() {
             return this.$store.getters["giftCards/getCategory"]
         },
-        concatServicesGiftCards() {
+       concatServicesGiftCards() {
             return this.categoriesServices.concat(this.categoriesGiftCard)
         },
         users() {
@@ -68,11 +68,12 @@ export default {
     methods: {
         getColor(value) {
             if (value < 0) {
-                return "color: #f4976c "
+                return "color: #f4976c"
             } else if (value > 0) {
                 return "color: #2573d5"
             }
         },
+
         getItem(idCategory) {
             for (let i = 0; i < this.concatServicesGiftCards.length; i++) {
                 if (idCategory === this.concatServicesGiftCards[i].id) {

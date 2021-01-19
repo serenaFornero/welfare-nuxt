@@ -15,12 +15,12 @@
         </v-card>
         <v-row justify="center" class="d-md-none">
             <v-btn
-                class="white--text accent"
+                color="accent"
                 fixed
-                style="margin-top: 550px;"
-                top
                 fab
-                small
+                bottom
+                right
+                style="bottom: 64px!important;"
                 to="/mappa-servizi"
             >
                 <v-icon>mdi-map-marker</v-icon>

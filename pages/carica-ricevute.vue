@@ -35,9 +35,9 @@
             </div>
             <v-card-text>
                 <v-form ref="form" v-model="valid">
-                    <v-file-input label="File name"></v-file-input>
+                    <v-file-input v-model="file" label="File name"></v-file-input>
                     <v-textarea
-                        v-model="receipt.description"
+                        v-model="fileDescription"
                         prepend-icon="mdi-comment"
                         label="Note"
                         rows="2"
@@ -85,8 +85,11 @@ export default {
         GoBack
     },
     data: () => ({
-        valid: true,
+        valid: false,
         alert: false,
+        file: null,
+        fileName: null,
+        fileDescription: null,
         receipt: {
             fileName: '',
             description: '',
@@ -100,7 +103,13 @@ export default {
     },
     methods: {
         addReceipt: function () {
-            this.$store.commit('receipts/addReceipt', {...this.receipt})
+            const file = {
+                id: this.$store.getters["receipts/getReceipt"].length,
+                name: this.file.name,
+                description: this.fileDescription,
+                date: new Date(this.file.lastModified).toISOString()
+            }
+            this.$store.commit('receipts/addReceipt', {...file})
         },
     },
 }

@@ -9,15 +9,15 @@
             <v-card-title class="primary--text">
                 I miei crediti
             </v-card-title>
-            <v-card-text v-for="values in getCredit" :key="values.id">
+            <v-card-text>
                 <p class="subtitle-1 mx-3">Totale accreditato nel {{ new Date().getFullYear() }}:</p>
-                <p class="pb-3 ml-3 font-weight-black accent--text">{{ values.tot }} €</p>
+                <p class="pb-3 ml-3 font-weight-black accent--text">{{ getTot }} €</p>
                 <v-divider></v-divider>
                 <p class="subtitle-1 pt-3 mx-3">Credito residuo Gift Card:</p>
-                <p class="pb-3 ml-3 font-weight-black accent--text">{{ values.giftCardCredit }} €</p>
+                <p class="pb-3 ml-3 font-weight-black accent--text">{{ getGiftCardCredit }} €</p>
                 <v-divider></v-divider>
                 <p class="subtitle-1 pt-3 mx-3">Scadenza credito disponibile:</p>
-                <p class="pb-3 ml-3 font-weight-black warning--text">{{ values.expiration }}</p>
+                <p class="pb-3 ml-3 font-weight-black warning--text">{{ getExpiration }}</p>
             </v-card-text>
         </v-card>
     </v-container>
@@ -34,12 +34,18 @@ export default {
         CardCreditAvailable,
     },
     computed: {
-        getCredit() {
-            return this.$store.getters['credit/getCredit']
+        getTot(){
+            return this.$store.getters['credit/getTot']
+        },
+        getGiftCardCredit(){
+            return this.$store.getters['credit/getGiftCardCredit']
+        },
+        getExpiration(){
+            return this.$store.getters['credit/getExpiration']
         },
         getUser() {
             return this.$store.getters['users/getUser']
         }
-    }
+    },
 }
 </script>

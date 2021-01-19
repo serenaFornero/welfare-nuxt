@@ -9,8 +9,8 @@
                 Gift Card {{ card.name }}
             </v-card-title>
             <v-card-text>
-                Cliccando su <strong>Procedi</strong> l'acquisto del buono del valore di <strong>
-                {{ card.value }}€ </strong> verrà confermato.
+                Cliccando su <strong>Procedi</strong> l'acquisto del buono <strong>{{card.brand}}</strong>
+                del valore di <strong> {{ card.value }}€ </strong> verrà confermato.
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
@@ -40,7 +40,10 @@ export default {
     data() {
         return {
             card: {
-                name: null
+                name: null,
+                brand: '',
+                value: ''
+
             },
             dialog: false,
         }
@@ -57,9 +60,9 @@ export default {
                 name: null,
             }
         },
-        addOrder(card) {
-            this.$store.commit("orders/addOrder", card)
-        },
+        addOrder: function (){
+            this.$store.commit('orders/addOrder', {...this.card})
+        }
     }
 }
 

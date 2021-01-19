@@ -55,7 +55,7 @@
                     ></v-text-field>
                     <v-dialog
                         ref="dialog"
-                        v-model="modal"
+                        v-model="pendingDeposit.date"
                         :return-value.sync="date"
                         persistent
                         width="290px"
@@ -77,14 +77,13 @@
                             <v-spacer></v-spacer>
                             <v-btn
                                 text
-                                class="accent"
+                                class="accent--text"
                                 @click="modal = false"
                             >
                                 Indietro
                             </v-btn>
                             <v-btn
-                                text
-                                class="accent--text"
+                                class="accent white--text rounded-lg"
                                 @click="$refs.dialog.save(date)"
                             >
                                 OK
@@ -92,7 +91,7 @@
                         </v-date-picker>
                     </v-dialog>
                     <div class="d-flex justify-center">
-                        <v-btn class="mt-10 text-capitalize mb-3 rounded-lg white--text accent" type="submit" to="/richiesta-inviata">
+                        <v-btn class="mt-10 text-capitalize mb-3 rounded-lg white--text accent" type="submit">
                             Invia richiesta
                         </v-btn>
                     </div>

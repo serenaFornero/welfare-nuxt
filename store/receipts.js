@@ -7,7 +7,7 @@ export const state = () => ({
             date: "12-12-2020"
         },
         {
-            id: 2,
+            id: 1,
             fileName: "myPdf.pdf",
             description: "Ricevuta n2",
             date: "10-10-2020"

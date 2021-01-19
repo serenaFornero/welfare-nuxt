@@ -1,12 +1,13 @@
 <template>
     <v-bottom-navigation
-        :value="value"
-        color="#29304d"
+        color="accent"
         grow
         app
         shift
     >
         <v-btn
+            nuxt
+            exact
             height="100%"
             to="/categorie-servizi"
         >
@@ -18,6 +19,8 @@
             <v-icon>mdi-storefront</v-icon>
         </v-btn>
         <v-btn
+            nuxt
+            exact
             height="100%"
             to="/buoni-acquisto"
         >
@@ -29,6 +32,8 @@
             <v-icon>mdi-gift</v-icon>
         </v-btn>
         <v-btn
+            nuxt
+            exact
             height="100%"
             to="/home"
         >
@@ -41,6 +46,8 @@
             <v-icon>mdi-account</v-icon>
         </v-btn>
         <v-btn
+            nuxt
+            exact
             height="100%"
             to="/portafoglio"
         >
@@ -57,6 +64,6 @@
 
 <script>
 export default {
-    data: () => ({value: 1}),
+    name: 'NavBar'
 }
 </script>

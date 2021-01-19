@@ -1,7 +1,7 @@
 <template>
     <v-card class="rounded-lg primary">
         <v-card-title class="white--text">
-            Credito disponibile: {{ getCredit }} €
+            Credito disponibile: {{ getCredit  }} €
         </v-card-title>
         <v-card-actions class="mx-3">
             <v-btn
