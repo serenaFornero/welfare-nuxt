@@ -6,7 +6,7 @@
             elevation="5"
         >
             <v-row justify="center">
-                <v-card-title class=" mt-3 primary--text">
+                <v-card-title class="primary--text">
                     Accedi alla tua area personale
                 </v-card-title>
             </v-row>
@@ -33,15 +33,15 @@
                     ></v-text-field>
 
                     <v-row justify="center">
-                        <v-checkbox class="mt-1 ml-3 font-weight-light accent--text "
+                        <v-checkbox class="mt-1 accent--text"
                                     v-model="checkbox"
                                     label="Ricordami"
 
                         ></v-checkbox>
                         <v-spacer></v-spacer>
                         <nuxt-link
-                            to="/recuperaPassword"
-                            class="font-weight-light mt-2 mr-2 text-decoration-none secondary--text"
+                            to="/recupera-password"
+                            class="mt-2 text-decoration-none"
                         >
                             Password dimenticata?
                         </nuxt-link>

@@ -11,7 +11,7 @@
                     elevation="2"
                     hover
                 >
-                    <nuxt-link :to="'/categorieServizi/' + category.id">
+                    <nuxt-link :to="'/categorie-servizi/' + category.id">
                         <v-img :src="category.src"></v-img>
                     </nuxt-link>
                 </v-card>

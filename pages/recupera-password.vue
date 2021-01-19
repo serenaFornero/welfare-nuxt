@@ -18,13 +18,11 @@ export default {
         Password,
     },
     layout: 'notAuthenticated',
-
     watch: {
         password(val) {
             console.log(val)
         }
     },
-
     data: () => ({
         valid: true,
         email: '',
@@ -33,7 +31,6 @@ export default {
             emailRules: v => /.+@.+/.test(v) || 'Email non valida'
         }
     }),
-    methods: {}
 }
 </script>
 

@@ -15,7 +15,7 @@
                 <v-list-item-action class="justify-center">
                     <v-btn
                         class="text-capitalize rounded-lg white--text accent"
-                        :to="'/giftCards/' + category.id"
+                        :to="'/buoni-acquisto/' + category.id"
                     >
                         Scopri
                     </v-btn>

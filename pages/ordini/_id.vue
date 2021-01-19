@@ -2,9 +2,7 @@
     <v-container fluid>
         <go-back/>
         <div v-for="item in ordersById" :key="item.id">
-            <p class="headline" style="color: #29304d">
-                Gift Card {{ item.brand }}
-            </p>
+            <p class="headline primary--text">Gift Card {{ item.brand }}</p>
             <v-card
                 class="rounded-lg d-flex flex-wrap flex-column justify-center"
                 elevation="5"
@@ -19,7 +17,6 @@
                     elevation="2"
                     class="mx-3 mt-5 subtitle-2 grey--text text--darken-1"
                     max-width="500"
-
                 >
                     I voucher potranno essere attivati cliccando sul pulsante "attiva". I voucher, dopo essere stati
                     attivati,
@@ -49,7 +46,8 @@
                             <strong>{{ item.value }}€</strong>
                         </v-list-item-subtitle>
                         <v-list-item-action>
-                            <DialogActivateGiftCard v-for="item in ordersById" :key="item.id" :orders="item"></DialogActivateGiftCard>
+                            <DialogActivateGiftCard v-for="item in ordersById" :key="item.id"
+                                                    :orders="item"></DialogActivateGiftCard>
                         </v-list-item-action>
                     </v-list-item-group>
                 </v-list>
@@ -63,11 +61,12 @@ import DialogActivateGiftCard from '@/components/DialogActivateGiftCard'
 import GoBack from '@/components/GoBack'
 
 export default {
+    layout: 'default',
     components: {
         GoBack,
         DialogActivateGiftCard
-
     },
+
     data() {
         return {
             alert: false
@@ -76,25 +75,21 @@ export default {
 
     computed: {
         ordersById() {
-            console.log(this.$store.getters['orders/getOrdersById'](parseInt(this.$route.params.id)))
             return this.$store.getters['orders/getOrdersById'](parseInt(this.$route.params.id))
         },
-
-        giftCards() {
+        categoriesGiftCards() {
             return this.$store.getters['giftCards/getCategory']
         }
-
     },
+
     methods: {
         getGiftCardItem(categoryId) {
-            for (let i = 0; i < this.giftCards.length; i++) {
-                if (categoryId === this.giftCards[i].id) {
-                    return this.giftCards[i]
+            for (let i = 0; i < this.categoriesGiftCards.length; i++) {
+                if (categoryId === this.categoriesGiftCards[i].id) {
+                    return this.categoriesGiftCards[i]
                 }
             }
         }
-
-
     }
 }
 </script>

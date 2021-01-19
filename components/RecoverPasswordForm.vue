@@ -11,13 +11,6 @@
             </v-row>
 
             <v-card-text>
-                <v-img
-                    contain
-                    fluid
-                    height="200"
-                    src="/forgot-password.png"
-                    class="d-none d-sm-flex"
-                ></v-img>
                 <v-form
                     ref="form"
                     v-model="valid"
@@ -30,15 +23,18 @@
                     />
                 </v-form>
             </v-card-text>
-            <v-card-actions class="justify-center">
+            <v-card-actions class="justify-center flex-column" >
                 <v-btn
                     large
                     class="mb-5 text-capitalize rounded-lg white--text accent"
-                    to="/resetPassword"
+                    to="/reset-password"
                     :disabled="!valid"
                 >
                     Invia
                 </v-btn>
+              <v-card-subtitle> Hai già un account?
+                  <nuxt-link to="/" class="text-decoration-none">Login</nuxt-link>
+              </v-card-subtitle>
             </v-card-actions>
         </v-card>
     </v-container>

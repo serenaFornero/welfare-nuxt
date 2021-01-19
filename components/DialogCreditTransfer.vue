@@ -36,7 +36,7 @@
                 <v-spacer></v-spacer>
                 <v-btn
                     class="text-capitalize white--text rounded-lg accent"
-                    to="/trasferimentoEffettuato"
+                    to="/trasferimento-effettuato"
                     @click="creditTransfer"
                 >
                     Procedi

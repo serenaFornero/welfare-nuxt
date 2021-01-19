@@ -1,18 +1,20 @@
 <template>
     <v-container fill-height>
-        <v-row align="top" justify="end">
+        <v-row align="center" justify="end">
             <v-col cols="12" sm="6">
-                <login></login>
+                <reset-password-form></reset-password-form>
             </v-col>
         </v-row>
     </v-container>
 </template>
 
 <script>
-import Login from '@/components/Login'
+import ResetPasswordForm from '@/components/ResetPasswordForm'
 
 export default {
+    components: {
+        ResetPasswordForm
+    },
     layout: 'notAuthenticated',
-    components: {Login}
 }
 </script>

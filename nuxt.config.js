@@ -69,12 +69,16 @@ export default {
                 dark: {
                     background: '#F7F9FC',
                     primary: '#29304d',
-                    accent: '#2573d5'
+                    accent: '#2573d5',
+                    warning: '#f4976c',
+                    error: '#FF5252',
                 },
                 light: {
                     background: '#F7F9FC',
                     primary: '#29304d',
-                    accent: '#2573d5'
+                    accent: '#2573d5',
+                    warning: '#f4976c',
+                    error: '#FF5252',
                 }
             }
         }

@@ -8,7 +8,7 @@
     >
         <v-btn
             height="100%"
-            to="/categorieServizi"
+            to="/categorie-servizi"
         >
         <span
             class="d-none d-sm-flex mt-2"
@@ -19,7 +19,7 @@
         </v-btn>
         <v-btn
             height="100%"
-            to="/giftCards"
+            to="/buoni-acquisto"
         >
         <span
             class="d-none d-sm-flex mt-2"
