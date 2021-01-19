@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         categoriesServices() {
-            return this.$store.getters["categories/getCategory"]
+            return this.$store.getters["services/getCategory"]
         },
     }
 }

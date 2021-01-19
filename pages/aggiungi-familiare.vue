@@ -17,7 +17,6 @@
                 elevation="2"
                 class="mx-3 subtitle-2 grey--text text--darken-1"
                 max-width="500"
-
             >
                 In base all’art. 12 del Tuir sono ammessi i familiari anche non a carico fiscalmente e non
                 necessariamente
