@@ -26,12 +26,6 @@
                     >
                     </v-text-field>
                 </v-col>
-                <v-btn
-                    class="my-2 text-capitalize rounded-lg accent--text"
-                    outlined
-                >
-                    Aggiorna
-                </v-btn>
             </v-row>
         </form>
     </v-container>

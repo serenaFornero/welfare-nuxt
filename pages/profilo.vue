@@ -20,31 +20,6 @@
             <v-card-title class="primary--text">
                 Coordinate Bancarie
             </v-card-title>
-            <v-alert
-                dismissible
-                close-text="Close Alert"
-                v-model="alert"
-                border="left"
-                colored-border
-                color="info"
-                elevation="2"
-                class="mx-3 mb-10 subtitle-2 grey--text text--darken-1"
-                max-width="500"
-            >
-                Per ususfruire del servizio rimborsi spese è necessario inserire il codice IBAN del tuo conto corrente
-                bancario
-
-            </v-alert>
-            <div class="text-right mt-n12">
-                <v-btn
-                    color="info"
-                    icon
-                    v-if="!alert"
-                    @click="alert = true"
-                >
-                    <v-icon>mdi-information</v-icon>
-                </v-btn>
-            </div>
             <bank-details-form></bank-details-form>
             <v-card-title class="primary--text">
                 I miei familiari

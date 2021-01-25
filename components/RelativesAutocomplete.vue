@@ -103,6 +103,7 @@ export default {
         return {
             relative: this.value,
             dialog: false,
+            dialogRemoveRel: null
         }
     },
     watch: {
@@ -120,7 +121,8 @@ export default {
     },
     methods: {
         removeRel: function () {
-            this.$store.commit("relatives/removeRel");
+            this.$store.commit("relatives/removeRel")
+
         },
         getFullName(name, surname) {
             return name + ' ' + surname

@@ -21,12 +21,7 @@ export default {
         label: {
             default: () => 'Password'
         },
-        rules: {
-            type: Array,
-            default: () => [
-                v => !!v || 'Il campo è obbligatorio'
-            ]
-        }
+
     },
     watch: {
         value(val) {
@@ -40,6 +35,9 @@ export default {
         return {
             showPassword: false,
             password: '',
+            rules: {
+                required: value => !!value || 'Il campo è obbligatorio',
+            }
         }
     }
 }

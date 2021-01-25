@@ -13,6 +13,7 @@
                     ref="form"
                     v-model="valid"
                     @submit.stop.prevent="login"
+
             >
             <v-card-text>
                     <password
@@ -22,7 +23,6 @@
                     <password
                         label="Conferma Password"
                         v-model="confirm_password"
-                        :rules="[(password === confirm_password) || 'Le password non corrispondono', rules.required]"
                     ></password>
 
             </v-card-text>
@@ -56,12 +56,9 @@ export default {
     },
 
     data: () => ({
-        valid: true,
+        valid:false,
         password: "",
         confirm_password: "",
-        rules: {
-            required: value => !!value || 'Il campo è obbligatorio',
-        },
     }),
     methods: {
         login() {
@@ -69,6 +66,9 @@ export default {
             this.$nextTick(() => {
                 this.$router.push('/home')
             })
+        },
+        passwordConfirmationRule() {
+            return () => (this.password === this.confirm_password) || 'Password must match'
         }
     }
 }

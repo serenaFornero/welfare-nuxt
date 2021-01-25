@@ -85,7 +85,7 @@
                         </v-btn>
                         <v-btn
                             class="text-capitalize white--text rounded-lg accent"
-                            @click="addRelative"
+                            @click="dialog = false"
                         >
                             Procedi
                         </v-btn>

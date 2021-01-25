@@ -9,28 +9,13 @@
 </template>
 
 <script>
-import Password from '@/components/Password'
 import RecoverPasswordForm from "@/components/RecoverPasswordForm";
 
 export default {
     components: {
         RecoverPasswordForm,
-        Password,
     },
     layout: 'notAuthenticated',
-    watch: {
-        password(val) {
-            console.log(val)
-        }
-    },
-    data: () => ({
-        valid: true,
-        email: '',
-        rules: {
-            required: value => !!value || 'Il campo è obbligatorio',
-            emailRules: v => /.+@.+/.test(v) || 'Email non valida'
-        }
-    }),
 }
 </script>
 

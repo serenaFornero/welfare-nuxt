@@ -13,7 +13,7 @@ export const state = () => ({
             phone: "3408864992",
             iban: "MJF45LGFEMMFD7784KKD",
             relation: "Utente"
-        }
+        },
     ],
 })
 
@@ -23,14 +23,12 @@ export const getters = {
     },
 }
 export const mutations = {
-    addRelative(state, relative) {
-        state.relatives.push({
-            name: relative.name,
-            surname: relative.surname,
-            birthDate: relative.birthDate,
-            relation: relative.relation,
-        });
-        console.log("mutations: relative aggiunto");
-    },
+    changePassword(state, pass){
+        state.users.fill(pass, 7)
+        console.log("mutation: pw cambiata");
+    }
+
+
 }
+
 

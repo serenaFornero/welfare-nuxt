@@ -76,7 +76,7 @@
                             >
                                 <v-text-field
                                     :rules="rules"
-                                    v-model="select"
+                                    v-model="value"
                                     max-width="50"
                                     label="Inserisci l'importo da rimborsare"
                                     type="number"
@@ -157,7 +157,7 @@
                         <v-card-text>
                             <v-file-input
                                 :rules="rules"
-                                v-model="select4"
+                                v-model="file"
                                 accept="image/*"
                                 label="Scegli i file da allegare"
                                 placeholder=""
@@ -210,7 +210,7 @@
                            sm="6"
                            md="3">
                         <v-text-field
-                            v-model="select"
+                            v-model="value"
                             label="Importo da rimborsare"
                             max-width="50"
                             readonly
@@ -251,7 +251,7 @@
                            sm="6"
                            md="3">
                         <v-text-field
-                            v-model="select4"
+                            v-model="file"
                             label="File allegato"
                             max-width="50"
                             readonly
@@ -287,8 +287,9 @@ export default {
         return {
             alert: false,
             valid: true,
-            select: "",
-            select4: null,
+            value: '',
+            file: null,
+            fileName: null,
             e6: 1,
             relative: null,
             birthDate: null,
@@ -333,7 +334,8 @@ export default {
             return this.$store.getters["refund/getRefundCategory"]
         },
     },
-    methods: {},
+    methods: {
+    },
 }
 
 </script>

@@ -1,6 +1,9 @@
 export default {
     // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
     ssr: false,
+    server: {
+        host: '0'
+    },
 
     // Target (https://go.nuxtjs.dev/config-target)
     target: 'static',
@@ -85,5 +88,9 @@ export default {
     },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
-    build: {}
+    build: {},
+    cli: {
+        badgeMessages: ['Hello World!'],
+        bannerColor: 'blue'
+    }
 }

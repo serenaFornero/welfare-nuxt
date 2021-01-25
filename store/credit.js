@@ -28,6 +28,4 @@ export const mutations = {
         state.creditAvailable = state.creditAvailable - price
         console.log("mutations: trasferimento effettuato");
     },
-
-
 }

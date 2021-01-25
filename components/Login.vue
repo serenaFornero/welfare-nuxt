@@ -14,14 +14,17 @@
                 class="login"
                 ref="form"
                 v-model="valid"
-                @submit.stop.prevent="login">
+                @submit.stop.prevent="login"
+            >
                 <v-card-text>
                     <v-text-field
                         v-model="email"
                         :rules="[rules.emailRules, rules.required]"
                         label="E-mail"
                         prepend-icon="mdi-account-circle"
-                    />
+                    >
+
+                    </v-text-field>
                     <v-text-field
                         v-model="password"
                         :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -73,7 +76,7 @@ export default {
     },
     name: "Login",
     data: () => ({
-        valid: true,
+        valid: false,
         showPassword: false,
         checkbox: true,
         email: '',
@@ -81,8 +84,9 @@ export default {
         rules: {
             required: value => !!value || 'Il campo è obbligatorio',
             emailMatch: () => (`L'email e la password non corrispondono`),
-            emailRules: v => /.+@.+/.test(v) || 'Email non valida'
-        }
+            emailRules: v => /\S+@\S+\.\S+/.test(v) || 'Email non valida'
+        },
+
     }),
     methods: {
         login() {
@@ -90,7 +94,8 @@ export default {
             this.$nextTick(() => {
                 this.$router.push('/home')
             })
-        }
+        },
+
     }
 }
 </script>
