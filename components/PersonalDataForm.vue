@@ -10,6 +10,7 @@
                     <v-text-field
                         max-width="50"
                         :value="user.name + user.surname"
+                        aria-readonly="true"
                         readonly
                         label="Nome e cognome"
                     ></v-text-field>
@@ -23,6 +24,7 @@
                     <v-text-field
                         :value="user.birthDate"
                         label="Data di nascita"
+                        aria-readonly="true"
                         readonly
                     ></v-text-field>
 
@@ -36,6 +38,7 @@
                     <v-text-field
                         :value="user.taxCode"
                         label="Codice Fiscale"
+                        aria-readonly="true"
                         readonly
                     ></v-text-field>
 
@@ -49,6 +52,7 @@
                     <v-text-field
                         :value="user.sex"
                         label="Sesso"
+                        aria-readonly="true"
                         readonly
                     ></v-text-field>
 
@@ -61,6 +65,7 @@
                     <v-text-field
                         max-width="50"
                         :value="user.email"
+                        aria-readonly="true"
                         readonly
                         label="Email"
                     ></v-text-field>
@@ -73,6 +78,7 @@
                     <v-text-field
                         :value="user.phone"
                         label="Telefono"
+                        aria-readonly="true"
                         readonly
                     ></v-text-field>
                 </v-col>

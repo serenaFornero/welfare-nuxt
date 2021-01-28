@@ -1,5 +1,6 @@
 <template>
     <v-autocomplete
+        aria-required="true"
         clearable
         item-value="id"
         :rules="rules"

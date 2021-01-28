@@ -18,6 +18,7 @@
             >
                 <v-card-text>
                     <v-text-field
+                        aria-required="true"
                         v-model="email"
                         :rules="[rules.emailRules, rules.required]"
                         label="E-mail"
@@ -26,6 +27,7 @@
 
                     </v-text-field>
                     <v-text-field
+                        aria-required="true"
                         v-model="password"
                         :append-icon=" showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                         :rules="[rules.required]"
@@ -39,6 +41,7 @@
                         <v-checkbox class="mt-1 accent--text"
                                     v-model="checkbox"
                                     label="Ricordami"
+                                    aria-checked="true"
 
                         ></v-checkbox>
                         <v-spacer></v-spacer>

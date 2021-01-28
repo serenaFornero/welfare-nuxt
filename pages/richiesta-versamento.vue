@@ -43,6 +43,7 @@
                         max-width="50"
                         label="Inserisci un nome"
                         placeholder="es. versamento fondo previdenza"
+                        aria-required="true"
                         required
                     ></v-text-field>
                     <v-text-field
@@ -50,6 +51,7 @@
                         max-width="50"
                         label="Inserisci importo da versare"
                         placeholder="0,00"
+                        aria-required="true"
                         required
                         type="number"
                     ></v-text-field>

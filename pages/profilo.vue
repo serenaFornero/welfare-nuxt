@@ -53,6 +53,7 @@
                             sm="6"
                             md="3">
                             <v-text-field
+                                aria-readonly="true"
                                 readonly
                                 v-model="birthDate"
                                 label="Data di nascita"
@@ -63,6 +64,7 @@
                             sm="6"
                             md="3">
                             <v-text-field
+                                aria-readonly="true"
                                 readonly
                                 v-model="relation"
                                 label="Legame di parentela"

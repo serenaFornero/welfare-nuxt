@@ -19,8 +19,10 @@
                     <password
                         label="Nuova password"
                         v-model="password"
+                        aria-required="true"
                     ></password>
                     <password
+                        aria-required="true"
                         label="Conferma Password"
                         v-model="confirm_password"
                     ></password>

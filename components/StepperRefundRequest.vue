@@ -75,6 +75,7 @@
                                 md="3"
                             >
                                 <v-text-field
+                                    aria-required="true"
                                     :rules="rules"
                                     v-model="value"
                                     max-width="50"
@@ -96,6 +97,7 @@
                             >
 
                                 <v-text-field
+                                    aria-required="true"
                                     v-model="type"
                                     label="Tipo di spesa"
                                     max-width="50"
@@ -156,6 +158,7 @@
                     <v-form v-model="valid">
                         <v-card-text>
                             <v-file-input
+                                aria-required="true"
                                 :rules="rules"
                                 v-model="file"
                                 accept="image/*"
@@ -213,6 +216,7 @@
                             v-model="value"
                             label="Importo da rimborsare"
                             max-width="50"
+                            aria-readonly="true"
                             readonly
                         ></v-text-field>
                     </v-col>
@@ -223,6 +227,7 @@
                             v-model="category"
                             label="Categoria di spesa"
                             max-width="50"
+                            aria-readonly="true"
                             readonly
                         ></v-text-field>
                     </v-col>
@@ -233,6 +238,7 @@
                             v-model="type"
                             label="Tipo di spesa"
                             max-width="50"
+                            aria-readonly="true"
                             readonly
                         ></v-text-field>
                     </v-col>
@@ -243,6 +249,7 @@
                             v-model="relative"
                             label="Effettivo beneficiario"
                             max-width="50"
+                            aria-readonly="true"
                             readonly
                         ></v-text-field>
 
@@ -254,6 +261,7 @@
                             v-model="file"
                             label="File allegato"
                             max-width="50"
+                            aria-readonly="true"
                             readonly
                         ></v-text-field>
                     </v-col>

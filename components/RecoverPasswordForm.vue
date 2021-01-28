@@ -16,6 +16,7 @@
                     v-model="valid"
                 >
                     <v-text-field
+                        aria-required="true"
                         v-model="email"
                         :rules="[rules.emailRules, rules.required]"
                         label="E-mail"

@@ -35,8 +35,9 @@
             </div>
             <v-card-text>
                 <v-form ref="form" v-model="valid">
-                    <v-file-input v-model="file" label="File name"></v-file-input>
+                    <v-file-input v-model="file" label="File name" aria-required="true"></v-file-input>
                     <v-textarea
+                        aria-required="true"
                         v-model="fileDescription"
                         prepend-icon="mdi-comment"
                         label="Note"
