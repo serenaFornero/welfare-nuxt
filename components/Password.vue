@@ -10,18 +10,12 @@
         ></v-text-field>
     </form>
 </template>
-<script>
 
+<script>
 export default {
     name: "Password",
     props: {
-        value: {
-            type: String
-        },
-        label: {
-            default: () => 'Password'
-        },
-
+        value: { type: String },
     },
     watch: {
         value(val) {
@@ -41,7 +35,6 @@ export default {
         }
     }
 }
-
 </script>
 
 

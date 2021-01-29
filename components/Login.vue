@@ -71,12 +71,9 @@
 
 
 <script>
-import Password from '@/components/Password'
 
 export default {
-    components: {
-        Password
-    },
+
     name: "Login",
     data: () => ({
         valid: false,
