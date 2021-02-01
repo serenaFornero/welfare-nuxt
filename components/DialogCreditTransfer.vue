@@ -7,8 +7,7 @@
         <v-card class="rounded-lg" elevation="5">
             <v-card-title class="justify-center primary--text">{{ item.name }}</v-card-title>
             <v-card-subtitle class="text-center"> {{ item.address }}</v-card-subtitle>
-            <form ref="form"
-                  v-model="valid">
+            <form ref="form">
                 <v-row justify="center">
                     <v-col
                         cols="12"
@@ -25,8 +24,8 @@
                             solo
                             :rules="[rules.required]"
                         >
-
                         </v-text-field>
+
                     </v-col>
                 </v-row>
             </form>
@@ -39,11 +38,11 @@
                     Indietro
                 </v-btn>
                 <v-spacer></v-spacer>
+
                 <v-btn
                     class="text-capitalize white--text rounded-lg accent"
                     to="/trasferimento-effettuato"
                     @click="creditTransfer"
-                    :disabled="!valid"
 
                 >
                     Procedi
@@ -58,17 +57,13 @@ export default {
     name: "DialogCreditTransfer",
     data() {
         return {
-            valid: false,
-            item: {
-                name: null
-            },
             dialog: false,
-            creditAvailable: "",
-            rules: {
-                required: value => !!value || 'Il campo è obbligatorio'
-            },
+            item: { name: null },
+            rules: { required: value => !!value || 'Il campo è obbligatorio'},
+            creditAvailable: '',
         }
     },
+
     methods: {
         open(service) {
             this.item = service
@@ -78,7 +73,7 @@ export default {
             this.dialog = false
             this.item = {name: null}
         },
-        creditTransfer: function () {
+        creditTransfer() {
             this.$store.commit('credit/decrementCredit', this.creditAvailable)
         },
     }

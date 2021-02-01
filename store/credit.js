@@ -23,6 +23,7 @@ export const getters = {
         return state.creditAvailable
     },
 }
+
 export const mutations = {
     decrementCredit(state, price) {
         state.creditAvailable = state.creditAvailable - price

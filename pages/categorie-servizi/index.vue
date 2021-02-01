@@ -7,12 +7,14 @@
             </p>
             <v-spacer></v-spacer>
         </v-row>
+
         <v-card class="rounded-lg d-flex flex-wrap" hover>
             <CategoriesServices v-for="value in categoriesServices"
                                 :key="value.id"
                                 :category="value"
             ></CategoriesServices>
         </v-card>
+
         <v-row justify="center" class="d-md-none">
             <v-btn
                 color="accent"

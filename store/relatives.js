@@ -17,6 +17,7 @@ export const state = () => ({
             relation: "Coniuge"
         }
     ],
+
     relation: ["Coniuge", "Figlio", "Fratello", "Sorella", "Suocero"]
 })
 

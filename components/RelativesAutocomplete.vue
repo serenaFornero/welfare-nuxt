@@ -114,11 +114,13 @@ export default {
             this.$emit('input', val)
         }
     },
+
     computed: {
         relatives() {
             return this.$store.getters["relatives/getRelative"]
         },
     },
+
     methods: {
         removeRel: function () {
             this.$store.commit("relatives/removeRel")
