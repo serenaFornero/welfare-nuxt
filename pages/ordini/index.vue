@@ -1,8 +1,6 @@
 <template>
     <v-container fluid>
-        <p class="headline primary--text">
-            Ordini
-        </p>
+        <go-back></go-back>
         <v-card
             class="rounded-lg d-flex flex-wrap flex-column justify-center"
             elevation="5"
@@ -48,10 +46,12 @@
 <script>
 import OrderList from "@/components/OrderList";
 import Avatar from "@/components/Avatar";
+import GoBack from "@/components/GoBack";
 
 export default {
     layout: 'default',
     components: {
+        GoBack,
         Avatar,
         OrderList
     },

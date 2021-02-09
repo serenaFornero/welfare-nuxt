@@ -60,6 +60,8 @@ export default {
             return this.$store.getters["services/getServiceById"](parseInt(this.$route.params.id))
         },
     },
+
+
     methods: {
         getCategoryItem(categoryId) {
             for (let i = 0; i < this.categoriesServices.length; i++) {
